@@ -4,5 +4,14 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"json.schemas": [
+			{
+				"fileMatch": [
+					"/*.json"
+				],
+				"url": "./schemas/R4/fhir.schema.json"
+			}
+		]
+	}
 }
