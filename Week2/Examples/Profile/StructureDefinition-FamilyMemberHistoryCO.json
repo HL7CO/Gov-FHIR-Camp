@@ -1,0 +1,191 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "FamilyMemberHistoryCO",
+  "url": "http://co.fhir.guide/core/StructureDefinition/FamilyMemberHistoryCO",
+  "version": "0.1.0",
+  "name": "FamilyMemberHistoryCO",
+  "title": "Profile: Family Member History CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR FamilyMemberHistory Core profile, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Record information about the relevant health history of members of the patient's blood or related family. [ES: Registrar información sobre los antecedentes de salud relevantes de los miembros de la familia consanguínea o afín del paciente.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "FamilyMemberHistory",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "FamilyMemberHistory.meta.profile",
+        "path": "FamilyMemberHistory.meta.profile",
+        "patternCanonical": "http://co.fhir.guide/core/StructureDefinition/FamilyMemberHistoryCO"
+      },
+      {
+        "id": "FamilyMemberHistory.status",
+        "path": "FamilyMemberHistory.status",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/history-status|4.0.1"
+        }
+      },
+      {
+        "id": "FamilyMemberHistory.dataAbsentReason",
+        "path": "FamilyMemberHistory.dataAbsentReason",
+        "binding": {
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/history-absent-reason"
+        }
+      },
+      {
+        "id": "FamilyMemberHistory.patient",
+        "path": "FamilyMemberHistory.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/PatientCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.relationship",
+        "path": "FamilyMemberHistory.relationship",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/FamilyMemberCodes"
+        }
+      },
+      {
+        "id": "FamilyMemberHistory.relationship.coding.system",
+        "path": "FamilyMemberHistory.relationship.coding.system",
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/FamilyMember"
+      },
+      {
+        "id": "FamilyMemberHistory.relationship.coding.code",
+        "path": "FamilyMemberHistory.relationship.coding.code",
+        "min": 1
+      },
+      {
+        "id": "FamilyMemberHistory.relationship.coding.display",
+        "path": "FamilyMemberHistory.relationship.coding.display",
+        "min": 1
+      },
+      {
+        "id": "FamilyMemberHistory.sex",
+        "path": "FamilyMemberHistory.sex",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+        }
+      },
+      {
+        "id": "FamilyMemberHistory.sex.coding.system",
+        "path": "FamilyMemberHistory.sex.coding.system",
+        "min": 1,
+        "fixedUri": "http://hl7.org/fhir/administrative-gender"
+      },
+      {
+        "id": "FamilyMemberHistory.sex.coding.code",
+        "path": "FamilyMemberHistory.sex.coding.code",
+        "min": 1
+      },
+      {
+        "id": "FamilyMemberHistory.sex.coding.display",
+        "path": "FamilyMemberHistory.sex.coding.display",
+        "min": 1
+      },
+      {
+        "id": "FamilyMemberHistory.reasonCode",
+        "path": "FamilyMemberHistory.reasonCode",
+        "binding": {
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/clinical-findings"
+        }
+      },
+      {
+        "id": "FamilyMemberHistory.reasonReference",
+        "path": "FamilyMemberHistory.reasonReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/ConditionCO",
+              "http://hl7.org/fhir/StructureDefinition/Observation",
+              "http://co.fhir.guide/core/StructureDefinition/AllergyIntoleranceCO",
+              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+              "http://hl7.org/fhir/StructureDefinition/DocumentReference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FamilyMemberHistory.condition.code",
+        "path": "FamilyMemberHistory.condition.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ICD10Codes"
+        }
+      },
+      {
+        "id": "FamilyMemberHistory.condition.outcome",
+        "path": "FamilyMemberHistory.condition.outcome",
+        "binding": {
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-outcome"
+        }
+      }
+    ]
+  }
+}

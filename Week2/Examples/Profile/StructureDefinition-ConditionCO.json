@@ -1,0 +1,214 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ConditionCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/ConditionCO",
+  "version": "0.1.0",
+  "name": "ConditionCO",
+  "title": "Profile: Condition CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Condition colombian Core profile, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Standardize the recording and exchange of data on diagnostic health conditions of colombian patients. [ES:  Estandarizar el registro e intercambio de datos sobre condiciones diagnósticas de salud de los pacientes colombianos.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition.clinicalStatus",
+        "path": "Condition.clinicalStatus",
+        "label": "Estátus clínico",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+        }
+      },
+      {
+        "id": "Condition.verificationStatus",
+        "path": "Condition.verificationStatus",
+        "label": "Estátus de verificación",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-ver-status|4.0.1"
+        }
+      },
+      {
+        "id": "Condition.category",
+        "path": "Condition.category",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-category"
+        }
+      },
+      {
+        "id": "Condition.category.coding.system",
+        "path": "Condition.category.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/condition-category"
+      },
+      {
+        "id": "Condition.category.coding.code",
+        "path": "Condition.category.coding.code",
+        "min": 1,
+        "fixedCode": "encounter-diagnosis"
+      },
+      {
+        "id": "Condition.category.coding.display",
+        "path": "Condition.category.coding.display",
+        "min": 1,
+        "fixedString": "Encounter Diagnosis"
+      },
+      {
+        "id": "Condition.severity",
+        "path": "Condition.severity",
+        "label": "Severidad de la condición"
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "label": "Código de diagnóstico",
+        "short": "Identification of the condition, problem or diagnosis (ICD|CIE 10|11)",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ICD10Codes"
+        }
+      },
+      {
+        "id": "Condition.code.coding.system",
+        "path": "Condition.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://hl7.org/fhir/sid/icd-10"
+      },
+      {
+        "id": "Condition.code.coding.code",
+        "path": "Condition.code.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Condition.code.coding.display",
+        "path": "Condition.code.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Condition.bodySite",
+        "path": "Condition.bodySite",
+        "binding": {
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        }
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "label": "Paciente",
+        "definition": "Indicates the patient who the condition record is associated with.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/PatientCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.encounter",
+        "path": "Condition.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/EncounterConsultationCO",
+              "http://co.fhir.guide/core/StructureDefinition/EncounterEmergencyCO",
+              "http://co.fhir.guide/core/StructureDefinition/EncounterHospitalizationCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.recordedDate",
+        "path": "Condition.recordedDate",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.recorder",
+        "path": "Condition.recorder",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/PractitionerCO",
+              "http://co.fhir.guide/core/StructureDefinition/PractitionerRoleCO"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.asserter",
+        "path": "Condition.asserter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/PractitionerCO",
+              "http://co.fhir.guide/core/StructureDefinition/PractitionerRoleCO"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

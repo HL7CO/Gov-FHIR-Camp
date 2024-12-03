@@ -1,0 +1,1477 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PatientCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/PatientCO",
+  "version": "0.1.0",
+  "name": "PatientCO",
+  "title": "Profile: Patient CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Core profile of Colombian patient, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "The registration of the identification and demographic data of the person who plays the role of patient, for the tracking of information through all health care processes.",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient",
+        "short": "Information about a person who plays the role of patient and receives healthcare services.",
+        "definition": "Identifying data, demographic and other administrative information about an individual who is a patient receiving care or other health-related services."
+      },
+      {
+        "id": "Patient.meta.profile",
+        "path": "Patient.meta.profile",
+        "patternCanonical": "http://co.fhir.guide/core/StructureDefinition/PatientCO"
+      },
+      {
+        "id": "Patient.extension",
+        "path": "Patient.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.extension:ExtensionPatientNationality",
+        "path": "Patient.extension",
+        "sliceName": "ExtensionPatientNationality",
+        "short": "Patient nationality",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientNationality"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.extension:ExtensionBirthPlace",
+        "path": "Patient.extension",
+        "sliceName": "ExtensionBirthPlace",
+        "short": "Geographical location of birth of the patient",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionBirthPlace"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.extension:ExtensionPatientEthnicity",
+        "path": "Patient.extension",
+        "sliceName": "ExtensionPatientEthnicity",
+        "short": "Patient ethnicity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientEthnicity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:ExtensionPatientPopulationGroup",
+        "path": "Patient.extension",
+        "sliceName": "ExtensionPatientPopulationGroup",
+        "short": "Patient population group",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientPopulationGroup"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:ExtensionPatientDisability",
+        "path": "Patient.extension",
+        "sliceName": "ExtensionPatientDisability",
+        "short": "Patient disability classification",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientDisability"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:ExtensionPatientGenderIdentity",
+        "path": "Patient.extension",
+        "sliceName": "ExtensionPatientGenderIdentity",
+        "short": "Patient gender identity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientGenderIdentity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "label": "Identificación",
+        "slicing": {
+          "description": "Types of patient identifiers.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Person identifiers",
+        "definition": "Identifiers of the person playing the role of patient. [ES: Identificaciones de la persona que desempeña el rol de paciente]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier",
+        "path": "Patient.identifier",
+        "sliceName": "NationalPersonIdentifier",
+        "label": "Identificación nacional del paciente",
+        "short": "National Person Identifier",
+        "definition": "Colombian identification of the person playing the role of patient. [ES: Identificación nacional de la persona que desempeña el rol de paciente]",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.id",
+        "path": "Patient.identifier.id",
+        "min": 1,
+        "patternString": "NationalPersonIdentifier-0"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.use",
+        "path": "Patient.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type",
+        "path": "Patient.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding",
+        "path": "Patient.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:InternationalCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:InternationalCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "short": "International code system",
+        "definition": "International code system of identifiers for persons. [ES: Codificación internacional de identificaciones para personas]",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:InternationalCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PN"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:InternationalCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Person number"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:ColombianCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianPersonIdentifierCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:ColombianCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "label": "Tipo identificación",
+        "short": "National code system",
+        "definition": "Colombian code system of identifiers for individuals. [ES: Codificación colombiana de identificaciones para personas]",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:ColombianCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "label": "Código",
+        "short": "CN | RC | TI | CC | PA | CD | CE | SC | PE | PT | PPT | AS | MS | SI",
+        "definition": "Colombian identifier type code. [ES: Código colombiano del tipo de identificación]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.type.coding:ColombianCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "label": "Tipo",
+        "short": "Cédula de ciudadanía | Tarjeta de identidad | Registro civil +",
+        "definition": "Representation of the code defined by the Colombian system of identifiers of persons. [ES: Representación del código definido por el sistema de identificaciones colombianas de personas]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.system",
+        "path": "Patient.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/RNEC"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.value",
+        "path": "Patient.identifier.value",
+        "label": "Número de identificación",
+        "short": "Identifier value",
+        "definition": "Value of the Colombian identification document. [ES: Valor del documento de identificación colombiano]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.period",
+        "path": "Patient.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of the identifier. [ES: Periódo de vigencia de la identificación]"
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.period.start",
+        "path": "Patient.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issuance",
+        "definition": "Date of issuance of the identifier. [ES: Fecha de expedición de la identificación]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:NationalPersonIdentifier.period.end",
+        "path": "Patient.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Expiration date",
+        "definition": "Identifier expiration date. [ES: Fecha de vencimiento de la identificación]"
+      },
+      {
+        "id": "Patient.identifier:Passport",
+        "path": "Patient.identifier",
+        "sliceName": "Passport",
+        "label": "Pasaporte",
+        "short": "Passport",
+        "definition": "Passport of the person playing the role of patient. [ES: Pasaporte de la persona que desempeña el rol de paciente]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Patient.identifier:Passport.id",
+        "path": "Patient.identifier.id",
+        "min": 1,
+        "patternString": "Passport-0"
+      },
+      {
+        "id": "Patient.identifier:Passport.use",
+        "path": "Patient.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Patient.identifier:Passport.type",
+        "path": "Patient.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding",
+        "path": "Patient.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:InternationalCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:InternationalCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:InternationalCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PPN"
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:InternationalCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Passport number"
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:ColombianCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianPersonIdentifierCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:ColombianCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier"
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:ColombianCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PA"
+      },
+      {
+        "id": "Patient.identifier:Passport.type.coding:ColombianCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Pasaporte"
+      },
+      {
+        "id": "Patient.identifier:Passport.system",
+        "path": "Patient.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/Pasaportes"
+      },
+      {
+        "id": "Patient.identifier:Passport.value",
+        "path": "Patient.identifier.value",
+        "label": "Pasaporte Nº",
+        "short": "Passport Nº",
+        "definition": "Passport Nº. [ES: Pasaporte Nº]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:Passport.period",
+        "path": "Patient.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of passport. [ES: Periódo de vigencia del pasaporte]"
+      },
+      {
+        "id": "Patient.identifier:Passport.period.start",
+        "path": "Patient.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issue",
+        "definition": "Date of issuance of passport. [ES: Fecha de expedición del pasaporte]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:Passport.period.end",
+        "path": "Patient.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Date of expiry",
+        "definition": "Passport expiration date. [ES: Fecha de vencimiento del pasaporte]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier",
+        "path": "Patient.identifier",
+        "sliceName": "TaxIdentifier",
+        "label": "RUT",
+        "short": "Tax Identifier",
+        "definition": "Tax Identifier of the person playing the role of patient. [ES: Registro único tributario de la persona que desempeña el rol de paciente]",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.id",
+        "path": "Patient.identifier.id",
+        "min": 1,
+        "patternString": "TaxIdentifier-0"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.use",
+        "path": "Patient.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type",
+        "path": "Patient.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding",
+        "path": "Patient.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:InternationalCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:InternationalCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:InternationalCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "TAX"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:InternationalCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Tax ID number"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:ColombianCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianPersonIdentifierCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:ColombianCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:ColombianCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "RUT"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.type.coding:ColombianCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Registro Único Tributario"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.system",
+        "path": "Patient.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/DIAN"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.value",
+        "path": "Patient.identifier.value",
+        "label": "RUT Número",
+        "short": "Tax ID number value",
+        "definition": "Value of the Colombian tax registration number. [ES: Valor o número del registro único tributario colombiano]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.period",
+        "path": "Patient.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of the identifier. [ES: Periódo de vigencia de la identificación]"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.period.start",
+        "path": "Patient.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issuance",
+        "definition": "Date of issuance of the identifier. [ES: Fecha de expedición de la identificación]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.period.end",
+        "path": "Patient.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Expiration date",
+        "definition": "Identifier expiration date. [ES: Fecha de vencimiento de la identificación]"
+      },
+      {
+        "id": "Patient.identifier:TaxIdentifier.assigner.display",
+        "path": "Patient.identifier.assigner.display",
+        "fixedString": "DIAN"
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber",
+        "path": "Patient.identifier",
+        "sliceName": "PatientMedicalRecordNumber",
+        "label": "Historia Clínica",
+        "short": "Patient Medical Record Number",
+        "definition": "Patient's medical record number, assigned by each of the provider organizations where he/she receives health care services. [ES: Número de historia clínica del paciente, asignado por cada una de las organizaciones prestadoras donde recibe servicios de atención en salud.]",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.id",
+        "path": "Patient.identifier.id",
+        "min": 1,
+        "patternString": "PatientMedicalRecordNumber-0"
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.use",
+        "path": "Patient.identifier.use",
+        "min": 1,
+        "fixedCode": "usual"
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.type",
+        "path": "Patient.identifier.type",
+        "min": 1,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.type.coding.system",
+        "path": "Patient.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.type.coding.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "MR"
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.type.coding.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Medical record number"
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.system",
+        "path": "Patient.identifier.system",
+        "label": "Sistema de Información de Historia Clínica",
+        "short": "Medical Record Information System",
+        "definition": "Uniform Resource Identifier (URI) from the medical record information system of the provider organization (hospital, clinic, diagnostic center, etc.) that assigns the identification. [ES: Identificador de recursos uniforme (URI) del sistema de información de historia clínica de la organización prestadora (hospital, clínica, centro de diagnóstico, etc) que asigna la identificación.]",
+        "patternUri": "http://co.fhir.guide/NamingSystem/HIS"
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.value",
+        "path": "Patient.identifier.value",
+        "label": "Número Historia Clínica",
+        "short": "Medical record number value",
+        "definition": "Value of the patient's medical record number. [ES: Número de historia clínica del paciente]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.assigner",
+        "path": "Patient.identifier.assigner",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.assigner.reference",
+        "path": "Patient.identifier.assigner.reference",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:PatientMedicalRecordNumber.assigner.type",
+        "path": "Patient.identifier.assigner.type",
+        "fixedUri": "Organization"
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber",
+        "path": "Patient.identifier",
+        "sliceName": "DriverLicenseNumber",
+        "label": "Licencia de conducción",
+        "short": "Driver's license number",
+        "definition": "Driver's license number, according to the National Traffic Registry System (RUNT). [ES: Número de Licencia de conducción, según el Sistema de Registro Único Nacional de Tránsito (RUNT).]",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.id",
+        "path": "Patient.identifier.id",
+        "min": 1,
+        "patternString": "DriverLicenseNumber-0"
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.use",
+        "path": "Patient.identifier.use",
+        "min": 1,
+        "fixedCode": "usual"
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.type",
+        "path": "Patient.identifier.type",
+        "min": 1,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.type.coding.system",
+        "path": "Patient.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.type.coding.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "DL"
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.type.coding.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Driver's license number"
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.system",
+        "path": "Patient.identifier.system",
+        "label": "RUNT",
+        "short": "Single National Traffic Registry (RUNT)",
+        "definition": "Single National Traffic Registry System (RUNT). [ES: Sistema de Registro Único Nacional de Tránsito (RUNT).]",
+        "fixedUri": "http://co.fhir.guide/NamingSystem/RUNT"
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.value",
+        "path": "Patient.identifier.value",
+        "label": "Número de licencia de conducción",
+        "short": "Driver's license number value",
+        "definition": "Value of the Driver's license. [ES: Número de licencia de conducción]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.assigner",
+        "path": "Patient.identifier.assigner",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.assigner.reference",
+        "path": "Patient.identifier.assigner.reference",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:DriverLicenseNumber.assigner.type",
+        "path": "Patient.identifier.assigner.type",
+        "fixedUri": "Organization"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers",
+        "path": "Patient.identifier",
+        "sliceName": "OldIdentifiers",
+        "label": "Identificaciones no vigentes",
+        "short": "Old National Person Identifier",
+        "definition": "Old (non-current), national identifications of the person playing the role of patient. [ES: Identificaciones nacionales viejas (no vigentes), de la persona que desempeña el rol de paciente]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.id",
+        "path": "Patient.identifier.id",
+        "min": 1,
+        "patternString": "OldIdentifiers-0"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.use",
+        "path": "Patient.identifier.use",
+        "min": 1,
+        "fixedCode": "old"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type",
+        "path": "Patient.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding",
+        "path": "Patient.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:InternationalCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:InternationalCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "short": "International code system",
+        "definition": "International code system of identifiers for persons. [ES: Codificación internacional de identificaciones para personas]",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:InternationalCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PN"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:InternationalCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Person number"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:ColombianCode",
+        "path": "Patient.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianPersonIdentifierCodes"
+        }
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:ColombianCode.system",
+        "path": "Patient.identifier.type.coding.system",
+        "label": "Tipo identificación",
+        "short": "National code system",
+        "definition": "Colombian code system of identifiers for individuals. [ES: Codificación colombiana de identificaciones para personas]",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:ColombianCode.code",
+        "path": "Patient.identifier.type.coding.code",
+        "label": "Código",
+        "short": "CN | RC | TI | CC | PA | CD | CE | SC | PE | PT | PPT | AS | MS | SI",
+        "definition": "Colombian identifier type code. [ES: Código colombiano del tipo de identificación]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.type.coding:ColombianCode.display",
+        "path": "Patient.identifier.type.coding.display",
+        "label": "Tipo",
+        "short": "Cédula de ciudadanía | Tarjeta de identidad | Registro civil +",
+        "definition": "Representation of the code defined by the Colombian system of identifiers of persons. [ES: Representación del código definido por el sistema de identificaciones colombianas de personas]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.system",
+        "path": "Patient.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/RNEC"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.value",
+        "path": "Patient.identifier.value",
+        "label": "Número de identificación",
+        "short": "Identifier value",
+        "definition": "Value of the Colombian identification document. [ES: Valor del documento de identificación colombiano]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.period",
+        "path": "Patient.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of the identifier. [ES: Periódo de vigencia de la identificación]"
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.period.start",
+        "path": "Patient.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issuance",
+        "definition": "Date of issuance of the identifier. [ES: Fecha de expedición de la identificación]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:OldIdentifiers.period.end",
+        "path": "Patient.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Expiration date",
+        "definition": "Identifier expiration date. [ES: Fecha de vencimiento de la identificación]"
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers",
+        "path": "Patient.identifier",
+        "sliceName": "SoftwareAssignedIdentifiers",
+        "label": "Registro de paciente en el sistema de información",
+        "short": "Patient Medical Record Number",
+        "definition": "Patient registration number or ID assigned by a clinical sub-system (HIS, LIS, RIS, APP, etc). [ES: Número o ID de registro del paciente, asignado por un sub sistema clínico (HIS, LIS, RIS, APP, etc).]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers.id",
+        "path": "Patient.identifier.id",
+        "min": 1,
+        "patternString": "SoftwareAssignedIdentifiers-0"
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers.use",
+        "path": "Patient.identifier.use",
+        "min": 1,
+        "fixedCode": "secondary"
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers.system",
+        "path": "Patient.identifier.system",
+        "label": "Sub-sistema de información clínica",
+        "short": "Clinical information sub-system",
+        "definition": "Uniform Resource Identifier (URI) of the clinical information sub-system (HIS, LIS, RIS, APP, etc), in the provider organization (hospital, clinic, diagnostic center, etc) that assigns the identification. [ES: Identificador de recursos uniforme (URI) del sub-sistema de información clínica (HIS, LIS, RIS, APP, etc), en la organización prestadora (hospital, clínica, centro de diagnóstico, etc) que asigna la identificación.]"
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers.value",
+        "path": "Patient.identifier.value",
+        "label": "ID de paciente",
+        "short": "Patient registration number or ID",
+        "definition": "Patient registration number or ID in clinical sub-system. [ES: Número o ID de registro de paciente en el sub-sistema clínico]",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers.assigner",
+        "path": "Patient.identifier.assigner",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers.assigner.reference",
+        "path": "Patient.identifier.assigner.reference",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:SoftwareAssignedIdentifiers.assigner.type",
+        "path": "Patient.identifier.assigner.type",
+        "fixedUri": "Organization"
+      },
+      {
+        "id": "Patient.active",
+        "path": "Patient.active",
+        "label": "Activo",
+        "short": "true | false",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "slicing": {
+          "description": "Official name, identifying name or temporary name of the patient",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "use"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Name(s) of patient",
+        "definition": "Name(s) of the person playing the role of the patient. [ES: Nombre(s) de la persona que desempeña el rol de paciente]",
+        "min": 1,
+        "max": "2"
+      },
+      {
+        "id": "Patient.name:OfficialPatientName",
+        "path": "Patient.name",
+        "sliceName": "OfficialPatientName",
+        "label": "Nombre del paciente",
+        "short": "Patient's official (legal) name",
+        "definition": "Official (legal) name of the person playing the role of patient. [ES: Nombre oficial (legal) de la persona que desempeña el rol de paciente]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.name:OfficialPatientName.use",
+        "path": "Patient.name.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Patient.name:OfficialPatientName.family",
+        "path": "Patient.name.family",
+        "label": "Apellidos",
+        "short": "Patient's family name",
+        "min": 1
+      },
+      {
+        "id": "Patient.name:OfficialPatientName.family.extension",
+        "path": "Patient.name.family.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.name:OfficialPatientName.family.extension:FathersFamilyName",
+        "path": "Patient.name.family.extension",
+        "sliceName": "FathersFamilyName",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.name:OfficialPatientName.family.extension:MothersFamilyName",
+        "path": "Patient.name.family.extension",
+        "sliceName": "MothersFamilyName",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.name:OfficialPatientName.given",
+        "path": "Patient.name.given",
+        "label": "Nombre(s)",
+        "short": "Patient's given name(s)",
+        "min": 1
+      },
+      {
+        "id": "Patient.name:PatientIdentifyingName",
+        "path": "Patient.name",
+        "sliceName": "PatientIdentifyingName",
+        "short": "Patient's identifying name",
+        "definition": "Identity and/or preferred name, freely adopted by the person playing the role of patient (can be used as an alias). [ES: Nombre identitario y/o de preferencia, libremente adoptado por la persona que desempeña el rol de paciente (puede ser utilizado como un alias).]",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Patient.name:PatientIdentifyingName.use",
+        "path": "Patient.name.use",
+        "min": 1,
+        "fixedCode": "usual"
+      },
+      {
+        "id": "Patient.name:PatientIdentifyingName.text",
+        "path": "Patient.name.text",
+        "min": 1
+      },
+      {
+        "id": "Patient.name:TemporaryPatientName",
+        "path": "Patient.name",
+        "sliceName": "TemporaryPatientName",
+        "short": "Temporary name of patient",
+        "definition": "Temporary name, assigned in cases of newborns or when it is not possible to know the name of the person playing the role of patient. [ES: Nombre temporal, asignado en casos de recién nacidos o cuando no es posible saber cuál es el nombre de la persona que desempeña el rol de paciente.]",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Patient.name:TemporaryPatientName.use",
+        "path": "Patient.name.use",
+        "min": 1,
+        "fixedCode": "temp"
+      },
+      {
+        "id": "Patient.name:TemporaryPatientName.text",
+        "path": "Patient.name.text",
+        "min": 1
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "slicing": {
+          "description": "Types of telecom addresses.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Telephone, mobile, email, etc.",
+        "definition": "Telecommunications addresses [ES: Direcciones de telecomunicaciones]"
+      },
+      {
+        "id": "Patient.telecom:TelecomPhone",
+        "path": "Patient.telecom",
+        "sliceName": "TelecomPhone",
+        "label": "Teléfono",
+        "short": "Telephone",
+        "definition": "Landline phone contact [ES: Teléfono fijo de contacto]",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:TelecomPhone.id",
+        "path": "Patient.telecom.id",
+        "min": 1,
+        "patternString": "TelecomPhone-0"
+      },
+      {
+        "id": "Patient.telecom:TelecomPhone.system",
+        "path": "Patient.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Patient.telecom:TelecomPhone.value",
+        "path": "Patient.telecom.value",
+        "short": "Syntax: +57(000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Patient.telecom:TelecomMobile",
+        "path": "Patient.telecom",
+        "sliceName": "TelecomMobile",
+        "label": "Celular",
+        "short": "Mobile",
+        "definition": "Contact mobile or cell phone [ES: Teléfono móvil o celular de contacto]",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:TelecomMobile.id",
+        "path": "Patient.telecom.id",
+        "min": 1,
+        "patternString": "TelecomMobile-0"
+      },
+      {
+        "id": "Patient.telecom:TelecomMobile.system",
+        "path": "Patient.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Patient.telecom:TelecomMobile.value",
+        "path": "Patient.telecom.value",
+        "short": "Syntax: (000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Patient.telecom:TelecomMobile.use",
+        "path": "Patient.telecom.use",
+        "min": 1,
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "Patient.telecom:TelecomEmail",
+        "path": "Patient.telecom",
+        "sliceName": "TelecomEmail",
+        "label": "E-mail",
+        "short": "E-mail",
+        "definition": "Contact email address [ES: Correo electrónico de contacto]",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:TelecomEmail.id",
+        "path": "Patient.telecom.id",
+        "min": 1,
+        "patternString": "TelecomEmail-0"
+      },
+      {
+        "id": "Patient.telecom:TelecomEmail.system",
+        "path": "Patient.telecom.system",
+        "min": 1,
+        "fixedCode": "email"
+      },
+      {
+        "id": "Patient.telecom:TelecomEmail.value",
+        "path": "Patient.telecom.value",
+        "short": "Syntax: name@example.com",
+        "min": 1
+      },
+      {
+        "id": "Patient.gender",
+        "path": "Patient.gender",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+        }
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "label": "Dirección",
+        "slicing": {
+          "description": "For residence or other addresses (work, temporary, etc.)",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "definition": "An address for the individual. [ES: Una dirección de la persona]",
+        "min": 1
+      },
+      {
+        "id": "Patient.address:HomeAddress",
+        "path": "Patient.address",
+        "sliceName": "HomeAddress",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Patient.address:HomeAddress.id",
+        "path": "Patient.address.id",
+        "min": 1,
+        "patternString": "HomeAddress-0"
+      },
+      {
+        "id": "Patient.address:HomeAddress.extension:ExtensionResidenceZone",
+        "path": "Patient.address.extension",
+        "sliceName": "ExtensionResidenceZone",
+        "short": "Urbana | Rural",
+        "definition": "Extension used in the Patient.Address element, to register the area of residence",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionResidenceZone"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.address:HomeAddress.use",
+        "path": "Patient.address.use",
+        "min": 1,
+        "fixedCode": "home"
+      },
+      {
+        "id": "Patient.address:HomeAddress.type",
+        "path": "Patient.address.type",
+        "min": 1,
+        "fixedCode": "physical"
+      },
+      {
+        "id": "Patient.address:HomeAddress.text",
+        "path": "Patient.address.text",
+        "min": 1
+      },
+      {
+        "id": "Patient.address:HomeAddress.city",
+        "path": "Patient.address.city",
+        "label": "Municipio",
+        "short": "Colombian municipality",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:HomeAddress.city.extension",
+        "path": "Patient.address.city.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.address:HomeAddress.city.extension:ExtensionDivipolaMunicipality",
+        "path": "Patient.address.city.extension",
+        "sliceName": "ExtensionDivipolaMunicipality",
+        "short": "Divipola municipality code",
+        "definition": "Extension used in the Patient.address.city element to register the DIVIPOLA code of the municipality",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.address:HomeAddress.district",
+        "path": "Patient.address.district",
+        "label": "Distrito, localidad o comuna",
+        "short": "District, locality or commune"
+      },
+      {
+        "id": "Patient.address:HomeAddress.state",
+        "path": "Patient.address.state",
+        "label": "Departamento",
+        "short": "Colombian Department",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:HomeAddress.state.extension",
+        "path": "Patient.address.state.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.address:HomeAddress.state.extension:ExtensionDivipolaDepartment",
+        "path": "Patient.address.state.extension",
+        "sliceName": "ExtensionDivipolaDepartment",
+        "short": "Divipola department code",
+        "definition": "Extension used in the Patient.address.state element to register the DIVIPOLA code of the department",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.address:HomeAddress.country",
+        "path": "Patient.address.country",
+        "label": "País",
+        "short": "Country",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Otheraddress",
+        "path": "Patient.address",
+        "sliceName": "Otheraddress",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Patient.address:Otheraddress.id",
+        "path": "Patient.address.id",
+        "min": 1,
+        "patternString": "Otheraddress-0"
+      },
+      {
+        "id": "Patient.maritalStatus",
+        "path": "Patient.maritalStatus",
+        "label": "Estado civil",
+        "short": "Patient's marital status",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/marital-status"
+        }
+      },
+      {
+        "id": "Patient.maritalStatus.coding",
+        "path": "Patient.maritalStatus.coding",
+        "max": "1"
+      },
+      {
+        "id": "Patient.maritalStatus.coding.system",
+        "path": "Patient.maritalStatus.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
+      },
+      {
+        "id": "Patient.maritalStatus.coding.code",
+        "path": "Patient.maritalStatus.coding.code",
+        "label": "Código",
+        "short": "A | D | I | L | M | P | S | T | U | W | UNK",
+        "definition": "Code of the marital status concept, according to the controlled vocabulary defined by HL7. [ES: Codigo del concepto de estado civil, según el vocabulario controlado definido por HL7.]",
+        "min": 1
+      },
+      {
+        "id": "Patient.maritalStatus.coding.display",
+        "path": "Patient.maritalStatus.coding.display",
+        "label": "Nombre",
+        "short": "Annulled | Divorced | Married | Widowed +",
+        "definition": "HL7-defined controlled vocabulary codable concept representation for marital status. [ES: Representación del concepto codificado de vocabulario controlado definido por HL7 para estado civil.]",
+        "min": 1
+      },
+      {
+        "id": "Patient.maritalStatus.text",
+        "path": "Patient.maritalStatus.text",
+        "short": "Plain text representation of marital status"
+      }
+    ]
+  }
+}

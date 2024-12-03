@@ -1,0 +1,423 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CareDeliveryLocationCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/CareDeliveryLocationCO",
+  "version": "0.1.0",
+  "name": "CareDeliveryLocationCO",
+  "title": "Profile: Care Delivery Location CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Core profile of Colombian care delivery locations, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Recording and tracking information from a point of care (location) of a care delivery organization or institution.",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Location",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Location",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Location",
+        "path": "Location",
+        "short": "Description of availability exceptions",
+        "definition": "A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times."
+      },
+      {
+        "id": "Location.meta.profile",
+        "path": "Location.meta.profile",
+        "patternCanonical": "http://co.fhir.guide/core/StructureDefinition/CareDeliveryLocationCO"
+      },
+      {
+        "id": "Location.identifier",
+        "path": "Location.identifier",
+        "short": "Healthcare location identifier",
+        "definition": "Identifier of the healthcare location assigned by the REPS. [ES: Identificador de la sede asignado en el REPS.]",
+        "min": 1
+      },
+      {
+        "id": "Location.identifier.use",
+        "path": "Location.identifier.use",
+        "fixedCode": "official"
+      },
+      {
+        "id": "Location.identifier.system",
+        "path": "Location.identifier.system",
+        "fixedUri": "http://co.fhir.guide/NamingSystem/REPS"
+      },
+      {
+        "id": "Location.identifier.value",
+        "path": "Location.identifier.value",
+        "label": "Código de la Sede",
+        "short": "Healthcare location identifier value",
+        "definition": "Identifier of the healthcare location assigned by the REPS. [ES: Identificador de la sede asignado en el REPS.]",
+        "min": 1
+      },
+      {
+        "id": "Location.status",
+        "path": "Location.status",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-status|4.0.1"
+        }
+      },
+      {
+        "id": "Location.name",
+        "path": "Location.name",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Location.description",
+        "path": "Location.description",
+        "short": "Description of the Location, which helps in finding or referencing the place.",
+        "definition": "Additional details about the location that could be displayed as further information to identify the location beyond its name"
+      },
+      {
+        "id": "Location.mode",
+        "path": "Location.mode",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-mode|4.0.1"
+        }
+      },
+      {
+        "id": "Location.type.coding.system",
+        "path": "Location.type.coding.system",
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+      },
+      {
+        "id": "Location.type.coding.code",
+        "path": "Location.type.coding.code",
+        "fixedCode": "HOSP"
+      },
+      {
+        "id": "Location.type.coding.display",
+        "path": "Location.type.coding.display",
+        "fixedString": "Hospital"
+      },
+      {
+        "id": "Location.telecom",
+        "path": "Location.telecom",
+        "slicing": {
+          "description": "Types of telecom addresses.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Telephone, mobile, email, etc.",
+        "definition": "Telecommunications addresses [ES: Direcciones de telecomunicaciones]"
+      },
+      {
+        "id": "Location.telecom:TelecomPhone",
+        "path": "Location.telecom",
+        "sliceName": "TelecomPhone",
+        "label": "Teléfono",
+        "short": "Telephone",
+        "definition": "Landline phone contact [ES: Teléfono fijo de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Location.telecom:TelecomPhone.id",
+        "path": "Location.telecom.id",
+        "min": 1,
+        "patternString": "TelecomPhone-0"
+      },
+      {
+        "id": "Location.telecom:TelecomPhone.system",
+        "path": "Location.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Location.telecom:TelecomPhone.value",
+        "path": "Location.telecom.value",
+        "short": "Syntax: +57(000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Location.telecom:TelecomMobile",
+        "path": "Location.telecom",
+        "sliceName": "TelecomMobile",
+        "label": "Celular",
+        "short": "Mobile",
+        "definition": "Contact mobile or cell phone [ES: Teléfono móvil o celular de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Location.telecom:TelecomMobile.id",
+        "path": "Location.telecom.id",
+        "min": 1,
+        "patternString": "TelecomMobile-0"
+      },
+      {
+        "id": "Location.telecom:TelecomMobile.system",
+        "path": "Location.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Location.telecom:TelecomMobile.value",
+        "path": "Location.telecom.value",
+        "short": "Syntax: (000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Location.telecom:TelecomMobile.use",
+        "path": "Location.telecom.use",
+        "min": 1,
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "Location.telecom:TelecomEmail",
+        "path": "Location.telecom",
+        "sliceName": "TelecomEmail",
+        "label": "E-mail",
+        "short": "E-mail",
+        "definition": "Contact email address [ES: Correo electrónico de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Location.telecom:TelecomEmail.id",
+        "path": "Location.telecom.id",
+        "min": 1,
+        "patternString": "TelecomEmail-0"
+      },
+      {
+        "id": "Location.telecom:TelecomEmail.system",
+        "path": "Location.telecom.system",
+        "min": 1,
+        "fixedCode": "email"
+      },
+      {
+        "id": "Location.telecom:TelecomEmail.value",
+        "path": "Location.telecom.value",
+        "short": "Syntax: info@example.com",
+        "min": 1
+      },
+      {
+        "id": "Location.telecom:TelecomURL",
+        "path": "Location.telecom",
+        "sliceName": "TelecomURL",
+        "label": "Sitio web",
+        "short": "Web Site",
+        "definition": "Web Site URL [ES: URL del sitio web]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Location.telecom:TelecomURL.id",
+        "path": "Location.telecom.id",
+        "min": 1,
+        "patternString": "TelecomURL-0"
+      },
+      {
+        "id": "Location.telecom:TelecomURL.system",
+        "path": "Location.telecom.system",
+        "min": 1,
+        "fixedCode": "url"
+      },
+      {
+        "id": "Location.telecom:TelecomURL.value",
+        "path": "Location.telecom.value",
+        "short": "Syntax: http://example.com",
+        "min": 1
+      },
+      {
+        "id": "Location.address",
+        "path": "Location.address",
+        "label": "Dirección",
+        "short": "Main address of the point of care location",
+        "definition": "Main address of the point of care location. [ES: Dirección de localización del punto de atención]",
+        "min": 1
+      },
+      {
+        "id": "Location.address.use",
+        "path": "Location.address.use",
+        "min": 1,
+        "fixedCode": "work"
+      },
+      {
+        "id": "Location.address.type",
+        "path": "Location.address.type",
+        "min": 1,
+        "fixedCode": "physical"
+      },
+      {
+        "id": "Location.address.text",
+        "path": "Location.address.text",
+        "min": 1
+      },
+      {
+        "id": "Location.address.city",
+        "path": "Location.address.city",
+        "label": "Municipio",
+        "short": "Colombian municipality",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Location.address.city.extension",
+        "path": "Location.address.city.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Location.address.city.extension:ExtensionDivipolaMunicipality",
+        "path": "Location.address.city.extension",
+        "sliceName": "ExtensionDivipolaMunicipality",
+        "short": "Divipola municipality code",
+        "definition": "Extension used in the Location.address.city element to register the DIVIPOLA code of the municipality",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Location.address.district",
+        "path": "Location.address.district",
+        "label": "Distrito, localidad o comuna",
+        "short": "District, locality or commune"
+      },
+      {
+        "id": "Location.address.state",
+        "path": "Location.address.state",
+        "label": "Departamento",
+        "short": "Colombian Department",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Location.address.state.extension",
+        "path": "Location.address.state.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Location.address.state.extension:ExtensionDivipolaDepartment",
+        "path": "Location.address.state.extension",
+        "sliceName": "ExtensionDivipolaDepartment",
+        "short": "Divipola department code",
+        "definition": "Extension used in the Location.address.state element to register the DIVIPOLA code of the department",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Location.address.country",
+        "path": "Location.address.country",
+        "label": "País",
+        "short": "Country",
+        "min": 1,
+        "fixedString": "CO",
+        "mustSupport": true
+      },
+      {
+        "id": "Location.managingOrganization",
+        "path": "Location.managingOrganization",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Location.hoursOfOperation.daysOfWeek",
+        "path": "Location.hoursOfOperation.daysOfWeek",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/days-of-week|4.0.1"
+        }
+      }
+    ]
+  }
+}

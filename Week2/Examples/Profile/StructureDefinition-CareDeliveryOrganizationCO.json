@@ -1,0 +1,830 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CareDeliveryOrganizationCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO",
+  "version": "0.1.0",
+  "name": "CareDeliveryOrganizationCO",
+  "title": "Profile: Care Delivery Organization CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "HIR Core profile of Colombian care delivery organizations, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Need to register and track care delivery organizations (CDO) or institutions (IPS), that are part of national healthcare network.",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization",
+        "short": "Organization or authorized to provide health services.",
+        "definition": "It is an organization or institution (public, private or mixed) authorized to provide health services (hospitals, clinics, care centers, diagnostic centers, etc.)."
+      },
+      {
+        "id": "Organization.meta.profile",
+        "path": "Organization.meta.profile",
+        "patternCanonical": "http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO"
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "label": "Identificación",
+        "slicing": {
+          "description": "Types of organization identifiers.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Organization identifiers",
+        "definition": "Healthcare provider organization identifiers. [ES: Identificaciones de la organización prestadora de servicios de salud]",
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier",
+        "path": "Organization.identifier",
+        "sliceName": "TaxIdentifier",
+        "label": "NIT",
+        "short": "Tax Identifier",
+        "definition": "Organization Tax Identifier. [ES: Número de identificación tributaria de la organización]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.id",
+        "path": "Organization.identifier.id",
+        "min": 1,
+        "patternString": "TaxIdentifier-0"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.use",
+        "path": "Organization.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type",
+        "path": "Organization.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding",
+        "path": "Organization.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:InternationalCode",
+        "path": "Organization.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:InternationalCode.system",
+        "path": "Organization.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:InternationalCode.code",
+        "path": "Organization.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "TAX"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:InternationalCode.display",
+        "path": "Organization.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Tax ID number"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:ColombianCode",
+        "path": "Organization.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianOrganizationIdentifierCodes"
+        }
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:ColombianCode.system",
+        "path": "Organization.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianOrganizationIdentifiers"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:ColombianCode.code",
+        "path": "Organization.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "NIT"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.type.coding:ColombianCode.display",
+        "path": "Organization.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Número de Identificación Tributaria"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.system",
+        "path": "Organization.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/DIAN"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.value",
+        "path": "Organization.identifier.value",
+        "label": "NIT Número",
+        "short": "Tax ID number value",
+        "definition": "Value of the Colombian tax registration number. [ES: Número colombiano de identificación tributaria]",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.period",
+        "path": "Organization.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of the identifier. [ES: Periódo de vigencia de la identificación]"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.period.start",
+        "path": "Organization.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issuance",
+        "definition": "Date of issuance of the identifier. [ES: Fecha de expedición de la identificación]",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.period.end",
+        "path": "Organization.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Expiration date",
+        "definition": "Identifier expiration date. [ES: Fecha de vencimiento de la identificación]"
+      },
+      {
+        "id": "Organization.identifier:TaxIdentifier.assigner.display",
+        "path": "Organization.identifier.assigner.display",
+        "fixedString": "DIAN"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier",
+        "path": "Organization.identifier",
+        "sliceName": "HealthcareProviderIdentifier",
+        "label": "Código prestador",
+        "short": "Healthcare Provider Identifier",
+        "definition": "Health provider identifier, registered in REPS (Special Registry of Health Service Providers). [ES: Código de habilitación registrado en el REPS (Registro Especial de Prestadores de Servicios de Salud)]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.id",
+        "path": "Organization.identifier.id",
+        "min": 1,
+        "patternString": "HealthcareProviderIdentifier-0"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.use",
+        "path": "Organization.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type",
+        "path": "Organization.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding",
+        "path": "Organization.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:InternationalCode",
+        "path": "Organization.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:InternationalCode.system",
+        "path": "Organization.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:InternationalCode.code",
+        "path": "Organization.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PRN"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:InternationalCode.display",
+        "path": "Organization.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Provider number"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:ColombianCode",
+        "path": "Organization.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianOrganizationIdentifierCodes"
+        }
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:ColombianCode.system",
+        "path": "Organization.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianOrganizationIdentifiers"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:ColombianCode.code",
+        "path": "Organization.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "CodigoPrestador"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.type.coding:ColombianCode.display",
+        "path": "Organization.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Código de habilitación de prestador de servicios de salud"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.system",
+        "path": "Organization.identifier.system",
+        "fixedUri": "http://co.fhir.guide/NamingSystem/REPS"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.value",
+        "path": "Organization.identifier.value",
+        "label": "Código prestador",
+        "short": "Healthcare provider code value",
+        "definition": "Value of the authorization code as a health provider, registered in REPS. [ES: Código de habilitación de prestador de salud registrado en el REPS]",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.period",
+        "path": "Organization.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of the identifier. [ES: Periódo de vigencia de la identificación]"
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.period.start",
+        "path": "Organization.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issuance",
+        "definition": "Date of issuance of the identifier. [ES: Fecha de expedición de la identificación]",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:HealthcareProviderIdentifier.period.end",
+        "path": "Organization.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Expiration date",
+        "definition": "Identifier expiration date. [ES: Fecha de vencimiento de la identificación]"
+      },
+      {
+        "id": "Organization.active",
+        "path": "Organization.active",
+        "label": "Activo",
+        "short": "true | false",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "label": "Tipo de organización",
+        "slicing": {
+          "description": "Types of organization identifiers.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding.system"
+            }
+          ],
+          "rules": "open"
+        },
+        "definition": "Organization Type Classification Code",
+        "min": 3,
+        "max": "4"
+      },
+      {
+        "id": "Organization.type:ProviderClass",
+        "path": "Organization.type",
+        "sliceName": "ProviderClass",
+        "label": "Clase de Prestador",
+        "short": "Healthcare provider class",
+        "definition": "Class of health provider, according to the record in REPS [ES: Clase de prestador, según registro en el REPS]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianProviderClassCodes"
+        }
+      },
+      {
+        "id": "Organization.type:ProviderClass.coding",
+        "path": "Organization.type.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.type:ProviderClass.coding.system",
+        "path": "Organization.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianProviderClass"
+      },
+      {
+        "id": "Organization.type:ProviderClass.coding.code",
+        "path": "Organization.type.coding.code",
+        "short": "IPS | TEP | OTHER",
+        "definition": "Healthcare provider class code, as recorded in the REPS. [ES: Código de clase de prestador, según registro en el REPS.]",
+        "min": 1
+      },
+      {
+        "id": "Organization.type:ProviderClass.coding.display",
+        "path": "Organization.type.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Organization.type:LegalNatureType",
+        "path": "Organization.type",
+        "sliceName": "LegalNatureType",
+        "label": "Naturaleza jurídica",
+        "short": "Legal nature of the organization",
+        "definition": "Type of legal nature of the organization (Private, Public, State or Mixed), according to the record in REPS [ES: Tipo de naturaleza jurídica de la organización (Privada, Pública, Empresa Social del Estado o Mixta), según registro en el REPS]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianLegalNatureTypeCodes"
+        }
+      },
+      {
+        "id": "Organization.type:LegalNatureType.coding",
+        "path": "Organization.type.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.type:LegalNatureType.coding.system",
+        "path": "Organization.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianLegalNatureType"
+      },
+      {
+        "id": "Organization.type:LegalNatureType.coding.code",
+        "path": "Organization.type.coding.code",
+        "short": "PRIV | PUB | ESE | MIX",
+        "definition": "Code of the type of legal nature. [ES: Código del tipo de naturaleza jurídica de la organización.]",
+        "min": 1
+      },
+      {
+        "id": "Organization.type:LegalNatureType.coding.display",
+        "path": "Organization.type.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Organization.type:HealthcareLevel",
+        "path": "Organization.type",
+        "sliceName": "HealthcareLevel",
+        "label": "Nivel atención prestador",
+        "short": "Healthcare complexity level",
+        "definition": "Health care complexity level (1, 2, 3, 4), according to the record in REPS [ES: Nivel de complejidad de atención en salud (1, 2, 3, 4), según registro en el REPS]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianHealthcareLevelCodes"
+        }
+      },
+      {
+        "id": "Organization.type:HealthcareLevel.coding",
+        "path": "Organization.type.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.type:HealthcareLevel.coding.system",
+        "path": "Organization.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianHealthcareLevel"
+      },
+      {
+        "id": "Organization.type:HealthcareLevel.coding.code",
+        "path": "Organization.type.coding.code",
+        "short": "1 | 2 | 3 | 4",
+        "definition": "Healthcare complexity level code. [ES: Código del nivel de complejidad de atención en salud.]",
+        "min": 1
+      },
+      {
+        "id": "Organization.type:HealthcareLevel.coding.display",
+        "path": "Organization.type.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Organization.type:TerritorialJurisdiction",
+        "path": "Organization.type",
+        "sliceName": "TerritorialJurisdiction",
+        "label": "Carácter territorial",
+        "short": "Type of territorial jurisdiction",
+        "definition": "Type of territorial jurisdiction (national, departmental, district, municipal, indigenous), according to the record in REPS [ES: Carácter territorial (1, 2, 3, 4), según registro en el REPS]",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianTerritorialJurisdictionCodes"
+        }
+      },
+      {
+        "id": "Organization.type:TerritorialJurisdiction.coding",
+        "path": "Organization.type.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.type:TerritorialJurisdiction.coding.system",
+        "path": "Organization.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianTerritorialJurisdiction"
+      },
+      {
+        "id": "Organization.type:TerritorialJurisdiction.coding.code",
+        "path": "Organization.type.coding.code",
+        "short": "NAL | DEP | DIS | MUN | IND",
+        "definition": "Territorial jurisdiction code. [ES: Código de carácter territorial.]",
+        "min": 1
+      },
+      {
+        "id": "Organization.type:TerritorialJurisdiction.coding.display",
+        "path": "Organization.type.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "label": "Razón social",
+        "short": "Official name of the organization",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.alias",
+        "path": "Organization.alias",
+        "label": "Nombre(s) comercial(es)",
+        "short": "List of trade names, acronyms or alternate names of the organization"
+      },
+      {
+        "id": "Organization.telecom",
+        "path": "Organization.telecom",
+        "slicing": {
+          "description": "Types of telecom addresses.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Telephone, mobile, email, etc.",
+        "definition": "Telecommunications addresses [ES: Direcciones de telecomunicaciones]"
+      },
+      {
+        "id": "Organization.telecom:TelecomPhone",
+        "path": "Organization.telecom",
+        "sliceName": "TelecomPhone",
+        "label": "Teléfono",
+        "short": "Telephone",
+        "definition": "Landline phone contact [ES: Teléfono fijo de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.telecom:TelecomPhone.id",
+        "path": "Organization.telecom.id",
+        "min": 1,
+        "patternString": "TelecomPhone-0"
+      },
+      {
+        "id": "Organization.telecom:TelecomPhone.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Organization.telecom:TelecomPhone.value",
+        "path": "Organization.telecom.value",
+        "short": "Syntax: +57(000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Organization.telecom:TelecomMobile",
+        "path": "Organization.telecom",
+        "sliceName": "TelecomMobile",
+        "label": "Celular",
+        "short": "Mobile",
+        "definition": "Contact mobile or cell phone [ES: Teléfono móvil o celular de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.telecom:TelecomMobile.id",
+        "path": "Organization.telecom.id",
+        "min": 1,
+        "patternString": "TelecomMobile-0"
+      },
+      {
+        "id": "Organization.telecom:TelecomMobile.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Organization.telecom:TelecomMobile.value",
+        "path": "Organization.telecom.value",
+        "short": "Syntax: (000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Organization.telecom:TelecomMobile.use",
+        "path": "Organization.telecom.use",
+        "min": 1,
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "Organization.telecom:TelecomEmail",
+        "path": "Organization.telecom",
+        "sliceName": "TelecomEmail",
+        "label": "E-mail",
+        "short": "E-mail",
+        "definition": "Contact email address [ES: Correo electrónico de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.telecom:TelecomEmail.id",
+        "path": "Organization.telecom.id",
+        "min": 1,
+        "patternString": "TelecomEmail-0"
+      },
+      {
+        "id": "Organization.telecom:TelecomEmail.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "fixedCode": "email"
+      },
+      {
+        "id": "Organization.telecom:TelecomEmail.value",
+        "path": "Organization.telecom.value",
+        "short": "Syntax: info@example.com",
+        "min": 1
+      },
+      {
+        "id": "Organization.telecom:TelecomURL",
+        "path": "Organization.telecom",
+        "sliceName": "TelecomURL",
+        "label": "Sitio web",
+        "short": "Web Site",
+        "definition": "Web Site URL [ES: URL del sitio web]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.telecom:TelecomURL.id",
+        "path": "Organization.telecom.id",
+        "min": 1,
+        "patternString": "TelecomURL-0"
+      },
+      {
+        "id": "Organization.telecom:TelecomURL.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "fixedCode": "url"
+      },
+      {
+        "id": "Organization.telecom:TelecomURL.value",
+        "path": "Organization.telecom.value",
+        "short": "Syntax: http://example.com",
+        "min": 1
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "label": "Dirección",
+        "short": "Main address of the organization",
+        "definition": "Main address of the organization. [ES: Dirección principal de la organización]",
+        "min": 1
+      },
+      {
+        "id": "Organization.address.use",
+        "path": "Organization.address.use",
+        "min": 1,
+        "fixedCode": "work"
+      },
+      {
+        "id": "Organization.address.type",
+        "path": "Organization.address.type",
+        "min": 1,
+        "fixedCode": "physical"
+      },
+      {
+        "id": "Organization.address.text",
+        "path": "Organization.address.text",
+        "min": 1
+      },
+      {
+        "id": "Organization.address.city",
+        "path": "Organization.address.city",
+        "label": "Municipio",
+        "short": "Colombian municipality",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.address.city.extension",
+        "path": "Organization.address.city.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Organization.address.city.extension:ExtensionDivipolaMunicipality",
+        "path": "Organization.address.city.extension",
+        "sliceName": "ExtensionDivipolaMunicipality",
+        "short": "Divipola municipality code",
+        "definition": "Extension used in the Organization.address.city element to register the DIVIPOLA code of the municipality",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.address.district",
+        "path": "Organization.address.district",
+        "label": "Distrito, localidad o comuna",
+        "short": "District, locality or commune"
+      },
+      {
+        "id": "Organization.address.state",
+        "path": "Organization.address.state",
+        "label": "Departamento",
+        "short": "Colombian Department",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.address.state.extension",
+        "path": "Organization.address.state.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Organization.address.state.extension:ExtensionDivipolaDepartment",
+        "path": "Organization.address.state.extension",
+        "sliceName": "ExtensionDivipolaDepartment",
+        "short": "Divipola department code",
+        "definition": "Extension used in the Organization.address.state element to register the DIVIPOLA code of the department",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.address.country",
+        "path": "Organization.address.country",
+        "label": "País",
+        "short": "Country",
+        "min": 1,
+        "fixedString": "CO",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact",
+        "path": "Organization.contact",
+        "definition": "Contact(s) for the organization for a certain purpose."
+      }
+    ]
+  }
+}

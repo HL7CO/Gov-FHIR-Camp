@@ -1,0 +1,1015 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PractitionerCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/PractitionerCO",
+  "version": "0.1.0",
+  "name": "PractitionerCO",
+  "title": "Profile: Practitioner CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Core profile of Colombian practitioner, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Need to register and track physicians, health professionals and healthcare personnel involved in healthcare activities.",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Practitioner",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Practitioner",
+        "path": "Practitioner",
+        "short": "A language the practitioner can use in patient communication",
+        "definition": "A language the practitioner can use in patient communication."
+      },
+      {
+        "id": "Practitioner.meta.profile",
+        "path": "Practitioner.meta.profile",
+        "patternCanonical": "http://co.fhir.guide/core/StructureDefinition/PractitionerCO"
+      },
+      {
+        "id": "Practitioner.identifier",
+        "path": "Practitioner.identifier",
+        "label": "Identificación",
+        "slicing": {
+          "description": "Types of person identifiers.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Person identifiers",
+        "definition": "Identifiers of the person playing the role of healthcare practitioner. [ES: Identificaciones de la persona que desempeña el rol de profesional de la salud]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier",
+        "path": "Practitioner.identifier",
+        "sliceName": "NationalPersonIdentifier",
+        "label": "Identificación nacional",
+        "short": "National Person Identifier",
+        "definition": "Colombian identification of the person playing the role of healthcare practitioner. [ES: Identificación nacional de la persona que desempeña el rol de profesional de la salud]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.id",
+        "path": "Practitioner.identifier.id",
+        "min": 1,
+        "fixedString": "NationalPersonIdentifier-0"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.use",
+        "path": "Practitioner.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type",
+        "path": "Practitioner.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding",
+        "path": "Practitioner.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:InternationalCode",
+        "path": "Practitioner.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:InternationalCode.system",
+        "path": "Practitioner.identifier.type.coding.system",
+        "short": "International code system",
+        "definition": "International code system of identifiers for persons. [ES: Codificación internacional de identificaciones para personas]",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:InternationalCode.code",
+        "path": "Practitioner.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PN"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:InternationalCode.display",
+        "path": "Practitioner.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Person number"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:ColombianCode",
+        "path": "Practitioner.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianPersonIdentifierCodes"
+        }
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:ColombianCode.system",
+        "path": "Practitioner.identifier.type.coding.system",
+        "label": "Tipo identificación",
+        "short": "National code system",
+        "definition": "Colombian code system of identifiers for individuals. [ES: Codificación colombiana de identificaciones para personas]",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:ColombianCode.code",
+        "path": "Practitioner.identifier.type.coding.code",
+        "label": "Código",
+        "short": "CN | RC | TI | CC | PA | CD | CE | SC | PE | PT | PPT | AS | MS | SI",
+        "definition": "Colombian identifier type code. [ES: Código colombiano del tipo de identificación]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.type.coding:ColombianCode.display",
+        "path": "Practitioner.identifier.type.coding.display",
+        "label": "Tipo",
+        "short": "Cédula de ciudadanía | Tarjeta de identidad | Registro civil +",
+        "definition": "Representation of the code defined by the Colombian system of identifiers of persons. [ES: Representación del código definido por el sistema de identificaciones colombianas de personas]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.system",
+        "path": "Practitioner.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/RNEC"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.value",
+        "path": "Practitioner.identifier.value",
+        "label": "Número de identificación",
+        "short": "Identifier value",
+        "definition": "Value of the Colombian identification document. [ES: Valor del documento de identificación colombiano]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.period",
+        "path": "Practitioner.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of the identifier. [ES: Periódo de vigencia de la identificación]"
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.period.start",
+        "path": "Practitioner.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issuance",
+        "definition": "Date of issuance of the identifier. [ES: Fecha de expedición de la identificación]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:NationalPersonIdentifier.period.end",
+        "path": "Practitioner.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Expiration date",
+        "definition": "Identifier expiration date. [ES: Fecha de vencimiento de la identificación]"
+      },
+      {
+        "id": "Practitioner.identifier:Passport",
+        "path": "Practitioner.identifier",
+        "sliceName": "Passport",
+        "label": "Pasaporte",
+        "short": "Passport",
+        "definition": "Passport of the person playing the role of healthcare practitioner. [ES: Pasaporte de la persona que desempeña el rol de profesional de la salud]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.id",
+        "path": "Practitioner.identifier.id",
+        "min": 1,
+        "patternString": "Passport-0"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.use",
+        "path": "Practitioner.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type",
+        "path": "Practitioner.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding",
+        "path": "Practitioner.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:InternationalCode",
+        "path": "Practitioner.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:InternationalCode.system",
+        "path": "Practitioner.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:InternationalCode.code",
+        "path": "Practitioner.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PPN"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:InternationalCode.display",
+        "path": "Practitioner.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Passport number"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:ColombianCode",
+        "path": "Practitioner.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianPersonIdentifierCodes"
+        }
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:ColombianCode.system",
+        "path": "Practitioner.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:ColombianCode.code",
+        "path": "Practitioner.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "PA"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.type.coding:ColombianCode.display",
+        "path": "Practitioner.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Pasaporte"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.system",
+        "path": "Practitioner.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/Pasaportes"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.value",
+        "path": "Practitioner.identifier.value",
+        "label": "Pasaporte Nº",
+        "short": "Passport Nº",
+        "definition": "Passport Nº. [ES: Pasaporte Nº]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:Passport.period",
+        "path": "Practitioner.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of passport. [ES: Periódo de vigencia del pasaporte]"
+      },
+      {
+        "id": "Practitioner.identifier:Passport.period.start",
+        "path": "Practitioner.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issue",
+        "definition": "Date of issuance of passport. [ES: Fecha de expedición del pasaporte]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:Passport.period.end",
+        "path": "Practitioner.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Date of expiry",
+        "definition": "Passport expiration date. [ES: Fecha de vencimiento del pasaporte]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier",
+        "path": "Practitioner.identifier",
+        "sliceName": "TaxIdentifier",
+        "label": "RUT",
+        "short": "Tax Identifier",
+        "definition": "Tax Identifier of the person playing the role of healthcare practitioner. [ES: Registro único tributario de la persona que desempeña el rol de profesional de la salud]",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.id",
+        "path": "Practitioner.identifier.id",
+        "min": 1,
+        "patternString": "TaxIdentifier-0"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.use",
+        "path": "Practitioner.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type",
+        "path": "Practitioner.identifier.type",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding",
+        "path": "Practitioner.identifier.type.coding",
+        "slicing": {
+          "description": "International coding and synonym (or equivalent) in Colombian coding",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:InternationalCode",
+        "path": "Practitioner.identifier.type.coding",
+        "sliceName": "InternationalCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:InternationalCode.system",
+        "path": "Practitioner.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:InternationalCode.code",
+        "path": "Practitioner.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "TAX"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:InternationalCode.display",
+        "path": "Practitioner.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Tax ID number"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:ColombianCode",
+        "path": "Practitioner.identifier.type.coding",
+        "sliceName": "ColombianCode",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianPersonIdentifierCodes"
+        }
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:ColombianCode.system",
+        "path": "Practitioner.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:ColombianCode.code",
+        "path": "Practitioner.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "RUT"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.type.coding:ColombianCode.display",
+        "path": "Practitioner.identifier.type.coding.display",
+        "min": 1,
+        "fixedString": "Registro Único Tributario"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.system",
+        "path": "Practitioner.identifier.system",
+        "patternUri": "http://co.fhir.guide/NamingSystem/DIAN"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.value",
+        "path": "Practitioner.identifier.value",
+        "label": "RUT Número",
+        "short": "Tax ID number value",
+        "definition": "Value of the Colombian tax registration number. [ES: Valor o número del registro único tributario colombiano]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.period",
+        "path": "Practitioner.identifier.period",
+        "label": "Vigencia",
+        "short": "Period of validity",
+        "definition": "Period of validity of the identifier. [ES: Periódo de vigencia de la identificación]"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.period.start",
+        "path": "Practitioner.identifier.period.start",
+        "label": "Fecha de expedición",
+        "short": "Date of issuance",
+        "definition": "Date of issuance of the identifier. [ES: Fecha de expedición de la identificación]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.period.end",
+        "path": "Practitioner.identifier.period.end",
+        "label": "Fecha de vencimiento",
+        "short": "Expiration date",
+        "definition": "Identifier expiration date. [ES: Fecha de vencimiento de la identificación]"
+      },
+      {
+        "id": "Practitioner.identifier:TaxIdentifier.assigner.display",
+        "path": "Practitioner.identifier.assigner.display",
+        "fixedString": "DIAN"
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers",
+        "path": "Practitioner.identifier",
+        "sliceName": "SoftwareAssignedIdentifiers",
+        "label": "Registro de profesional de la salud en el sistema de información",
+        "short": "Practitioner Record Number",
+        "definition": "Practitioner registration number or ID assigned by a clinical sub-system (HIS, LIS, RIS, APP, etc). [ES: Número o ID de registro del profesional de la salud, asignado por un sub sistema clínico (HIS, LIS, RIS, APP, etc).]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers.id",
+        "path": "Practitioner.identifier.id",
+        "min": 1,
+        "patternString": "SoftwareAssignedIdentifiers-0"
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers.use",
+        "path": "Practitioner.identifier.use",
+        "min": 1,
+        "fixedCode": "secondary"
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers.system",
+        "path": "Practitioner.identifier.system",
+        "label": "Sub-sistema de información clínica",
+        "short": "Clinical information sub-system",
+        "definition": "Uniform Resource Identifier (URI) of the clinical information sub-system (HIS, LIS, RIS, APP, etc), in the provider organization (hospital, clinic, diagnostic center, etc) that assigns the identification. [ES: Identificador de recursos uniforme (URI) del sub-sistema de información clínica (HIS, LIS, RIS, APP, etc), en la organización prestadora (hospital, clínica, centro de diagnóstico, etc) que asigna la identificación.]"
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers.value",
+        "path": "Practitioner.identifier.value",
+        "label": "ID de profesional de la salud",
+        "short": "Practitioner registration number or ID",
+        "definition": "Practitioner registration number or ID in clinical sub-system. [ES: Número o ID de registro de profesional de la salud en el sub-sistema clínico]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers.assigner",
+        "path": "Practitioner.identifier.assigner",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers.assigner.reference",
+        "path": "Practitioner.identifier.assigner.reference",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier:SoftwareAssignedIdentifiers.assigner.type",
+        "path": "Practitioner.identifier.assigner.type",
+        "fixedUri": "Organization"
+      },
+      {
+        "id": "Practitioner.active",
+        "path": "Practitioner.active",
+        "label": "Activo",
+        "short": "true | false",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.name",
+        "path": "Practitioner.name",
+        "label": "Nombre del profesional de la salud",
+        "short": "Name(s) of practitioner",
+        "definition": "Name(s) of the person playing the role of the healthcare practitioner. [ES: Nombre(s) de la persona que desempeña el rol de profesional de la salud]",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Practitioner.name.use",
+        "path": "Practitioner.name.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Practitioner.name.family",
+        "path": "Practitioner.name.family",
+        "label": "Apellidos",
+        "short": "Practitioner's family name",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.name.family.extension",
+        "path": "Practitioner.name.family.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Practitioner.name.family.extension:FathersFamilyName",
+        "path": "Practitioner.name.family.extension",
+        "sliceName": "FathersFamilyName",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.name.family.extension:MothersFamilyName",
+        "path": "Practitioner.name.family.extension",
+        "sliceName": "MothersFamilyName",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.name.given",
+        "path": "Practitioner.name.given",
+        "label": "Nombre(s)",
+        "short": "Practitioner's given name(s)",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.name.prefix",
+        "path": "Practitioner.name.prefix",
+        "short": "Dra | Dr  +"
+      },
+      {
+        "id": "Practitioner.name.suffix",
+        "path": "Practitioner.name.suffix",
+        "short": "MD | FT | ENF | MSC | PhD  +"
+      },
+      {
+        "id": "Practitioner.telecom",
+        "path": "Practitioner.telecom",
+        "slicing": {
+          "description": "Types of telecom addresses.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Telephone, mobile, email, etc.",
+        "definition": "Telecommunications addresses [ES: Direcciones de telecomunicaciones]"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomPhone",
+        "path": "Practitioner.telecom",
+        "sliceName": "TelecomPhone",
+        "label": "Teléfono",
+        "short": "Telephone",
+        "definition": "Landline phone contact [ES: Teléfono fijo de contacto]",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.telecom:TelecomPhone.id",
+        "path": "Practitioner.telecom.id",
+        "min": 1,
+        "patternString": "TelecomPhone-0"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomPhone.system",
+        "path": "Practitioner.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomPhone.value",
+        "path": "Practitioner.telecom.value",
+        "short": "Syntax: +57(000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.telecom:TelecomMobile",
+        "path": "Practitioner.telecom",
+        "sliceName": "TelecomMobile",
+        "label": "Celular",
+        "short": "Mobile",
+        "definition": "Contact mobile or cell phone [ES: Teléfono móvil o celular de contacto]",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.telecom:TelecomMobile.id",
+        "path": "Practitioner.telecom.id",
+        "min": 1,
+        "patternString": "TelecomMobile-0"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomMobile.system",
+        "path": "Practitioner.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomMobile.value",
+        "path": "Practitioner.telecom.value",
+        "short": "Syntax: (000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.telecom:TelecomMobile.use",
+        "path": "Practitioner.telecom.use",
+        "min": 1,
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomEmail",
+        "path": "Practitioner.telecom",
+        "sliceName": "TelecomEmail",
+        "label": "E-mail",
+        "short": "E-mail",
+        "definition": "Contact email address [ES: Correo electrónico de contacto]",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.telecom:TelecomEmail.id",
+        "path": "Practitioner.telecom.id",
+        "min": 1,
+        "patternString": "TelecomEmail-0"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomEmail.system",
+        "path": "Practitioner.telecom.system",
+        "min": 1,
+        "fixedCode": "email"
+      },
+      {
+        "id": "Practitioner.telecom:TelecomEmail.value",
+        "path": "Practitioner.telecom.value",
+        "short": "Syntax: name@example.com",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.address",
+        "path": "Practitioner.address",
+        "label": "Dirección",
+        "short": "An address for the individual",
+        "definition": "An address for the individual. [ES: Una dirección de la persona]",
+        "comment": "Address registration is required for independent health professional offices only."
+      },
+      {
+        "id": "Practitioner.address.use",
+        "path": "Practitioner.address.use",
+        "min": 1,
+        "fixedCode": "work"
+      },
+      {
+        "id": "Practitioner.address.type",
+        "path": "Practitioner.address.type",
+        "min": 1,
+        "fixedCode": "physical"
+      },
+      {
+        "id": "Practitioner.address.text",
+        "path": "Practitioner.address.text",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.address.city",
+        "path": "Practitioner.address.city",
+        "label": "Municipio",
+        "short": "Colombian municipality",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address.city.extension",
+        "path": "Practitioner.address.city.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Practitioner.address.city.extension:ExtensionDivipolaMunicipality",
+        "path": "Practitioner.address.city.extension",
+        "sliceName": "ExtensionDivipolaMunicipality",
+        "short": "Divipola municipality code",
+        "definition": "Extension used in the Practitioner.address.city element to register the DIVIPOLA code of the municipality",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.address.district",
+        "path": "Practitioner.address.district",
+        "label": "Distrito, localidad o comuna",
+        "short": "District, locality or commune"
+      },
+      {
+        "id": "Practitioner.address.state",
+        "path": "Practitioner.address.state",
+        "label": "Departamento",
+        "short": "Colombian Department",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address.state.extension",
+        "path": "Practitioner.address.state.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Practitioner.address.state.extension:ExtensionDivipolaDepartment",
+        "path": "Practitioner.address.state.extension",
+        "sliceName": "ExtensionDivipolaDepartment",
+        "short": "Divipola department code",
+        "definition": "Extension used in the Practitioner.address.state element to register the DIVIPOLA code of the department",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.address.country",
+        "path": "Practitioner.address.country",
+        "label": "País",
+        "short": "Country",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.gender",
+        "path": "Practitioner.gender",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+        }
+      },
+      {
+        "id": "Practitioner.birthDate",
+        "path": "Practitioner.birthDate",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.photo",
+        "path": "Practitioner.photo",
+        "requirements": "Many EHR systems have the capability to capture an image of personnel. Fits with newer social media usage too."
+      },
+      {
+        "id": "Practitioner.qualification",
+        "path": "Practitioner.qualification",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.qualification.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.qualification.identifier.use",
+        "path": "Practitioner.qualification.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Practitioner.qualification.identifier.type",
+        "path": "Practitioner.qualification.identifier.type",
+        "min": 1,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/IdentifierTypeCodes"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.identifier.type.coding.system",
+        "path": "Practitioner.qualification.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "id": "Practitioner.qualification.identifier.type.coding.code",
+        "path": "Practitioner.qualification.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "LN"
+      },
+      {
+        "id": "Practitioner.qualification.identifier.type.coding.display",
+        "path": "Practitioner.qualification.identifier.type.coding.display",
+        "min": 1,
+        "patternString": "License number"
+      },
+      {
+        "id": "Practitioner.qualification.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "RETHUS",
+        "definition": "Single National Registry System of Human Talent in Health (RETHUS). [ES: Sistema de Registro Único Nacional del Talento Humano en Salud (RETHUS).]",
+        "fixedUri": "http://co.fhir.guide/NamingSystem/RETHUS"
+      },
+      {
+        "id": "Practitioner.qualification.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "label": "Nº Tarjeta Profesional",
+        "short": "RETHUS ID",
+        "definition": "Practitioner's professional license number. [ES: Número de licencia del profesional de la salud]",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification.identifier.assigner.type",
+        "path": "Practitioner.qualification.identifier.assigner.type",
+        "fixedUri": "Organization"
+      },
+      {
+        "id": "Practitioner.qualification.code",
+        "path": "Practitioner.qualification.code",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/RETHUSqualificationCodes"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/RETHUSqualification"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification.code.coding.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.communication",
+        "path": "Practitioner.communication",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+        }
+      }
+    ]
+  }
+}

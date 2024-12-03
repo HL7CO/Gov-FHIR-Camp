@@ -1,0 +1,618 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "EncounterConsultationCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/EncounterConsultationCO",
+  "version": "0.1.0",
+  "name": "EncounterConsultationCO",
+  "title": "Profile: Encounter Medical Consultation CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Encounter (Consultation) colombian Core profile, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Standardize the recording and exchange of data on outpatient health care encounters. [ES: Estandarizar el registro e intercambo de datos de encuentros de atención ambulatoria (consulta) en salud.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter",
+        "short": "Health Care Encounter.",
+        "definition": "Recording and exchange of data on outpatient health care encounters."
+      },
+      {
+        "id": "Encounter.identifier",
+        "path": "Encounter.identifier",
+        "label": "Identificación encuentro",
+        "slicing": {
+          "description": "Types of patient encounter identifiers.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "definition": "Identifier(s) by which this encounter is known. [ES: Identificadores conocidos del encuentro de atención (número de admisión, factura, etc.)]",
+        "min": 1,
+        "max": "3"
+      },
+      {
+        "id": "Encounter.identifier:InvoiceIdentifier",
+        "path": "Encounter.identifier",
+        "sliceName": "InvoiceIdentifier",
+        "short": "Invoice Identifier",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:InvoiceIdentifier.id",
+        "path": "Encounter.identifier.id",
+        "min": 1,
+        "fixedString": "InvoiceIdentifier"
+      },
+      {
+        "id": "Encounter.identifier:InvoiceIdentifier.use",
+        "path": "Encounter.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Encounter.identifier:InvoiceIdentifier.system",
+        "path": "Encounter.identifier.system",
+        "min": 1,
+        "fixedUri": "http://co.fhir.guide/NamingSystem/Invoices"
+      },
+      {
+        "id": "Encounter.identifier:InvoiceIdentifier.value",
+        "path": "Encounter.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Encounter.identifier:AuthorizationIdentifier",
+        "path": "Encounter.identifier",
+        "sliceName": "AuthorizationIdentifier",
+        "short": "Authorization Identifier",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:AuthorizationIdentifier.id",
+        "path": "Encounter.identifier.id",
+        "min": 1,
+        "fixedString": "AuthorizationIdentifier"
+      },
+      {
+        "id": "Encounter.identifier:AuthorizationIdentifier.use",
+        "path": "Encounter.identifier.use",
+        "min": 1,
+        "patternCode": "official"
+      },
+      {
+        "id": "Encounter.identifier:AuthorizationIdentifier.system",
+        "path": "Encounter.identifier.system",
+        "min": 1,
+        "fixedUri": "http://co.fhir.guide/NamingSystem/EncounterAuthorization"
+      },
+      {
+        "id": "Encounter.identifier:AuthorizationIdentifier.value",
+        "path": "Encounter.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Encounter.identifier:EncounterIdentifier",
+        "path": "Encounter.identifier",
+        "sliceName": "EncounterIdentifier",
+        "short": "Encounter Identifier (admission)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:EncounterIdentifier.id",
+        "path": "Encounter.identifier.id",
+        "min": 1,
+        "fixedString": "EncounterIdentifier"
+      },
+      {
+        "id": "Encounter.identifier:EncounterIdentifier.use",
+        "path": "Encounter.identifier.use",
+        "min": 1,
+        "patternCode": "usual"
+      },
+      {
+        "id": "Encounter.identifier:EncounterIdentifier.system",
+        "path": "Encounter.identifier.system",
+        "min": 1,
+        "fixedUri": "http://co.fhir.guide/NamingSystem/Encounters"
+      },
+      {
+        "id": "Encounter.identifier:EncounterIdentifier.value",
+        "path": "Encounter.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
+        }
+      },
+      {
+        "id": "Encounter.class.system",
+        "path": "Encounter.class.system",
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      },
+      {
+        "id": "Encounter.class.code",
+        "path": "Encounter.class.code",
+        "fixedCode": "AMB"
+      },
+      {
+        "id": "Encounter.class.display",
+        "path": "Encounter.class.display",
+        "fixedString": "ambulatory"
+      },
+      {
+        "id": "Encounter.type",
+        "path": "Encounter.type",
+        "definition": "Consultation purpose [ES: Finalidad de la consulta]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianEncounterPurposeCodes"
+        }
+      },
+      {
+        "id": "Encounter.type.coding.system",
+        "path": "Encounter.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianEncounterPurpose"
+      },
+      {
+        "id": "Encounter.type.coding.code",
+        "path": "Encounter.type.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Encounter.type.coding.display",
+        "path": "Encounter.type.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Encounter.serviceType",
+        "path": "Encounter.serviceType",
+        "short": "Specific type of service (CUPS)",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/CUPSConsultationCodes"
+        }
+      },
+      {
+        "id": "Encounter.serviceType.coding.system",
+        "path": "Encounter.serviceType.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/CUPS"
+      },
+      {
+        "id": "Encounter.serviceType.coding.code",
+        "path": "Encounter.serviceType.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Encounter.serviceType.coding.display",
+        "path": "Encounter.serviceType.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "short": "The patient present at the encounter",
+        "definition": "The patient present at the encounter.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/PatientCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period",
+        "path": "Encounter.period",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period.start",
+        "path": "Encounter.period.start",
+        "short": "Start time date",
+        "min": 1
+      },
+      {
+        "id": "Encounter.period.end",
+        "path": "Encounter.period.end",
+        "short": "End time date",
+        "comment": "encounter end date = start",
+        "min": 1
+      },
+      {
+        "id": "Encounter.reasonCode",
+        "path": "Encounter.reasonCode",
+        "short": "Coded reason the encounter takes place (external cause)",
+        "definition": "Reason the encounter takes place, expressed as a code. For admissions, this can be used for coding external cause.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianEncounterReasonCodes"
+        }
+      },
+      {
+        "id": "Encounter.reasonCode.coding.system",
+        "path": "Encounter.reasonCode.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianEncounterReason"
+      },
+      {
+        "id": "Encounter.reasonCode.coding.code",
+        "path": "Encounter.reasonCode.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Encounter.reasonCode.coding.display",
+        "path": "Encounter.reasonCode.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Encounter.diagnosis",
+        "path": "Encounter.diagnosis",
+        "slicing": {
+          "description": "Types of encounter diagnosis.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "rank"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "max": "4",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis",
+        "path": "Encounter.diagnosis",
+        "sliceName": "MainDiagnosis",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis.id",
+        "path": "Encounter.diagnosis.id",
+        "min": 1,
+        "patternString": "MainDiagnosis"
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis.condition",
+        "path": "Encounter.diagnosis.condition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis.use",
+        "path": "Encounter.diagnosis.use",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianDiagnosisRoleCodes"
+        }
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis.use.coding.system",
+        "path": "Encounter.diagnosis.use.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianDiagnosisRole"
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis.use.coding.code",
+        "path": "Encounter.diagnosis.use.coding.code",
+        "min": 1,
+        "fixedCode": "8319008"
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis.use.coding.display",
+        "path": "Encounter.diagnosis.use.coding.display",
+        "min": 1,
+        "fixedString": "diagnóstico primario"
+      },
+      {
+        "id": "Encounter.diagnosis:MainDiagnosis.rank",
+        "path": "Encounter.diagnosis.rank",
+        "min": 1,
+        "fixedPositiveInt": 1
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1",
+        "path": "Encounter.diagnosis",
+        "sliceName": "Comobility-1",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1.id",
+        "path": "Encounter.diagnosis.id",
+        "min": 1,
+        "patternString": "Comobility-1"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1.condition",
+        "path": "Encounter.diagnosis.condition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1.use",
+        "path": "Encounter.diagnosis.use",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianDiagnosisRoleCodes"
+        }
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1.use.coding.system",
+        "path": "Encounter.diagnosis.use.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianDiagnosisRole"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1.use.coding.code",
+        "path": "Encounter.diagnosis.use.coding.code",
+        "min": 1,
+        "fixedCode": "398192003"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1.use.coding.display",
+        "path": "Encounter.diagnosis.use.coding.display",
+        "min": 1,
+        "fixedString": "comorbilidades"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-1.rank",
+        "path": "Encounter.diagnosis.rank",
+        "min": 1,
+        "fixedPositiveInt": 2
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2",
+        "path": "Encounter.diagnosis",
+        "sliceName": "Comobility-2",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2.id",
+        "path": "Encounter.diagnosis.id",
+        "min": 1,
+        "patternString": "Comobility-2"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2.condition",
+        "path": "Encounter.diagnosis.condition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2.use",
+        "path": "Encounter.diagnosis.use",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianDiagnosisRoleCodes"
+        }
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2.use.coding.system",
+        "path": "Encounter.diagnosis.use.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianDiagnosisRole"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2.use.coding.code",
+        "path": "Encounter.diagnosis.use.coding.code",
+        "min": 1,
+        "fixedCode": "398192003"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2.use.coding.display",
+        "path": "Encounter.diagnosis.use.coding.display",
+        "min": 1,
+        "fixedString": "comorbilidades"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-2.rank",
+        "path": "Encounter.diagnosis.rank",
+        "min": 1,
+        "fixedPositiveInt": 3
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3",
+        "path": "Encounter.diagnosis",
+        "sliceName": "Comobility-3",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3.id",
+        "path": "Encounter.diagnosis.id",
+        "min": 1,
+        "patternString": "Comobility-3"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3.condition",
+        "path": "Encounter.diagnosis.condition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3.use",
+        "path": "Encounter.diagnosis.use",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianDiagnosisRoleCodes"
+        }
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3.use.coding.system",
+        "path": "Encounter.diagnosis.use.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianDiagnosisRole"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3.use.coding.code",
+        "path": "Encounter.diagnosis.use.coding.code",
+        "min": 1,
+        "fixedCode": "398192003"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3.use.coding.display",
+        "path": "Encounter.diagnosis.use.coding.display",
+        "min": 1,
+        "fixedString": "comorbilidades"
+      },
+      {
+        "id": "Encounter.diagnosis:Comobility-3.rank",
+        "path": "Encounter.diagnosis.rank",
+        "min": 1,
+        "fixedPositiveInt": 4
+      },
+      {
+        "id": "Encounter.location",
+        "path": "Encounter.location",
+        "max": "1"
+      },
+      {
+        "id": "Encounter.location.location",
+        "path": "Encounter.location.location",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/CareDeliveryLocationCO"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.serviceProvider",
+        "path": "Encounter.serviceProvider",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

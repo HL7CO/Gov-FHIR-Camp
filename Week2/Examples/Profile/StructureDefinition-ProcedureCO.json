@@ -1,0 +1,470 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ProcedureCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/ProcedureCO",
+  "version": "0.1.0",
+  "name": "ProcedureCO",
+  "title": "Profile: Procedure CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Ariel Leonardo Fernández",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "ariel.fernandz@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Procedure colombian Core profile, defined by HL7 Colombia.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Standardize the recording and exchange of data on the provision of health procedures to colombian patients. [ES:  Estandarizar el registro e intercambio de datos sobre prestación de procedimientos de salud a los pacientes colombianos.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure",
+        "definition": "An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, etc."
+      },
+      {
+        "id": "Procedure.meta.profile",
+        "path": "Procedure.meta.profile",
+        "patternCanonical": "http://co.fhir.guide/core/StructureDefinition/ProcedureCO"
+      },
+      {
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Procedure.extension:ExtensionSurgicalMethod",
+        "path": "Procedure.extension",
+        "sliceName": "ExtensionSurgicalMethod",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://co.fhir.guide/core/StructureDefinition/ExtensionSurgicalMethod"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.identifier",
+        "path": "Procedure.identifier",
+        "label": "Identificación encuentro",
+        "slicing": {
+          "description": "Types of patient encounter identifiers.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Identifier(s) by which this encounter is known",
+        "definition": "Identifier(s) by which this encounter is known. [ES: Identificadores conocidos del encuentro de atención (número de admisión, factura, etc.)]",
+        "min": 1,
+        "max": "2"
+      },
+      {
+        "id": "Procedure.identifier:InvoiceIdentifier",
+        "path": "Procedure.identifier",
+        "sliceName": "InvoiceIdentifier",
+        "label": "Número de la factura",
+        "short": "Invoice Identifier",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.identifier:InvoiceIdentifier.id",
+        "path": "Procedure.identifier.id",
+        "min": 1,
+        "fixedString": "InvoiceIdentifier"
+      },
+      {
+        "id": "Procedure.identifier:InvoiceIdentifier.use",
+        "path": "Procedure.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Procedure.identifier:InvoiceIdentifier.system",
+        "path": "Procedure.identifier.system",
+        "min": 1,
+        "fixedUri": "http://co.fhir.guide/NamingSystem/Invoices"
+      },
+      {
+        "id": "Procedure.identifier:InvoiceIdentifier.value",
+        "path": "Procedure.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Procedure.identifier:AuthorizationIdentifier",
+        "path": "Procedure.identifier",
+        "sliceName": "AuthorizationIdentifier",
+        "label": "Número de autorización",
+        "short": "Authorization Identifier",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.identifier:AuthorizationIdentifier.id",
+        "path": "Procedure.identifier.id",
+        "min": 1,
+        "fixedString": "AuthorizationIdentifier"
+      },
+      {
+        "id": "Procedure.identifier:AuthorizationIdentifier.use",
+        "path": "Procedure.identifier.use",
+        "min": 1,
+        "patternCode": "official"
+      },
+      {
+        "id": "Procedure.identifier:AuthorizationIdentifier.system",
+        "path": "Procedure.identifier.system",
+        "min": 1,
+        "fixedUri": "http://co.fhir.guide/NamingSystem/EncounterAuthorization"
+      },
+      {
+        "id": "Procedure.identifier:AuthorizationIdentifier.value",
+        "path": "Procedure.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/event-status|4.0.1"
+        }
+      },
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "label": "Ámbito de realización del procedimiento",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianProcedureCategoryCodes"
+        }
+      },
+      {
+        "id": "Procedure.category.coding.system",
+        "path": "Procedure.category.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianProcedureCategory"
+      },
+      {
+        "id": "Procedure.category.coding.code",
+        "path": "Procedure.category.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Procedure.category.coding.display",
+        "path": "Procedure.category.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "label": "Código del procedimiento",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/CUPSProcedureCodes"
+        }
+      },
+      {
+        "id": "Procedure.code.coding.system",
+        "path": "Procedure.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/CUPS"
+      },
+      {
+        "id": "Procedure.code.coding.code",
+        "path": "Procedure.code.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Procedure.code.coding.display",
+        "path": "Procedure.code.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "definition": "The person, or group on which the procedure was performed.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/PatientCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.encounter",
+        "path": "Procedure.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/EncounterConsultationCO",
+              "http://co.fhir.guide/core/StructureDefinition/EncounterEmergencyCO",
+              "http://co.fhir.guide/core/StructureDefinition/EncounterHospitalizationCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "label": "Fecha del procedimiento",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performer",
+        "path": "Procedure.performer",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performer.function",
+        "path": "Procedure.performer.function",
+        "label": "Personal que atiende",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/PactitionerTypeFunctionCodes"
+        }
+      },
+      {
+        "id": "Procedure.performer.function.coding.system",
+        "path": "Procedure.performer.function.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/PactitionerTypeFunction"
+      },
+      {
+        "id": "Procedure.performer.function.coding.code",
+        "path": "Procedure.performer.function.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Procedure.performer.function.coding.display",
+        "path": "Procedure.performer.function.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Procedure.performer.actor",
+        "path": "Procedure.performer.actor",
+        "label": "Prestador de servicios de salud",
+        "short": "The reference to the care delivery organization",
+        "definition": "The organization who was involved in the procedure.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.reasonCode",
+        "path": "Procedure.reasonCode",
+        "label": "Finalidad del procedimiento",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianProcedureReasonCodes"
+        }
+      },
+      {
+        "id": "Procedure.reasonCode.coding.system",
+        "path": "Procedure.reasonCode.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianProcedureReason"
+      },
+      {
+        "id": "Procedure.reasonCode.coding.code",
+        "path": "Procedure.reasonCode.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Procedure.reasonCode.coding.display",
+        "path": "Procedure.reasonCode.coding.display",
+        "min": 1
+      },
+      {
+        "id": "Procedure.reasonReference",
+        "path": "Procedure.reasonReference",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open",
+          "description": "Different types of conditions that are the reason for a healthcare procedure",
+          "ordered": true
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.reasonReference:MainDiagnosis",
+        "path": "Procedure.reasonReference",
+        "sliceName": "MainDiagnosis",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.reasonReference:MainDiagnosis.id",
+        "path": "Procedure.reasonReference.id",
+        "min": 1,
+        "patternString": "MainDiagnosis"
+      },
+      {
+        "id": "Procedure.reasonReference:Comobility",
+        "path": "Procedure.reasonReference",
+        "sliceName": "Comobility",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.reasonReference:Comobility.id",
+        "path": "Procedure.reasonReference.id",
+        "min": 1,
+        "patternString": "Comobility-1"
+      },
+      {
+        "id": "Procedure.complication",
+        "path": "Procedure.complication",
+        "label": "Complicación",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ICD10Codes"
+        }
+      },
+      {
+        "id": "Procedure.complication.coding.system",
+        "path": "Procedure.complication.coding.system",
+        "min": 1,
+        "fixedUri": "http://hl7.org/fhir/sid/icd-10"
+      },
+      {
+        "id": "Procedure.complication.coding.code",
+        "path": "Procedure.complication.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Procedure.complication.coding.display",
+        "path": "Procedure.complication.coding.display",
+        "min": 1
+      }
+    ]
+  }
+}

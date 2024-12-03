@@ -1,0 +1,157 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "FamilyGroupCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/FamilyGroupCO",
+  "version": "0.1.0",
+  "name": "FamilyGroupCO",
+  "title": "Profile: Family Group CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Core profile of Colombian family groups, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Standardize the recording and exchange of data of a family group [ES: Estandarizar los datos de registro e intercambo de datos de un grupo familiar.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Group",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Group",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Group",
+        "path": "Group",
+        "short": "Family Group.",
+        "definition": "Recording and exchanging data of a family group"
+      },
+      {
+        "id": "Group.active",
+        "path": "Group.active",
+        "mustSupport": true
+      },
+      {
+        "id": "Group.type",
+        "path": "Group.type",
+        "short": "Types of resources that are part of group.",
+        "fixedCode": "person"
+      },
+      {
+        "id": "Group.actual",
+        "path": "Group.actual",
+        "fixedBoolean": true
+      },
+      {
+        "id": "Group.code",
+        "path": "Group.code",
+        "definition": "Provides a specific type of resource the group includes",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/ColombianGroupCodes"
+        }
+      },
+      {
+        "id": "Group.code.coding.system",
+        "path": "Group.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.fhir.guide/co/CodeSystem/ColombianGroups"
+      },
+      {
+        "id": "Group.code.coding.code",
+        "path": "Group.code.coding.code",
+        "min": 1,
+        "fixedCode": "35359004"
+      },
+      {
+        "id": "Group.code.coding.display",
+        "path": "Group.code.coding.display",
+        "min": 1,
+        "patternString": "familia"
+      },
+      {
+        "id": "Group.code.text",
+        "path": "Group.code.text",
+        "fixedString": "Grupo familiar"
+      },
+      {
+        "id": "Group.member",
+        "path": "Group.member",
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.entity",
+        "path": "Group.member.entity",
+        "definition": "A reference to the entity that is a member of the group. Must be consistent with Group.type.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/PatientCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.period",
+        "path": "Group.member.period",
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.period.start",
+        "path": "Group.member.period.start",
+        "min": 1
+      },
+      {
+        "id": "Group.member.inactive",
+        "path": "Group.member.inactive",
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "HealthcareServiceCO",
+  "language": "es",
+  "url": "http://co.fhir.guide/core/StructureDefinition/HealthcareServiceCO",
+  "version": "0.1.0",
+  "name": "HealthcareServiceCO",
+  "title": "Profile: Healthcare Service CO",
+  "status": "draft",
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia (Core)",
+  "contact": [
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR HealthcareService colombian Core profile, defined by HL7 CO.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "Record and track information from an authorized health service at a point of care (location) of a care delivery organization or institution.",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "HealthcareService",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "HealthcareService",
+        "path": "HealthcareService",
+        "short": "Closing time of day (ignored if allDay = true)",
+        "definition": "The closing time of day. Note: If the AllDay flag is set, then this time is ignored."
+      },
+      {
+        "id": "HealthcareService.meta.profile",
+        "path": "HealthcareService.meta.profile",
+        "patternCanonical": "http://co.fhir.guide/core/StructureDefinition/HealthcareServiceCO"
+      },
+      {
+        "id": "HealthcareService.identifier",
+        "path": "HealthcareService.identifier",
+        "short": "Healthcare service identifier (DHSS)",
+        "definition": "Identifier of the Healthcare Services Qualification Distinctive assigned by the REPS. [ES: Identificador del Distintivo de Habilitación de Servicios de Salud (DHSS) asignado en el REPS.]",
+        "min": 1
+      },
+      {
+        "id": "HealthcareService.identifier.use",
+        "path": "HealthcareService.identifier.use",
+        "fixedCode": "official"
+      },
+      {
+        "id": "HealthcareService.identifier.system",
+        "path": "HealthcareService.identifier.system",
+        "fixedUri": "http://co.fhir.guide/NamingSystem/REPS"
+      },
+      {
+        "id": "HealthcareService.identifier.value",
+        "path": "HealthcareService.identifier.value",
+        "label": "DHSS",
+        "short": "Healthcare Services Qualification Distinctive",
+        "definition": "Identifier valud of the Healthcare Services Qualification Distinctive assigned by the REPS. [ES: Valor del identificador del Distintivo de Habilitación de Servicios de Salud (DHSS) asignado en el REPS.]",
+        "comment": "Syntax: DHSS0110869",
+        "min": 1
+      },
+      {
+        "id": "HealthcareService.active",
+        "path": "HealthcareService.active",
+        "label": "Activo",
+        "short": "true | false",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.providedBy",
+        "path": "HealthcareService.providedBy",
+        "short": "Reference to organization resource.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.category",
+        "path": "HealthcareService.category",
+        "label": "Grupo",
+        "short": "Type of service that may be delivered or performed",
+        "definition": "The specific type of service that may be delivered or performed.",
+        "comment": "The selection of a service category is determined by the groups defined in REPS.",
+        "alias": [
+          "service group"
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/REPShealthcareServiceCategoryCodes"
+        }
+      },
+      {
+        "id": "HealthcareService.type",
+        "path": "HealthcareService.type",
+        "label": "Servicio",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.fhir.guide/co/ValueSet/REPShealthcareServiceCodes"
+        }
+      },
+      {
+        "id": "HealthcareService.specialty",
+        "path": "HealthcareService.specialty",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+        }
+      },
+      {
+        "id": "HealthcareService.location",
+        "path": "HealthcareService.location",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://co.fhir.guide/core/StructureDefinition/CareDeliveryLocationCO"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.telecom",
+        "path": "HealthcareService.telecom",
+        "slicing": {
+          "description": "Types of telecom addresses.",
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "id"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Telephone, mobile, email, etc.",
+        "definition": "Telecommunications addresses [ES: Direcciones de telecomunicaciones]"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomPhone",
+        "path": "HealthcareService.telecom",
+        "sliceName": "TelecomPhone",
+        "label": "Teléfono",
+        "short": "Telephone",
+        "definition": "Landline phone contact [ES: Teléfono fijo de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomPhone.id",
+        "path": "HealthcareService.telecom.id",
+        "min": 1,
+        "patternString": "TelecomPhone-0"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomPhone.system",
+        "path": "HealthcareService.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomPhone.value",
+        "path": "HealthcareService.telecom.value",
+        "short": "Syntax: +57(000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomMobile",
+        "path": "HealthcareService.telecom",
+        "sliceName": "TelecomMobile",
+        "label": "Celular",
+        "short": "Mobile",
+        "definition": "Contact mobile or cell phone [ES: Teléfono móvil o celular de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomMobile.id",
+        "path": "HealthcareService.telecom.id",
+        "min": 1,
+        "patternString": "TelecomMobile-0"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomMobile.system",
+        "path": "HealthcareService.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomMobile.value",
+        "path": "HealthcareService.telecom.value",
+        "short": "Syntax: (000)000-0000",
+        "min": 1
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomMobile.use",
+        "path": "HealthcareService.telecom.use",
+        "min": 1,
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomEmail",
+        "path": "HealthcareService.telecom",
+        "sliceName": "TelecomEmail",
+        "label": "E-mail",
+        "short": "E-mail",
+        "definition": "Contact email address [ES: Correo electrónico de contacto]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomEmail.id",
+        "path": "HealthcareService.telecom.id",
+        "min": 1,
+        "patternString": "TelecomEmail-0"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomEmail.system",
+        "path": "HealthcareService.telecom.system",
+        "min": 1,
+        "fixedCode": "email"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomEmail.value",
+        "path": "HealthcareService.telecom.value",
+        "short": "Syntax: info@example.com",
+        "min": 1
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomURL",
+        "path": "HealthcareService.telecom",
+        "sliceName": "TelecomURL",
+        "label": "Sitio web",
+        "short": "Web Site",
+        "definition": "Web Site URL [ES: URL del sitio web]",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomURL.id",
+        "path": "HealthcareService.telecom.id",
+        "min": 1,
+        "patternString": "TelecomURL-0"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomURL.system",
+        "path": "HealthcareService.telecom.system",
+        "min": 1,
+        "fixedCode": "url"
+      },
+      {
+        "id": "HealthcareService.telecom:TelecomURL.value",
+        "path": "HealthcareService.telecom.value",
+        "short": "Syntax: http://example.com",
+        "min": 1
+      },
+      {
+        "id": "HealthcareService.characteristic",
+        "path": "HealthcareService.characteristic",
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.availableTime",
+        "path": "HealthcareService.availableTime",
+        "label": "Horarios"
+      },
+      {
+        "id": "HealthcareService.availableTime.daysOfWeek",
+        "path": "HealthcareService.availableTime.daysOfWeek",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/days-of-week|4.0.1"
+        }
+      }
+    ]
+  }
+}
