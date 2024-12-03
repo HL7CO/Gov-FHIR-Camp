@@ -1,0 +1,69 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "REPShealthcarePositionsCodes",
+  "id": "REPShealthcarePositionsCodes",
+  "title": "ValueSet: REPS Positions",
+  "description": "Colombian Set of codified values for roles within a care delivery organization - CDO (applicable to PractitionerRole resource).\r\n\r\n[ES: Conjunto de valores codificados de roles dentro de una Institución Prestadora de Servicios de Salud - IPS (aplicable al recurso PractitionerRole).]",
+  "url": "http://terminology.fhir.guide/co/ValueSet/REPShealthcarePositionsCodes",
+  "version": "0.1.0",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This set of encoded values is used to register roles within a care delivery organization - CDO (applicable to PractitionerRole resource).\r\n\r\n[ES: Este conjunto de valores codificados se utiliza para registrar roles dentro de una Institución Prestadora de Servicios de Salud - IPS (aplicable al recurso PractitionerRole).]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.fhir.guide/co/CodeSystem/REPShealthcarePositions"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FamilyMemberCodes",
+  "id": "FamilyMemberCodes",
+  "title": "ValueSet: FamilyMember",
+  "description": " A relationship between two people characterizing their \"familial\" relationship",
+  "url": "http://terminology.fhir.guide/co/ValueSet/FamilyMemberCodes",
+  "version": "0.1.0",
+  "date": "2024-11-19",
+  "experimental": false,
+  "publisher": "HL7 v3",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org"
+        }
+      ]
+    }
+  ],
+  "immutable": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.fhir.guide/co/CodeSystem/FamilyMember"
+      }
+    ]
+  }
+}

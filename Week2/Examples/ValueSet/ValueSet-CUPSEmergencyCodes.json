@@ -1,0 +1,119 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CUPSemergency",
+  "id": "CUPSEmergencyCodes",
+  "title": "ValueSet: Unique Codes for emergency encounters - Colombia",
+  "description": "Set of coded values for types of emergency consultation encounters - Colombia.\r\n\r\n[ES: Conjunto de valores codificados para tipos encuentros de consulta de urgencias. - Colombia.]",
+  "url": "http://terminology.fhir.guide/co/ValueSet/CUPSEmergencyCodes",
+  "version": "0.1.0",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This set of coded values is used as a nomenclature for emergency consultation encounter types. (chapter 8907 of the CUPS code system).\r\n\r\n[ES: Este conjunto de valores codificados se utiliza como una nomenclatura para tipos encuentros de consulta de urgencias. (capítulo 8907 de CUPS).]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.fhir.guide/co/CodeSystem/CUPS",
+        "concept": [
+          {
+            "code": "8907",
+            "display": "CONSULTA DE URGENCIAS"
+          },
+          {
+            "code": "890701",
+            "display": "CONSULTA DE URGENCIAS POR MEDICINA GENERAL"
+          },
+          {
+            "code": "890702",
+            "display": "CONSULTA DE URGENCIAS POR OTRAS ESPECIALIDADES MEDICAS"
+          },
+          {
+            "code": "890703",
+            "display": "CONSULTA DE URGENCIAS POR ODONTOLOGIA GENERAL"
+          },
+          {
+            "code": "890704",
+            "display": "CONSULTA DE URGENCIAS POR ODONTOLOGIA ESPECIALIZADA"
+          },
+          {
+            "code": "890735",
+            "display": "CONSULTA DE URGENCIAS, POR ESPECIALISTA EN CIRUGIA GENERAL"
+          },
+          {
+            "code": "890750",
+            "display": "CONSULTA DE URGENCIAS, POR ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA"
+          },
+          {
+            "code": "890763",
+            "display": "CONSULTA DE URGENCIAS, POR ESPECIALISTA EN MEDICINA FAMILIAR"
+          },
+          {
+            "code": "890780",
+            "display": "CONSULTA DE URGENCIAS, POR ESPECIALISTA EN ORTOPEDIA Y TRAUMATOLOGIA"
+          },
+          {
+            "code": "890781",
+            "display": "CONSULTA DE URGENCIAS, POR ESPECIALISTA EN ORTOPEDIA Y TRAUMATOLOGIA PEDIATRICA"
+          },
+          {
+            "code": "890783",
+            "display": "CONSULTA DE URGENCIAS, POR ESPECIALISTA EN PEDIATRIA"
+          },
+          {
+            "code": "890793",
+            "display": "CONSULTA DE URGENCIAS, POR ESPECIALISTA EN URGENCIAS O EMERGENCIAS"
+          }
+        ]
+      }
+    ]
+  }
+}

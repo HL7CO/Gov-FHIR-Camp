@@ -1,0 +1,92 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColombianEncounterPurpose",
+  "id": "ColombianEncounterPurposeCodes",
+  "title": "ValueSet: Colombian Encounter Purpose",
+  "description": "Set of coded values for purpose of outpatient encounters.\r\n\r\n[ES: Conjunto de valores codificados para finalidad de encuentros de consulta ambulatoria.]",
+  "url": "http://terminology.fhir.guide/co/ValueSet/ColombianEncounterPurposeCodes",
+  "version": "0.1.0",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia",
+  "contact": [
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    },
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Ariel Leonardo Fernández",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "ariel.fernandez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This set of coded values is used as a nomenclature for the purpose of outpatient encounters.\r\n\r\n[ES: Este conjunto de valores codificados se utiliza como una nomenclatura para finalidad de encuentros de consulta ambulatoria.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0 2006+",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianEncounterPurpose"
+      }
+    ]
+  }
+}
