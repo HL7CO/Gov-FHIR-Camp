@@ -1,0 +1,128 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianEncounterReason",
+  "id": "ColombianEncounterReason",
+  "title": "CodeSystem: Colombian Encounter ReasonCode",
+  "description": "Colombian ReasonCode classification code system for encounters in Colombia.\r\n\r\n[ES: Codificación de clasificación motivos de consulta para encuentros ambulatorios en Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianEncounterReason",
+  "concept": [
+    {
+      "code": "01",
+      "display": "Accidente de trabajo"
+    },
+    {
+      "code": "02",
+      "display": "Accidente de tránsito"
+    },
+    {
+      "code": "03",
+      "display": "Accidente rábico"
+    },
+    {
+      "code": "04",
+      "display": "Accidente ofídico"
+    },
+    {
+      "code": "05",
+      "display": "Otro tipo de accidente"
+    },
+    {
+      "code": "06",
+      "display": "Evento catastrófico"
+    },
+    {
+      "code": "07",
+      "display": "Lesión por agresión"
+    },
+    {
+      "code": "08",
+      "display": "Lesión auto infligida"
+    },
+    {
+      "code": "09",
+      "display": "Sospecha de maltrato físico"
+    },
+    {
+      "code": "10",
+      "display": "Sospecha de abuso sexual"
+    },
+    {
+      "code": "11",
+      "display": "Sospecha de violencia sexual"
+    },
+    {
+      "code": "12",
+      "display": "Sospecha de maltrato emocional"
+    },
+    {
+      "code": "13",
+      "display": "Enfermedad general"
+    },
+    {
+      "code": "14",
+      "display": "Enfermedad profesional"
+    },
+    {
+      "code": "15",
+      "display": "Otra"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a general encounter reason classification nomenclator in Colombia.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de motivos de consulta de encuentros de atención en Colombia.]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 15
+}

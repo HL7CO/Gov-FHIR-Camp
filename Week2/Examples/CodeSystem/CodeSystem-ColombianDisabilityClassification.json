@@ -1,0 +1,148 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianDisabilityClassification",
+  "id": "ColombianDisabilityClassification",
+  "title": "CodeSystem: Colombian Disability Classification",
+  "description": "General disability classification code system for patients in Colombia.\r\n\r\n[ES: Codificación de clasificación general de discapacidad para pacientes en Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianDisabilityClassification",
+  "concept": [
+    {
+      "code": "01",
+      "display": "Discapacidad física",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Physical disability"
+        }
+      ]
+    },
+    {
+      "code": "02",
+      "display": "Discapacidad visual",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Visual impairment"
+        }
+      ]
+    },
+    {
+      "code": "03",
+      "display": "Discapacidad auditiva",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Hearing impairment "
+        }
+      ]
+    },
+    {
+      "code": "04",
+      "display": "Discapacidad intelectual",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Intellectual disability"
+        }
+      ]
+    },
+    {
+      "code": "05",
+      "display": "Discapacidad sicosocial",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Psychosocial disability"
+        }
+      ]
+    },
+    {
+      "code": "06",
+      "display": "Sordoceguera",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Deafblindness"
+        }
+      ]
+    },
+    {
+      "code": "07",
+      "display": "Discapacidad múltiple",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Multiple disabilities"
+        }
+      ]
+    },
+    {
+      "code": "08",
+      "display": "Sin discapacidad",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Without disability"
+        }
+      ]
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a general patient disability classification nomenclator in Colombia, used in an *Extension of the FHIR Patient* resource. Because this coding does not provide sufficient semantics, the use of the *FHIR Condition* resource is recommended to describe the detail of a patient's disability condition.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de clasificación general de discapacidad de pacientes en Colombia, utilizado en una *Extensión del recurso FHIR Patient*. Debido a que esta codificación no ofrece la semántica suficiente, se recomienda el uso del recurso *FHIR Condition* para describir el detalle de la condición de discapacidad de un paciente.]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 8
+}

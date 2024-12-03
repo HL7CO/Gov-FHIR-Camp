@@ -1,0 +1,108 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianEncounterPurpose",
+  "id": "ColombianEncounterPurpose",
+  "title": "CodeSystem: Colombian Encounter Purpose",
+  "description": "Colombian Purpose classification code system for encounters in Colombia.\r\n\r\n[ES: Codificación de finalidad de la consulta para encuentros ambulatorios en Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianEncounterPurpose",
+  "concept": [
+    {
+      "code": "01",
+      "display": "Atención del parto (puerperio)"
+    },
+    {
+      "code": "02",
+      "display": "Atención del recién nacido"
+    },
+    {
+      "code": "03",
+      "display": "Atención en planificación familiar"
+    },
+    {
+      "code": "04",
+      "display": "Detección de alteraciones de crecimiento y desarrollo del menor de diez años"
+    },
+    {
+      "code": "05",
+      "display": "Detección de alteración del desarrollo joven"
+    },
+    {
+      "code": "06",
+      "display": "Detección de alteraciones del embarazo"
+    },
+    {
+      "code": "07",
+      "display": "Detección de alteraciones del adulto"
+    },
+    {
+      "code": "08",
+      "display": "Detección de alteraciones de agudeza visual"
+    },
+    {
+      "code": "09",
+      "display": "Detección de enfermedad profesional"
+    },
+    {
+      "code": "10",
+      "display": "No aplica"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a general encounter purpose classification nomenclator in Colombia.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de finalidad de la consulta de encuentros de atención en Colombia.]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 10
+}

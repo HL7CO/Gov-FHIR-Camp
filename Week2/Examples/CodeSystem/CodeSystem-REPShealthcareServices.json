@@ -1,0 +1,696 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "REPShealthcareServices",
+  "id": "REPShealthcareServices",
+  "title": "CodeSystem: REPS Healthcare Services",
+  "description": "Code system for authorized healthcare services - Colombia.\r\n\r\n[ES: Sistema de códificación de servicios de atención en salud habilitados - Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/REPShealthcareServices",
+  "concept": [
+    {
+      "code": "105",
+      "display": "CUIDADO INTERMEDIO NEONATAL"
+    },
+    {
+      "code": "106",
+      "display": "CUIDADO INTERMEDIO PEDITRICO"
+    },
+    {
+      "code": "107",
+      "display": "CUIDADO INTERMEDIO ADULTOS"
+    },
+    {
+      "code": "108",
+      "display": "CUIDADO INTENSIVO NEONATAL"
+    },
+    {
+      "code": "109",
+      "display": "CUIDADO INTENSIVO PEDITRICO"
+    },
+    {
+      "code": "110",
+      "display": "CUIDADO INTENSIVO ADULTOS"
+    },
+    {
+      "code": "120",
+      "display": "CUIDADO BSICO NEONATAL"
+    },
+    {
+      "code": "129",
+      "display": "HOSPITALIZACIÓN ADULTOS"
+    },
+    {
+      "code": "130",
+      "display": "HOSPITALIZACIÓN PEDITRICA"
+    },
+    {
+      "code": "131",
+      "display": "HOSPITALIZACIÓN EN SALUD MENTAL"
+    },
+    {
+      "code": "132",
+      "display": "HOSPITALIZACIÓN PARCIAL"
+    },
+    {
+      "code": "133",
+      "display": "HOSPITALIZACIÓN PACIENTE CRÍTICO CON VENTILADOR"
+    },
+    {
+      "code": "134",
+      "display": "HOSPITALIZACIÓN PACIENTE CRÍTICO SIN VENTILADOR"
+    },
+    {
+      "code": "135",
+      "display": "HOSPITALIZACIÓN EN CONSUMO DE SUSTANCIAS PSICOACTIVAS"
+    },
+    {
+      "code": "138",
+      "display": "CUIDADO BSICO DEL CONSUMO DE SUSTANCIAS PSICOACTIVAS"
+    },
+    {
+      "code": "201",
+      "display": "CIRUGÍA DE CABEZA Y CUELLO"
+    },
+    {
+      "code": "202",
+      "display": "CIRUGÍA CARDIOVASCULAR"
+    },
+    {
+      "code": "203",
+      "display": "CIRUGÍA GENERAL"
+    },
+    {
+      "code": "204",
+      "display": "CIRUGÍA GINECOLÓGICA"
+    },
+    {
+      "code": "205",
+      "display": "CIRUGÍA MAXILOFACIAL"
+    },
+    {
+      "code": "207",
+      "display": "CIRUGÍA ORTOPÉDICA"
+    },
+    {
+      "code": "208",
+      "display": "CIRUGÍA OFTALMOLÓGICA"
+    },
+    {
+      "code": "209",
+      "display": "CIRUGÍA OTORRINOLARINGOLOGÍA"
+    },
+    {
+      "code": "210",
+      "display": "CIRUGÍA ONCOLÓGICA"
+    },
+    {
+      "code": "211",
+      "display": "CIRUGÍA ORAL"
+    },
+    {
+      "code": "212",
+      "display": "CIRUGÍA PEDITRICA"
+    },
+    {
+      "code": "213",
+      "display": "CIRUGÍA PLÁSTICA Y ESTÉTICA"
+    },
+    {
+      "code": "214",
+      "display": "CIRUGÍA VASCULAR Y ANGIOLÓGICA"
+    },
+    {
+      "code": "215",
+      "display": "CIRUGÍA UROLÓGICA"
+    },
+    {
+      "code": "217",
+      "display": "OTRAS CIRUGÍAS"
+    },
+    {
+      "code": "218",
+      "display": "CIRUGÍA ENDOVASCULAR NEUROLÓGICA"
+    },
+    {
+      "code": "227",
+      "display": "CIRUGÍA ONCOLÓGICA PEDITRICA"
+    },
+    {
+      "code": "231",
+      "display": "CIRUGÍA DE LA MANO"
+    },
+    {
+      "code": "232",
+      "display": "CIRUGÍA DE MAMA Y TUMORES TEJIDOS BLANDOS"
+    },
+    {
+      "code": "233",
+      "display": "CIRUGÍA DERMATOLÓGICA"
+    },
+    {
+      "code": "234",
+      "display": "CIRUGÍA DE TÓRAX"
+    },
+    {
+      "code": "235",
+      "display": "CIRUGÍA GASTROINTESTINAL"
+    },
+    {
+      "code": "237",
+      "display": "CIRUGÍA PLÁSTICA ONCOLÓGICA"
+    },
+    {
+      "code": "245",
+      "display": "NEUROCIRUGÍA"
+    },
+    {
+      "code": "301",
+      "display": "ANESTESIA"
+    },
+    {
+      "code": "302",
+      "display": "CARDIOLOGÍA"
+    },
+    {
+      "code": "303",
+      "display": "CIRUGÍA CARDIOVASCULAR"
+    },
+    {
+      "code": "304",
+      "display": "CIRUGÍA GENERAL"
+    },
+    {
+      "code": "306",
+      "display": "CIRUGÍA PEDITRICA"
+    },
+    {
+      "code": "308",
+      "display": "DERMATOLOGÍA"
+    },
+    {
+      "code": "309",
+      "display": "DOLOR Y CUIDADOS PALIATIVOS"
+    },
+    {
+      "code": "310",
+      "display": "ENDOCRINOLOGÍA"
+    },
+    {
+      "code": "311",
+      "display": "ENDODONCIA"
+    },
+    {
+      "code": "312",
+      "display": "ENFERMERÍA"
+    },
+    {
+      "code": "313",
+      "display": "ESTOMATOLOGÍA"
+    },
+    {
+      "code": "316",
+      "display": "GASTROENTEROLOGÍA"
+    },
+    {
+      "code": "317",
+      "display": "GENÉTICA"
+    },
+    {
+      "code": "318",
+      "display": "GERIATRÍA"
+    },
+    {
+      "code": "320",
+      "display": "GINECOBSTETRICIA"
+    },
+    {
+      "code": "321",
+      "display": "HEMATOLOGÍA"
+    },
+    {
+      "code": "323",
+      "display": "INFECTOLOGÍA"
+    },
+    {
+      "code": "324",
+      "display": "INMUNOLOGÍA"
+    },
+    {
+      "code": "325",
+      "display": "MEDICINA FAMILIAR"
+    },
+    {
+      "code": "326",
+      "display": "MEDICINA FÍSICA Y DEL DEPORTE"
+    },
+    {
+      "code": "327",
+      "display": "MEDICINA FÍSICA Y REHABILITACIÓN"
+    },
+    {
+      "code": "328",
+      "display": "MEDICINA GENERAL"
+    },
+    {
+      "code": "329",
+      "display": "MEDICINA INTERNA"
+    },
+    {
+      "code": "330",
+      "display": "NEFROLOGÍA"
+    },
+    {
+      "code": "331",
+      "display": "NEUMOLOGÍA"
+    },
+    {
+      "code": "332",
+      "display": "NEUROLOGÍA"
+    },
+    {
+      "code": "333",
+      "display": "NUTRICIÓN Y DIETÉTICA"
+    },
+    {
+      "code": "334",
+      "display": "ODONTOLOGÍA GENERAL"
+    },
+    {
+      "code": "335",
+      "display": "OFTALMOLOGÍA"
+    },
+    {
+      "code": "336",
+      "display": "ONCOLOGÍA CLÍNICA"
+    },
+    {
+      "code": "337",
+      "display": "OPTOMETRÍA"
+    },
+    {
+      "code": "338",
+      "display": "ORTODONCIA"
+    },
+    {
+      "code": "339",
+      "display": "ORTOPEDIA Y/O TRAUMATOLOGÍA"
+    },
+    {
+      "code": "340",
+      "display": "OTORRINOLARINGOLOGÍA"
+    },
+    {
+      "code": "342",
+      "display": "PEDIATRÍA"
+    },
+    {
+      "code": "343",
+      "display": "PERIODONCIA"
+    },
+    {
+      "code": "344",
+      "display": "PSICOLOGÍA"
+    },
+    {
+      "code": "345",
+      "display": "PSIQUIATRÍA"
+    },
+    {
+      "code": "346",
+      "display": "REHABILITACIÓN ONCOLÓGICA"
+    },
+    {
+      "code": "347",
+      "display": "REHABILITACIÓN ORAL"
+    },
+    {
+      "code": "348",
+      "display": "REUMATOLOGÍA"
+    },
+    {
+      "code": "354",
+      "display": "TOXICOLOGÍA"
+    },
+    {
+      "code": "355",
+      "display": "UROLOGÍA"
+    },
+    {
+      "code": "356",
+      "display": "OTRAS CONSULTAS DE ESPECIALIDAD"
+    },
+    {
+      "code": "361",
+      "display": "CARDIOLOGÍA PEDITRICA"
+    },
+    {
+      "code": "362",
+      "display": "CIRUGÍA DE CABEZA Y CUELLO"
+    },
+    {
+      "code": "363",
+      "display": "CIRUGÍA DE MANO"
+    },
+    {
+      "code": "364",
+      "display": "CIRUGÍA DE MAMA Y TUMORES TEJIDOS BLANDOS"
+    },
+    {
+      "code": "365",
+      "display": "CIRUGÍA DERMATOLÓGICA"
+    },
+    {
+      "code": "366",
+      "display": "CIRUGÍA DE TÓRAX"
+    },
+    {
+      "code": "367",
+      "display": "CIRUGÍA GASTROINTESTINAL"
+    },
+    {
+      "code": "368",
+      "display": "CIRUGÍA GINECOLÓGICA LAPAROSCӐICA"
+    },
+    {
+      "code": "369",
+      "display": "CIRUGÍA PLÁSTICA Y ESTÉTICA"
+    },
+    {
+      "code": "370",
+      "display": "CIRUGÍA PLÁSTICA ONCOLÓGICA"
+    },
+    {
+      "code": "371",
+      "display": "OTRAS CONSULTAS GENERALES"
+    },
+    {
+      "code": "372",
+      "display": "CIRUGÍA VASCULAR"
+    },
+    {
+      "code": "373",
+      "display": "CIRUGÍA ONCOLÓGICA"
+    },
+    {
+      "code": "374",
+      "display": "CIRUGÍA ONCOLÓGICA PEDITRICA"
+    },
+    {
+      "code": "375",
+      "display": "DERMATOLOGÍA ONCOLÓGICA"
+    },
+    {
+      "code": "377",
+      "display": "COLOPROCTOLOGÍA"
+    },
+    {
+      "code": "379",
+      "display": "GINECOLOGÍA ONCOLÓGICA"
+    },
+    {
+      "code": "383",
+      "display": "MEDICINA NUCLEAR"
+    },
+    {
+      "code": "384",
+      "display": "NEFROLOGÍA PEDITRICA"
+    },
+    {
+      "code": "385",
+      "display": "NEONATOLOGÍA"
+    },
+    {
+      "code": "386",
+      "display": "NEUMOLOGÍA PEDITRICA"
+    },
+    {
+      "code": "387",
+      "display": "NEUROCIRUGÍA"
+    },
+    {
+      "code": "388",
+      "display": "NEUROPEDIATRÍA"
+    },
+    {
+      "code": "390",
+      "display": "OFTALMOLOGÍA ONCOLÓGICA"
+    },
+    {
+      "code": "391",
+      "display": "ONCOLOGÍA Y HEMATOLOGÍA PEDITRICA"
+    },
+    {
+      "code": "393",
+      "display": "ORTOPEDIA ONCOLÓGICA"
+    },
+    {
+      "code": "395",
+      "display": "UROLOGÍA ONCOLÓGICA"
+    },
+    {
+      "code": "396",
+      "display": "ODONTOPEDIATRÍA"
+    },
+    {
+      "code": "397",
+      "display": "MEDICINA ESTÉTICA"
+    },
+    {
+      "code": "406",
+      "display": "HEMATOLOGÍA ONCOLÓGICA"
+    },
+    {
+      "code": "407",
+      "display": "MEDICINA DEL TRABAJO Y MEDICINA LABORAL"
+    },
+    {
+      "code": "408",
+      "display": "RADIOTERAPIA"
+    },
+    {
+      "code": "409",
+      "display": "ORTOPEDIA PEDITRICA"
+    },
+    {
+      "code": "410",
+      "display": "CIRUGÍA ORAL"
+    },
+    {
+      "code": "411",
+      "display": "CIRUGÍA MAXILOFACIAL"
+    },
+    {
+      "code": "412",
+      "display": "MEDICINA ALTERNATIVA Y COMPLEMENTARIA - HOMEOPTICA"
+    },
+    {
+      "code": "413",
+      "display": "MEDICINA ALTERNATIVA Y COMPLEMENTARIA - AYURVÉDICA"
+    },
+    {
+      "code": "414",
+      "display": "MEDICINA ALTERNATIVA Y COMPLEMENTARIA - TRADICIONAL CHINA"
+    },
+    {
+      "code": "415",
+      "display": "MEDICINA ALTERNATIVA Y COMPLEMENTARIA - NATUROPTICA"
+    },
+    {
+      "code": "416",
+      "display": "MEDICINA ALTERNATIVA Y COMPLEMENTARIA - NEURALTERAPÉUTICA"
+    },
+    {
+      "code": "417",
+      "display": "TERAPIAS ALTERNATIVAS Y COMPLEMENTARIAS - BIOENERGÉTICA"
+    },
+    {
+      "code": "418",
+      "display": "TERAPIAS ALTERNATIVAS Y COMPLEMENTARIAS - TERAPIA CON FILTROS"
+    },
+    {
+      "code": "419",
+      "display": "TERAPIAS ALTERNATIVAS Y COMPLEMENTARIAS - TERAPIAS MANUALES"
+    },
+    {
+      "code": "420",
+      "display": "VACUNACIÓN"
+    },
+    {
+      "code": "421",
+      "display": "PATOLOGÍA"
+    },
+    {
+      "code": "422",
+      "display": "MEDICINA ALTERNATIVA Y COMPLEMENTARIA - OSTEOPTICA"
+    },
+    {
+      "code": "423",
+      "display": "SEGURIDAD Y SALUD EN EL TRABAJO"
+    },
+    {
+      "code": "706",
+      "display": "LABORATORIO CLÍNICO"
+    },
+    {
+      "code": "709",
+      "display": "QUIMIOTERAPIA"
+    },
+    {
+      "code": "711",
+      "display": "RADIOTERAPIA"
+    },
+    {
+      "code": "712",
+      "display": "TOMA DE MUESTRAS DE LABORATORIO CLÍNICO"
+    },
+    {
+      "code": "714",
+      "display": "SERVICIO FARMACÉUTICO"
+    },
+    {
+      "code": "715",
+      "display": "MEDICINA NUCLEAR"
+    },
+    {
+      "code": "717",
+      "display": "LABORATORIO CITOLOGÍAS CERVICO-UTERINAS"
+    },
+    {
+      "code": "728",
+      "display": "TERAPIA OCUPACIONAL"
+    },
+    {
+      "code": "729",
+      "display": "TERAPIA RESPIRATORIA"
+    },
+    {
+      "code": "731",
+      "display": "LABORATORIO DE HISTOTECNOLOGÍA"
+    },
+    {
+      "code": "733",
+      "display": "HEMODILISIS"
+    },
+    {
+      "code": "734",
+      "display": "DILISIS PERITONEAL"
+    },
+    {
+      "code": "739",
+      "display": "FISIOTERAPIA"
+    },
+    {
+      "code": "740",
+      "display": "FONOAUDIOLOGÍA Y/O TERAPIA DEL LENGUAJE"
+    },
+    {
+      "code": "742",
+      "display": "DIAGNÓSTICO VASCULAR"
+    },
+    {
+      "code": "743",
+      "display": "HEMODINAMIA E INTERVENCIONISMO"
+    },
+    {
+      "code": "744",
+      "display": "IMGENES DIAGNOSTICAS - IONIZANTES"
+    },
+    {
+      "code": "745",
+      "display": "IMGENES DIAGNOSTICAS - NO IONIZANTES"
+    },
+    {
+      "code": "746",
+      "display": "GESTION PRE-TRANSFUSIONAL"
+    },
+    {
+      "code": "747",
+      "display": "PATOLOGÍA"
+    },
+    {
+      "code": "748",
+      "display": "RADIOLOGÍA ODONTOLÓGICA"
+    },
+    {
+      "code": "749",
+      "display": "TOMA DE MUESTRAS DE CUELLO UTERINO Y GINECOLÓGICAS"
+    },
+    {
+      "code": "1101",
+      "display": "ATENCIÓN DEL PARTO"
+    },
+    {
+      "code": "1102",
+      "display": "URGENCIAS"
+    },
+    {
+      "code": "1103",
+      "display": "TRANSPORTE ASISTENCIAL BASICO"
+    },
+    {
+      "code": "1104",
+      "display": "TRANSPORTE ASISTENCIAL MEDICALIZADO"
+    },
+    {
+      "code": "1105",
+      "display": "ATENCIÓN PREHOSPITALARIA"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclature of authorized healthcare services - Colombia (taken from Mipres Version 3 - Sispro).\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de servicios de atención en salud habilitados - Colombia (tomado de la versión 3 de Mipres - Sispro).]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 157
+}

@@ -1,0 +1,204 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianPopulationGroup",
+  "id": "ColombianPopulationGroup",
+  "title": "CodeSystem: Colombian Population Group",
+  "description": "Code system for population groups in Colombia.\r\n\r\n[ES: Sistema de códificación de grupos poblacionales en Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianPopulationGroup",
+  "concept": [
+    {
+      "code": "1",
+      "display": "HABITANTE DE LA CALLE"
+    },
+    {
+      "code": "10",
+      "display": "POBLACIÓN INFANTIL VULNERABLE BAJO PROTECCIÓN DE INSTITUCIONES DIFERENTES AL ICBF"
+    },
+    {
+      "code": "11",
+      "display": "PROGRAMA EN PROTECCIÓN A TESTIGOS"
+    },
+    {
+      "code": "12",
+      "display": "POBLACIÓN EN CENTROS PSIQUIÁTRICOS"
+    },
+    {
+      "code": "13",
+      "display": "POBLACIÓN RURAL MIGRATORIO"
+    },
+    {
+      "code": "14",
+      "display": "POBLACIÓN RECLUSA A CARGO DE LA ENTIDAD TERRITORIAL"
+    },
+    {
+      "code": "15",
+      "display": "POBLACIÓN RURAL NO MIGRATORIA"
+    },
+    {
+      "code": "16",
+      "display": "ADULTO MAYOR EN CENTROS DE PROTECCIÓN"
+    },
+    {
+      "code": "17",
+      "display": "COMUNIDADES INDÍGENAS"
+    },
+    {
+      "code": "18",
+      "display": "RROM (GITANO)"
+    },
+    {
+      "code": "2",
+      "display": "NIÑOS-NIÑAS-ADOLESCENTES Y JÓVENES EN PROCESO ADMINISTRATIVO PARA EL RESTABLECIMIENTO DE SUS DERECHOS"
+    },
+    {
+      "code": "22",
+      "display": "PERSONAS EN PRISIÓN DOMICILIARIA A CARGO DEL INPEC"
+    },
+    {
+      "code": "23",
+      "display": "PERSONAS QUE DEJEN DE SER MADRES COMUNITARIAS"
+    },
+    {
+      "code": "24",
+      "display": "MIGRANTES COLOMBIANOS REPATRIADOS, QUE HAN RETORNADO VOLUNTARIAMENTE AL PAÍS, O HAN SIDO DEPORTADOS O EXPULSADOS DE TERRITORIO EXTRANJERO"
+    },
+    {
+      "code": "25",
+      "display": "POBLACIÓN PERTENECIENTE AL SISTEMA DE RESPONSABILIDAD PENAL PARA ADOLESCENTES A CARGO DEL ICBF"
+    },
+    {
+      "code": "26",
+      "display": "MIEMBROS DE LOS GRUPOS ARMADOS AL MARGEN DE LA LEY QUE CELEBREN ACUERDOS DE PAZ CON EL GOBIERNO NACIONAL"
+    },
+    {
+      "code": "27",
+      "display": "RECIÉN NACIDO Y MENOR DE EDAD DE PADRES NO AFILIADOS"
+    },
+    {
+      "code": "28",
+      "display": "LOS VOLUNTARIOS ACREDITADOS Y ACTIVOS DE LA DEFENSA CIVIL COLOMBIANA, CRUZ ROJA COLOMBIANA Y CUERPOS DE BOMBEROS"
+    },
+    {
+      "code": "29",
+      "display": "PERSONAS CON DISCAPACIDAD EN CENTROS DE PROTECCIÓN"
+    },
+    {
+      "code": "30",
+      "display": "MIGRANTE VENEZOLANO CON PE E HIJOS MENORES DE EDAD CON DOCUMENTO VÁLIDO"
+    },
+    {
+      "code": "31",
+      "display": "AFILIACION DE OFICIO SIN ENCUESTA SISBEN Y SIN PERTENECER A UNA POBLACIÓN ESPECIAL"
+    },
+    {
+      "code": "32",
+      "display": "PERSONAS QUE SE ENCUENTRAN RECLUIDAS SIN CONDENA O CUMPLIENDO MEDIDA DE ASEGURAMIENTO EN CENTROS DE DETENCION TRANSITORIA"
+    },
+    {
+      "code": "4",
+      "display": "CREADOR O GESTOR CULTURAL"
+    },
+    {
+      "code": "5",
+      "display": "POBLACIÓN CON SISBEN"
+    },
+    {
+      "code": "6",
+      "display": "MENORES DESVINCULADOS DEL CONFLICTO ARMADO BAJO LA PROTECCIÓN DEL ICBF"
+    },
+    {
+      "code": "8",
+      "display": "POBLACIÓN DESMOVILIZADA Y/O MIEMBROS DEL GRUPO ARMADO ILEGAL QUE CELEBREN ACUERDOS DE PAZ CON EL GOBIERNO NACIONAL"
+    },
+    {
+      "code": "9",
+      "display": "VÍCTIMAS DEL CONFLICTO ARMADO INTERNO"
+    },
+    {
+      "code": "33",
+      "display": "Veteranos de la fuerza pública Decreto 1346 de 2020"
+    },
+    {
+      "code": "50",
+      "display": "USUARIOS ALTO COSTO SIN ENCUESTA DE SISBEN-DECRETO 1443 DEL 2 DE AGOSTO DE 2022"
+    },
+    {
+      "code": "51",
+      "display": "ENFERMEDADES HUÉRFANAS SIN ENCUESTA DE SISBEN-DECRETO 1443 DEL 2 DE AGOSTO DE 2022"
+    },
+    {
+      "code": "52",
+      "display": "MADRES GESTANTES SIN ENCUESTA DE SISBEN-DECRETO 1443 DEL 2 DE AGOSTO DE 2022"
+    },
+    {
+      "code": "53",
+      "display": "MENORES DE EDAD SIN ENCUESTA DE SISBEN -DECRETO 1443 DEL 2 DE AGOSTO DE 2022"
+    },
+    {
+      "code": "54",
+      "display": "AFILIADOS QUE SE ENCUENTREN CON TRATAMIENTOS EN CURSO CON INTERNACIÓN, URGENCIAS DOMICILIARIA O URGENCIAS SIN ENCUESTA DE SISBEN"
+    },
+    {
+      "code": "34",
+      "display": "POBLACIÓN NO POBRE - NO VULNERABLE"
+    }
+  ],
+  "language": "es",
+  "version": "0.1.0",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclature of special population groups in Colombia (taken from the SIVIGILA registry structure).\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de grupos de población especial en Colombia (tomado de la estructura de registros de SIVIGILA).]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 34
+}

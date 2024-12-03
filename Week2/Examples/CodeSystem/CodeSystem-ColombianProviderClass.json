@@ -1,0 +1,93 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianProviderClass",
+  "id": "ColombianProviderClass",
+  "title": "CodeSystem: Colombian Provider Class",
+  "description": "Code system of classes of health provider organizations in Colombia.\r\n\r\n[ES: Sistema de codificación de clases de organizaciones prestadoras de salud en Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianProviderClass",
+  "concept": [
+    {
+      "code": "IPS",
+      "display": "Institución Prestadora de Servicios de Salud"
+    },
+    {
+      "code": "TEP",
+      "display": "Transporte Especial de Pacientes"
+    },
+    {
+      "code": "OTHER",
+      "display": "Objeto social diferente a la prestación de servicios de salud"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia",
+  "contact": [
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    },
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclator of types of healthcare provider organizations in Colombia, according to the information registered in the REPS..\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de tipos de organizaciones prestadoras de servicios de salud en Colombia, según la información registrada en el REPS.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0 2023+",
+  "caseSensitive": true,
+  "count": 3
+}

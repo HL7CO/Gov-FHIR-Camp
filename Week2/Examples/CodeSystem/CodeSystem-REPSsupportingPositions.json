@@ -1,0 +1,252 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "REPSsupportingPositions",
+  "id": "REPSsupportingPositions",
+  "title": "CodeSystem: REPS Supporting Positions",
+  "description": "Code system for support roles within a healthcare organization (applicable to PractitionerRole resource).\r\n\r\n[ES: Sistema de códificación de roles de apoyo dentro de una organización en salud (aplicable al recurso PractitionerRole).]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/REPSsupportingPositions",
+  "concept": [
+    {
+      "code": "001",
+      "display": "Director de Hospital"
+    },
+    {
+      "code": "002",
+      "display": "Subdirector (Administrativo/Financiero)"
+    },
+    {
+      "code": "003",
+      "display": "Subdirector (científico)"
+    },
+    {
+      "code": "004",
+      "display": "Gerente"
+    },
+    {
+      "code": "005",
+      "display": "Subgerente (Administrivo/Financiero)"
+    },
+    {
+      "code": "006",
+      "display": "Subgerente (Científico)"
+    },
+    {
+      "code": "007",
+      "display": "Asesor"
+    },
+    {
+      "code": "008",
+      "display": "Jefe Jurídica"
+    },
+    {
+      "code": "009",
+      "display": "Jefe Planeación"
+    },
+    {
+      "code": "010",
+      "display": "Jefe Sistemas"
+    },
+    {
+      "code": "011",
+      "display": "Jefe Prensa o Comunicaciones"
+    },
+    {
+      "code": "013",
+      "display": "Tesorería"
+    },
+    {
+      "code": "130",
+      "display": "Técnico operativo"
+    },
+    {
+      "code": "139",
+      "display": "Almacenista"
+    },
+    {
+      "code": "140",
+      "display": "Estadística En Salud"
+    },
+    {
+      "code": "141",
+      "display": "Otro tecnico administrativo"
+    },
+    {
+      "code": "142",
+      "display": "Otro Auxiliar Administrativo"
+    },
+    {
+      "code": "143",
+      "display": "Trabajo Social"
+    },
+    {
+      "code": "144",
+      "display": "Ecónomo"
+    },
+    {
+      "code": "145",
+      "display": "Supervisor"
+    },
+    {
+      "code": "150",
+      "display": "Información En Salud"
+    },
+    {
+      "code": "152",
+      "display": "Otro Auxiliar area de la salud"
+    },
+    {
+      "code": "153",
+      "display": "Salud Familiar Y Comunitaria"
+    },
+    {
+      "code": "154",
+      "display": "Promotor"
+    },
+    {
+      "code": "155",
+      "display": "Secretario Ejecutivo"
+    },
+    {
+      "code": "156",
+      "display": "Secretario"
+    },
+    {
+      "code": "157",
+      "display": "Celaduría O Vigilancia"
+    },
+    {
+      "code": "158",
+      "display": "Lavandería"
+    },
+    {
+      "code": "159",
+      "display": "Alimentación"
+    },
+    {
+      "code": "160",
+      "display": "Transporte"
+    },
+    {
+      "code": "161",
+      "display": "Aseo"
+    },
+    {
+      "code": "162",
+      "display": "Mantenimiento"
+    },
+    {
+      "code": "163",
+      "display": "Otro trabajador"
+    },
+    {
+      "code": "164",
+      "display": "Camillero"
+    },
+    {
+      "code": "165",
+      "display": "Lider Programa Area administrativa y financiera"
+    },
+    {
+      "code": "166",
+      "display": "Lider Programa  Area asistencial"
+    },
+    {
+      "code": "167",
+      "display": "Lider proyecto Area administrativa y financiera"
+    },
+    {
+      "code": "168",
+      "display": "Lider proyecto Area asistencial"
+    },
+    {
+      "code": "169",
+      "display": "Almacenista General"
+    },
+    {
+      "code": "170",
+      "display": "Jefe Control Interno"
+    },
+    {
+      "code": "171",
+      "display": "Auxiliar Administrativo en Salud"
+    },
+    {
+      "code": "185",
+      "display": "Director Administrativo"
+    },
+    {
+      "code": "186",
+      "display": "Director Financiero"
+    },
+    {
+      "code": "187",
+      "display": "Director Técnico"
+    },
+    {
+      "code": "188",
+      "display": "Director Operativo"
+    },
+    {
+      "code": "189",
+      "display": "Jefe Área Administrativa y Financiera"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclature of support roles within a healthcare organization - applicable to PractitionerRole resource (taken from Sispro).\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de roles de apoyo dentro de una organización en salud - aplicable al recurso PractitionerRole (tomado de Sispro).]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 46
+}

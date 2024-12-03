@@ -1,0 +1,118 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "PactitionerTypeFunction",
+  "id": "PactitionerTypeFunction",
+  "title": "CodeSystem: Colombian Pactitioner Type Function.",
+  "description": "Colombian coding system for the general classification of the type of health professional who attends or performs a procedure.\r\n\r\n[ES: Sistema de códificación colombiano de clasificación general del tipo de profesional de salud que atiende o realiza un procedimiento.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/PactitionerTypeFunction",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Médico (a) especialista"
+    },
+    {
+      "code": "2",
+      "display": "Médico (a) general"
+    },
+    {
+      "code": "3",
+      "display": "Enfermera (o)"
+    },
+    {
+      "code": "4",
+      "display": "Auxiliar de enfermería"
+    },
+    {
+      "code": "5",
+      "display": "Otro"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    },
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This coding system is used as a Colombian nomenclature for the general classification of the type of health professional who attends or performs a procedure.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador colombiano de clasificación general del tipo de profesional de salud que atiende o realiza un procedimiento.]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 5
+}

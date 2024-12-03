@@ -1,0 +1,84 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianAdmitSource",
+  "id": "ColombianAdmitSource",
+  "title": "CodeSystem: Colombian Admit Source",
+  "description": "Colombian admit source classification for inpatient encounter in Colombia.\r\n\r\n[ES: Código de clasificación del via de ingreso para un encuentro de hospitalización en Colombia (urgencias, remitido, consulta externa, etc.).]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianAdmitSource",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Urgencias"
+    },
+    {
+      "code": "2",
+      "display": "Consulta externa ó programada"
+    },
+    {
+      "code": "3",
+      "display": "Remitido"
+    },
+    {
+      "code": "4",
+      "display": "Nacido en la institución"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a admit source for inpatient encounters classification nomenclator in Colombia.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de ingreso de encuentros de hospitalización en Colombia.]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 4
+}

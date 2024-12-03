@@ -1,0 +1,154 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianPersonIdentifier",
+  "id": "ColombianPersonIdentifier",
+  "title": "CodeSystem: Colombian Person Identifiers",
+  "description": "Identifier types code system for persons in Colombia.\r\n\r\n[ES: Codificación de tipos de identificaciones para personas en Colombia]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier",
+  "concept": [
+    {
+      "code": "RNEC",
+      "display": "Registraduría Nacional del Estado Civil",
+      "definition": "Identifiers assigned by RNEC. [ES: Identificadores asignados por la RNEC (Registraduría Nacional del Estado Civil)]. urn:oid:2.16.170.3.899999040.1",
+      "concept": [
+        {
+          "code": "CN",
+          "display": "Certificado de nacido vivo",
+          "definition": "Certificate of live birth. [ES: Documento que registra la información básica del nacimiento de un menor en Colombia].urn:oid:2.16.170.3.899999040.1.1"
+        },
+        {
+          "code": "RC",
+          "display": "Registro civil",
+          "definition": "Civil registration document. [ES: Documento que prueba el estado civil de una persona en Colombia]. urn:oid:2.16.170.3.899999040.1.2"
+        },
+        {
+          "code": "TI",
+          "display": "Tarjeta de Identidad",
+          "definition": "Identity card for minors. [ES: Documento de identificación para los menores de edad]. urn:oid:2.16.170.3.899999040.1.3"
+        },
+        {
+          "code": "CC",
+          "display": "Cédula ciudadanía",
+          "definition": "Citizenship card of the Colombian individual. [ES: Cédula ciudadanía de la persona colombiana]. urn:oid:2.16.170.3.899999040.1.4"
+        }
+      ]
+    },
+    {
+      "code": "CANCILLERIA",
+      "display": "Cancillería",
+      "definition": "Identifiers assigned by the Ministry of Foreign Affairs. [ES: Identificadores asignados por el Ministerio de Relaciones Exteriores]. urn:oid:2.16.170.1.2.2.899999042.1",
+      "concept": [
+        {
+          "code": "PA",
+          "display": "Pasaporte",
+          "definition": "Passport. urn:oid:2.16.170.1.2.2.899999042.1.1"
+        },
+        {
+          "code": "CD",
+          "display": "Carné diplomático",
+          "definition": "Diplomatic ID card. urn:oid:2.16.170.1.2.2.899999042.1.2"
+        },
+        {
+          "code": "CE",
+          "display": "Cédula de extranjería",
+          "definition": "Foreigners' identification card in Colombia. urn:oid:2.16.170.1.2.2.899999042.1.3"
+        },
+        {
+          "code": "SC",
+          "display": "Salvoconducto de permanencia",
+          "definition": "Temporary document issued by the Special Administrative Unit of Migration Colombia to foreigners who require it. This document may be of two types: for leaving the country or for permanence. The duration of the laissez-passer is issued for up to (30) calendar days (extendable in special cases). [ES: Documento de carácter temporal, que expide la Unidad Administrativa Especial Migración Colombia al extranjero que así lo requiera. Este documento podrá ser de dos clases: para salida del país o para permanencia. La duración del salvoconducto se emite hasta por (30) días calendario (prorrogables en casos especiales)]. urn:oid:2.16.170.1.2.2.899999042.1.4"
+        },
+        {
+          "code": "PE",
+          "display": "Permiso Especial de Permanencia",
+          "definition": "Authorization document for Venezuelan nationals to stay temporarily under regular migratory conditions and to exercise any legal activity or occupation in Colombia. [ES: Documento de autorización a nacionales venezolanos para permanecer temporalmente en condiciones de regularidad migratoria y ejercer cualquier actividad u ocupación legal en Colombia.]. urn:oid:2.16.170.1.2.2.899999042.1.5"
+        },
+        {
+          "code": "PT",
+          "display": "Permiso Temporal de Permanencia",
+          "definition": "Authorization document for foreigners whose nationality does not require a visa and who intend to extend their stay up to 180 days within the same calendar year. [ES: Documento de autorización para extranjeros cuya nacionalidad no requiera visa y que pretendan extender su permanencia hasta 180 días dentro del mismo año calendario.]. urn:oid:2.16.170.1.2.2.899999042.1.6"
+        },
+        {
+          "code": "PPT",
+          "display": "Permiso por Protección Temporal",
+          "definition": "Identity document that Migración Colombia will give to the Venezuelan who has registered in the RUMV (Registro Único de Migrantes Venezolanos), with which he/she can access work and join the social security system in Colombia. [ES: Documento de identidad que Migración Colombia entregará al venezolano que se haya inscrito en el RUMV (Registro Único de Migrantes Venezolanos), con el cual puede acceder al trabajo y afiliarse al régimen de seguridad social en Colombia.]. urn:oid:2.16.170.1.2.2.899999042.1.7"
+        }
+      ]
+    },
+    {
+      "code": "DIAN",
+      "display": "Dirección de Impuestos y Aduanas Nacionales",
+      "definition": "Identifiers assigned by DIAN. [ES: Identificadores asignados por la DIAN]. urn:oid:2.16.170.1.2.2.899999090.800197268.1",
+      "concept": [
+        {
+          "code": "RUT",
+          "display": "Registro Único Tributario",
+          "definition": "Colombian tax identifier, assigned by the DIAN, for subjects of tributary obligations. [ES: Identificador de impuestos colombiano, asignado por la DIAN, para sujetos de obligaciones tributarias] . urn:oid:2.16.170.1.2.2.899999090.800197268.1.2"
+        }
+      ]
+    },
+    {
+      "code": "OTROS",
+      "display": "Otras identificaciones",
+      "definition": "Other types of identifiers",
+      "concept": [
+        {
+          "code": "AS",
+          "display": "Adulto sin identificar",
+          "definition": "Unidentified adult. urn:oid:2.16.170.3.899999040.1.5"
+        },
+        {
+          "code": "MS",
+          "display": "Menor sin identificar",
+          "definition": "Unidentified minor. urn:oid:2.16.170.3.899999040.1.6"
+        },
+        {
+          "code": "SI",
+          "display": "Sin identificación",
+          "definition": "Without identification. urn:oid:2.16.170.3.899999040.1.7"
+        }
+      ]
+    }
+  ],
+  "language": "es",
+  "version": "1.0.1",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia",
+  "contact": [
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclator of identifier types for persons in Colombia, used in FHIR resource elements such as: *Patient.identifier.type*, *Practitioner.identifier.type*, *Person.identifier.type* and *RelatedPerson.identifier.type*.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de tipos de identificadores para personas en Colombia, utilizado en elementos de recursos FHIR como: *Patient.identifier.type*, *Practitioner.identifier.type*, *Person.identifier.type* y *RelatedPerson.identifier.type*.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0, 2024+",
+  "caseSensitive": true,
+  "count": 19
+}

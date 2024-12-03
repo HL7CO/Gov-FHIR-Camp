@@ -1,0 +1,88 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianProcedureReason",
+  "id": "ColombianProcedureReason",
+  "title": "CodeSystem: Colombian Procedure Reason.",
+  "description": "Colombian codification system of the purpose of the health care procedure.\r\n\r\n[ES: Sistema de códificación colombiano de la finalidad del procedimiento de atención en salud.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianProcedureReason",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Diagnóstico"
+    },
+    {
+      "code": "2",
+      "display": "Terapéutico"
+    },
+    {
+      "code": "3",
+      "display": "Protección específica"
+    },
+    {
+      "code": "4",
+      "display": "Detección temprana de enfermedad general"
+    },
+    {
+      "code": "5",
+      "display": "Detección temprana de enfermedad laboral"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This coding system is used as a Colombian nomenclator of the purpose of the health care procedure.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de colombiano de la finalidad del procedimiento de atención en salud.]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 5
+}

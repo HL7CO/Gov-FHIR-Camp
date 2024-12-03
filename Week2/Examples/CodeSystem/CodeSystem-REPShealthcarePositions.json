@@ -1,0 +1,648 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "REPShealthcarePositions",
+  "id": "REPShealthcarePositions",
+  "title": "CodeSystem: REPS Healthcare Positions",
+  "description": "Code system for health care roles within a care delivery organization - CDO (applicable to PractitionerRole resource).\r\n\r\n[ES: Sistema de códificación de roles asistenciales o clínicos en salud dentro de una Institución Prestadora de Servicios de Salud - IPS (aplicable al recurso PractitionerRole).]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/REPShealthcarePositions",
+  "concept": [
+    {
+      "code": "014",
+      "display": "Médico General - Medicina General"
+    },
+    {
+      "code": "015",
+      "display": "Médico Especialista - Alergología"
+    },
+    {
+      "code": "016",
+      "display": "Médico Especialista - Anatomía Patológica"
+    },
+    {
+      "code": "017",
+      "display": "Médico Especialista - Anestesia y Reanimación"
+    },
+    {
+      "code": "018",
+      "display": "Médico Especialista - Cardiología Intervencionista y Hemodinamia"
+    },
+    {
+      "code": "019",
+      "display": "Médico Especialista - Cardiología Pediátrica"
+    },
+    {
+      "code": "020",
+      "display": "Médico Especialista - Cirugía Cardio-Vascular"
+    },
+    {
+      "code": "021",
+      "display": "Médico Especialista - Cirugía de Cabeza y Cuello"
+    },
+    {
+      "code": "022",
+      "display": "Médico Especialista - Cirugía de Columna"
+    },
+    {
+      "code": "023",
+      "display": "Médico Especialista - Cirugía de la Mano"
+    },
+    {
+      "code": "024",
+      "display": "Médico Especialista - Cirugía de Mama y Tumores de Tejidos Blandos"
+    },
+    {
+      "code": "025",
+      "display": "Médico Especialista - Cirugía Gastrointestinal y/o Endoscopia Digestiva"
+    },
+    {
+      "code": "026",
+      "display": "Médico Especialista - Cirugía General"
+    },
+    {
+      "code": "027",
+      "display": "Médico Especialista - Cirugía Maxilofacial."
+    },
+    {
+      "code": "028",
+      "display": "Médico Especialista - Cirugía Pediátrica"
+    },
+    {
+      "code": "029",
+      "display": "Médico Especialista - Cirugía Plástica"
+    },
+    {
+      "code": "030",
+      "display": "Médico Especialista - Cirugía Torácica"
+    },
+    {
+      "code": "031",
+      "display": "Médico Especialista - Cirugía Vascular Periférica"
+    },
+    {
+      "code": "032",
+      "display": "Médico Especialista - Coloproctología"
+    },
+    {
+      "code": "033",
+      "display": "Médico Especialista - Dermatología"
+    },
+    {
+      "code": "034",
+      "display": "Médico Especialista - Endocrinología"
+    },
+    {
+      "code": "035",
+      "display": "Médico Especialista - Genética"
+    },
+    {
+      "code": "036",
+      "display": "Médico Especialista - Geriatría"
+    },
+    {
+      "code": "037",
+      "display": "Médico Especialista - Ginecología Oncologica"
+    },
+    {
+      "code": "038",
+      "display": "Médico Especialista - Ginecología y Obstetricia"
+    },
+    {
+      "code": "039",
+      "display": "Médico Especialista - Hepatología"
+    },
+    {
+      "code": "040",
+      "display": "Médico Especialista - Hematología y Oncología Clínica"
+    },
+    {
+      "code": "041",
+      "display": "Médico Especialista - Infectología"
+    },
+    {
+      "code": "042",
+      "display": "Médico Especialista - Medicina del Deporte"
+    },
+    {
+      "code": "043",
+      "display": "Médico Especialista - Medicina del Trabajo y/o Salud Ocupacional"
+    },
+    {
+      "code": "044",
+      "display": "Médico Especialista - Medicina Familiar"
+    },
+    {
+      "code": "045",
+      "display": "Médico Especialista - Medicina Forense"
+    },
+    {
+      "code": "046",
+      "display": "Médico Especialista - Medicina Interna"
+    },
+    {
+      "code": "047",
+      "display": "Médico Especialista - Medicina Nuclear"
+    },
+    {
+      "code": "048",
+      "display": "Médico Especialista - Nefrología"
+    },
+    {
+      "code": "049",
+      "display": "Médico Especialista - Nefrología Pediátrica"
+    },
+    {
+      "code": "050",
+      "display": "Médico Especialista - Neonatología"
+    },
+    {
+      "code": "051",
+      "display": "Médico Especialista - Neumología"
+    },
+    {
+      "code": "052",
+      "display": "Médico Especialista - Neumología Pediátrica"
+    },
+    {
+      "code": "053",
+      "display": "Médico Especialista - Neurocirugía"
+    },
+    {
+      "code": "054",
+      "display": "Médico Especialista - Neurofisiología Clínica"
+    },
+    {
+      "code": "055",
+      "display": "Médico Especialista - Neurología Clínica"
+    },
+    {
+      "code": "056",
+      "display": "Médico Especialista - Neurología Infantil"
+    },
+    {
+      "code": "057",
+      "display": "Médico Especialista - Neuropatología"
+    },
+    {
+      "code": "058",
+      "display": "Médico Especialista - Neuropediatría"
+    },
+    {
+      "code": "059",
+      "display": "Médico Especialista - Oftalmología"
+    },
+    {
+      "code": "060",
+      "display": "Médico Especialista - Oncohematología Pediátrica"
+    },
+    {
+      "code": "061",
+      "display": "Médico Especialista - Oncología Clínica"
+    },
+    {
+      "code": "062",
+      "display": "Médico Especialista - Ortopedia Infantil"
+    },
+    {
+      "code": "063",
+      "display": "Médico Especialista - Ortopedia y Traumatología"
+    },
+    {
+      "code": "064",
+      "display": "Médico Especialista - Otorrinolaringología"
+    },
+    {
+      "code": "065",
+      "display": "Médico Especialista - Pediatría"
+    },
+    {
+      "code": "066",
+      "display": "Médico Especialista - Psiquiatría"
+    },
+    {
+      "code": "067",
+      "display": "Médico Especialista - Psiquiatría Infantil y del Adolescente"
+    },
+    {
+      "code": "068",
+      "display": "Médico Especialista - Radiología e Imágenes Diagnosticas"
+    },
+    {
+      "code": "069",
+      "display": "Médico Especialista - Radioterapia"
+    },
+    {
+      "code": "070",
+      "display": "Médico Especialista - Rehabilitación"
+    },
+    {
+      "code": "071",
+      "display": "Médico Especialista - Reumatología"
+    },
+    {
+      "code": "072",
+      "display": "Médico Especialista - Toxicología Clínica"
+    },
+    {
+      "code": "073",
+      "display": "Médico Especialista - Urología"
+    },
+    {
+      "code": "074",
+      "display": "Médico Especialista - Urología Oncologica"
+    },
+    {
+      "code": "075",
+      "display": "Médico Especialista - Cuidado Critico"
+    },
+    {
+      "code": "076",
+      "display": "Médico Especialista - Otro"
+    },
+    {
+      "code": "077",
+      "display": "Odontólogo - Odontología"
+    },
+    {
+      "code": "078",
+      "display": "Odontólogo Especialista - Cirugía Oral y Maxilofacial"
+    },
+    {
+      "code": "079",
+      "display": "Odontólogo Especialista - Endodoncia"
+    },
+    {
+      "code": "080",
+      "display": "Odontólogo Especialista - Estomatología Pediátrica"
+    },
+    {
+      "code": "081",
+      "display": "Odontólogo Especialista - Odontopediatría y Ortopedia Maxilar"
+    },
+    {
+      "code": "082",
+      "display": "Odontólogo Especialista - Ortodoncia y Ortopedia Maxilar"
+    },
+    {
+      "code": "083",
+      "display": "Odontólogo Especialista - Periodoncia"
+    },
+    {
+      "code": "084",
+      "display": "Odontólogo Especialista - Prostodoncia"
+    },
+    {
+      "code": "085",
+      "display": "Odontólogo Especialista - Rehabilitación Oral"
+    },
+    {
+      "code": "086",
+      "display": "Odontólogo Especialista - Implantología"
+    },
+    {
+      "code": "087",
+      "display": "Odontólogo Especialista - Otro"
+    },
+    {
+      "code": "088",
+      "display": "Profesional Servicio Social Obligatorio - Bacteriología Servicio Social Obligatorio"
+    },
+    {
+      "code": "089",
+      "display": "Profesional Servicio Social Obligatorio - Enfermería Servicio Social Obligatorio"
+    },
+    {
+      "code": "090",
+      "display": "Profesional Servicio Social Obligatorio - Medicina General Servicio Obligatorio"
+    },
+    {
+      "code": "091",
+      "display": "Profesional Servicio Social Obligatorio - Odontología Servicios Social Obligatorio"
+    },
+    {
+      "code": "092",
+      "display": "Profesional Universitario - Profesional Universitario"
+    },
+    {
+      "code": "093",
+      "display": "Profesional Universitario - Psicólogo"
+    },
+    {
+      "code": "094",
+      "display": "Profesional Universitario - Trabajo Social"
+    },
+    {
+      "code": "095",
+      "display": "Profesional Especializado - Profesional Especializado"
+    },
+    {
+      "code": "096",
+      "display": "Profesional Universitario Area Salud - Optometría"
+    },
+    {
+      "code": "097",
+      "display": "Profesional Universitario Area Salud - Bacteriólogo y Laboratorista Clínico"
+    },
+    {
+      "code": "098",
+      "display": "Profesional Universitario Area Salud - Instrucción en Salud"
+    },
+    {
+      "code": "099",
+      "display": "Profesional Universitario Area Salud - Medicina Veterinaria"
+    },
+    {
+      "code": "100",
+      "display": "Profesional Universitario Area Salud - Nutricionista Dietista"
+    },
+    {
+      "code": "101",
+      "display": "Profesional Universitario Area Salud - Instrumentador Quirúrgico"
+    },
+    {
+      "code": "102",
+      "display": "Profesional Universitario Area Salud - Terapista Física"
+    },
+    {
+      "code": "103",
+      "display": "Profesional Universitario Area Salud - Terapista Ocupacional"
+    },
+    {
+      "code": "104",
+      "display": "Profesional Universitario Area Salud - Terapista Respiratoria"
+    },
+    {
+      "code": "105",
+      "display": "Profesional Universitario Area Salud - Fonoaudiología"
+    },
+    {
+      "code": "106",
+      "display": "Profesional Universitario Area Salud - Otro"
+    },
+    {
+      "code": "107",
+      "display": "Profesional Especializado Area Salud - Bacteriólogo Especialista en Banco de Sangre y Transfusión Sanguínea"
+    },
+    {
+      "code": "108",
+      "display": "Profesional Especializado Area Salud - Bacteriólogo Especialista en Inmunología"
+    },
+    {
+      "code": "109",
+      "display": "Profesional Especializado Area Salud - Bacteriólogo Especialista en Microbiología Clínica"
+    },
+    {
+      "code": "110",
+      "display": "Profesional Especializado Area Salud - Fonoaudiología y Foniatría"
+    },
+    {
+      "code": "111",
+      "display": "Profesional Especializado Area Salud - Neurorehabilitación"
+    },
+    {
+      "code": "112",
+      "display": "Profesional Especializado Area Salud - Epidemiología"
+    },
+    {
+      "code": "113",
+      "display": "Profesional Especializado Area Salud - Salud Pública"
+    },
+    {
+      "code": "114",
+      "display": "Profesional Especializado Area Salud - Salud Ambiental"
+    },
+    {
+      "code": "115",
+      "display": "Profesional Especializado Area Salud - Promoción y Prevención"
+    },
+    {
+      "code": "116",
+      "display": "Profesional Especializado Area Salud - Salud Comunitaria"
+    },
+    {
+      "code": "117",
+      "display": "Profesional Especializado Area Salud - Salud Familiar"
+    },
+    {
+      "code": "118",
+      "display": "Profesional Especializado Area Salud - Salud Ocupacional"
+    },
+    {
+      "code": "119",
+      "display": "Profesional Especializado Area Salud - Toxicología"
+    },
+    {
+      "code": "120",
+      "display": "Profesional Especializado Area Salud - Otro"
+    },
+    {
+      "code": "121",
+      "display": "Enfermero - Enfermería"
+    },
+    {
+      "code": "122",
+      "display": "Enfermero Especialista - Atención Materno-Perinatal"
+    },
+    {
+      "code": "123",
+      "display": "Enfermero Especialista - Cuidado Critico y/o Intensivo"
+    },
+    {
+      "code": "124",
+      "display": "Enfermero Especialista - Nefrología"
+    },
+    {
+      "code": "125",
+      "display": "Enfermero Especialista - Neonatología"
+    },
+    {
+      "code": "126",
+      "display": "Enfermero Especialista - Oncología"
+    },
+    {
+      "code": "127",
+      "display": "Enfermero Especialista - Patología Cardio-Respiratoria"
+    },
+    {
+      "code": "128",
+      "display": "Enfermero Especialista - Patología Cardio-Vascular"
+    },
+    {
+      "code": "129",
+      "display": "Enfermero Especialista - Salud Mental"
+    },
+    {
+      "code": "131",
+      "display": "Técnico Area Salud - Otro"
+    },
+    {
+      "code": "132",
+      "display": "Técnico Area Salud - Radiología e Imágenes Diagnosticas"
+    },
+    {
+      "code": "133",
+      "display": "Técnico Area Salud - Laboratorio Clínico"
+    },
+    {
+      "code": "134",
+      "display": "Técnico Area Salud - Laboratorio Dental"
+    },
+    {
+      "code": "135",
+      "display": "Técnico Area Salud - Salud Ocupacional"
+    },
+    {
+      "code": "136",
+      "display": "Técnico Area Salud - Salud Ambiental"
+    },
+    {
+      "code": "137",
+      "display": "Técnico Area Salud - Terapia"
+    },
+    {
+      "code": "138",
+      "display": "Técnico Area Salud - Instrumentación Quirúrgica"
+    },
+    {
+      "code": "146",
+      "display": "Auxiliar Area Salud - Auxiliar en Salud Oral"
+    },
+    {
+      "code": "147",
+      "display": "Auxiliar Area Salud - Auxiliar en Servicios Farmacéuticos"
+    },
+    {
+      "code": "148",
+      "display": "Auxiliar Area Salud - Auxiliar en Enfermería"
+    },
+    {
+      "code": "149",
+      "display": "Auxiliar Area Salud - Auxiliar en Salud Oral"
+    },
+    {
+      "code": "151",
+      "display": "Auxiliar Area Salud - Laboratorio Clínico"
+    },
+    {
+      "code": "172",
+      "display": "Auxiliar Area Salud - Auxiliar en Salud Pública"
+    },
+    {
+      "code": "173",
+      "display": "Técnico Area Salud - Regencia de Farmacia"
+    },
+    {
+      "code": "174",
+      "display": "Técnico Area Salud - Salud Comunitaria"
+    },
+    {
+      "code": "175",
+      "display": "Médico Especialista - Cardiología"
+    },
+    {
+      "code": "176",
+      "display": "Médico Especialista - Cirugía Oncológica"
+    },
+    {
+      "code": "177",
+      "display": "Médico Especialista - Cirugía Plastica Oncológica"
+    },
+    {
+      "code": "178",
+      "display": "Médico Especialista - Gastroenterología"
+    },
+    {
+      "code": "179",
+      "display": "Médico Especialista - Gerontología"
+    },
+    {
+      "code": "180",
+      "display": "Médico Especialista - Inmunología"
+    },
+    {
+      "code": "181",
+      "display": "Médico Especialista - Medicina Alternativa - Terapia Alternativa"
+    },
+    {
+      "code": "182",
+      "display": "Médico Especialista - Medicina Física y Rehabilitación"
+    },
+    {
+      "code": "183",
+      "display": "Médico Especialista - Oftalmología Oncológica"
+    },
+    {
+      "code": "184",
+      "display": "Médico Especialista - Patología"
+    },
+    {
+      "code": "190",
+      "display": "Jefe de Oficina (Operativo) - Área Asistencial"
+    },
+    {
+      "code": "191",
+      "display": "Otros profesionales de la salud no clasificados en otros grupos primarios"
+    },
+    {
+      "code": "192",
+      "display": "Otros técnicos y profesionales del nivel medio de la salud no clasificados en otros grupos primarios"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclature of health care roles within a care delivery organization - CDO. Applicable to PractitionerRole resource (taken from Sispro).\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de roles asistenciales o clínicos en salud dentro de una Institución Prestadora de Servicios de Salud - IPS. Aplicable al recurso PractitionerRole (tomado de Sispro).]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 145
+}

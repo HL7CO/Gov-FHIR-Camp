@@ -1,0 +1,101 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianTerritorialJurisdiction",
+  "id": "ColombianTerritorialJurisdiction",
+  "title": "CodeSystem: Colombian Territorial Jurisdiction",
+  "description": "Colombian code system for territorial jurisdiction of organizations.\r\n\r\n[ES: Sistema de codificación de carácter territorial de organizaciones en Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianTerritorialJurisdiction",
+  "concept": [
+    {
+      "code": "NAL",
+      "display": "NACIONAL"
+    },
+    {
+      "code": "DEP",
+      "display": "DEPARTAMENTAL"
+    },
+    {
+      "code": "DIS",
+      "display": "DISTRITAL"
+    },
+    {
+      "code": "MUN",
+      "display": "MUNICIPAL"
+    },
+    {
+      "code": "IND",
+      "display": "INDÍGENA"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "HL7 Colombia",
+  "contact": [
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    },
+    {
+      "name": "Mario Enrique Cortés M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mario.cortes@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Nathalia Ortega M",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "nathalia.ortega@hl7co.org",
+          "use": "work"
+        }
+      ]
+    },
+    {
+      "name": "Jaime Alberto Ramírez C",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "jaime.ramirez@hl7co.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclator of the territorial nature of the health-providing institutions in Colombia (national, departmental, district, municipal or indigenous), according to the information registered in the REPS.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador del carácter territorial de las instituciones prestadoras de salud en Colombia (nacional, departamental, distrital, municipal o indígena), según la información registrada en el REPS.]",
+  "copyright": "HL7 Colombia, CC-BY-4.0 2023+",
+  "caseSensitive": true,
+  "count": 5
+}

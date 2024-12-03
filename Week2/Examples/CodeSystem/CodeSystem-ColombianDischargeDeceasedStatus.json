@@ -1,0 +1,78 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianDischargeDeceasedStatus",
+  "id": "ColombianDischargeDeceasedStatus",
+  "title": "CodeSystem: Colombian Discharge Deceased Status",
+  "description": "Coding system for discharge death status - Colombia.\r\n\r\n[ES: Sistema de códificación del estado de deceso en el momento del egreso - Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianDischargeDeceasedStatus",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Vivo (a)",
+      "definition": "SCTID: 438949009 | vivo (hallazgo)"
+    },
+    {
+      "code": "2",
+      "display": "Muerto (a)",
+      "definition": "SCTID: 419099009 | muerto (hallazgo)"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a nomenclature of discharge death status - Colombia (taken from RIPS).\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de estado de deceso en el momento del egreso - Colombia (tomado de RIPS).]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2006+",
+  "caseSensitive": true,
+  "count": 2
+}

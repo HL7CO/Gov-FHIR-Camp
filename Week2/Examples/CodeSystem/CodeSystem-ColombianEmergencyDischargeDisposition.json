@@ -1,0 +1,80 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColombianEmergencyDischargeDisposition",
+  "id": "ColombianEmergencyDischargeDisposition",
+  "title": "CodeSystem: Colombian Emergency Discharge Disposition",
+  "description": "Colombian discharge disposition code system for emergency encounters in Colombia.\r\n\r\n[ES: Codificación de destino del paciente a la salida para encuentros de urgencias en Colombia.]",
+  "url": "http://terminology.fhir.guide/co/CodeSystem/ColombianEmergencyDischargeDisposition",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Alta de urgencias"
+    },
+    {
+      "code": "2",
+      "display": "Remisión a otro nivel de complejidad"
+    },
+    {
+      "code": "3",
+      "display": "Hospitalización"
+    }
+  ],
+  "version": "0.1.0",
+  "language": "es",
+  "experimental": false,
+  "date": "2024-11-19",
+  "publisher": "MinSalud Colombia",
+  "contact": [
+    {
+      "name": "Ministerio de Salud y Protección Social Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.minsalud.gov.co/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(601) 330-5043 "
+        },
+        {
+          "system": "phone",
+          "value": "018000960020"
+        }
+      ]
+    },
+    {
+      "name": "HL7 Colombia",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7co.org/"
+        },
+        {
+          "system": "phone",
+          "value": "+57(320) 230-6178 "
+        },
+        {
+          "system": "email",
+          "value": "info@hl7co.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "CO",
+          "system": "urn:iso:std:iso:3166:-2",
+          "display": "Colombia"
+        }
+      ]
+    }
+  ],
+  "purpose": "This code system is used as a patient discharge disposition for emergency encounters nomenclator in Colombia.\r\n\r\n[ES: Este sistema de codificación se utiliza como nomenclador de destino de paciente a la salida para encuentros de urgencias en Colombia.]",
+  "copyright": "MinSalud Colombia, CC-BY-4.0 2021+",
+  "caseSensitive": true,
+  "count": 3
+}
