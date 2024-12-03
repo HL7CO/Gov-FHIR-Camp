@@ -1,0 +1,160 @@
+{
+    "resourceType": "Patient",
+    "id": "",
+    "meta": {
+        "profile": [
+            "http://co.fhir.guide/core/StructureDefinition/PatientCO"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientNationality",
+            "valueCoding": {
+                "system": "http://terminology.fhir.guide/co/CodeSystem/ISO31661",
+                "code": "",
+                "display": ""
+            }
+        },
+        {
+            "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientEthnicity",
+            "valueCoding": {
+                "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianEthnicGroup",
+                "code": "",
+                "display": ""
+            }
+        },
+        {
+            "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientPopulationGroup",
+            "valueCoding": {
+                "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianPopulationGroup",
+                "code": "",
+                "display": ""
+            }
+        },
+        {
+            "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientDisability",
+            "valueCoding": {
+                "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianDisabilityClassification",
+                "code": "",
+                "display": ""
+            }
+        },
+        {
+            "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionPatientGenderIdentity",
+            "valueCoding": {
+                "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianGenderIdentity",
+                "code": "",
+                "display": ""
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "id": "NationalPersonIdentifier-0",
+            "use": "official",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "PN",
+                        "display": "Person number"
+                    },
+                    {
+                        "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier",
+                        "code": "",
+                        "display": ""
+                    }
+                ]
+            },
+            "system": "http://co.fhir.guide/NamingSystem/RNEC",
+            "value": "",
+            "period": {
+                "start": ""
+            }
+        }
+    ],
+    "active": ,
+    "name": [
+        {
+            "use": "official",
+            "family": "",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName",
+                        "valueString": ""
+                    },
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName",
+                        "valueString": ""
+                    }
+                ]
+            },
+            "given": [
+                "",
+                ""
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "id": "TelecomMobile-0",
+            "system": "phone",
+            "value": "",
+            "use": "mobile"
+        },
+        {
+            "id": "TelecomEmail-0",
+            "system": "email",
+            "value": ""
+        }
+    ],
+    "gender": "",
+    "birthDate": "",
+    "deceasedBoolean": ,
+    "address": [
+        {
+            "id": "HomeAddress-0",
+            "use": "home",
+            "type": "physical",
+            "text": "",
+            "city": "",
+            "_city": {
+                "extension": [
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality",
+                        "valueCoding": {
+                            "system": "http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA",
+                            "code": ""
+                        }
+                    }
+                ]
+            },
+            "district": "",
+            "state": "",
+            "_state": {
+                "extension": [
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment",
+                        "valueCoding": {
+                            "system": "http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA",
+                            "code": ""
+                        }
+                    }
+                ]
+            },
+            "postalCode": "",
+            "country": ""
+        }
+    ],
+    "maritalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+                "code": "",
+                "display": ""
+            }
+        ],
+        "text": ""
+    }
+}

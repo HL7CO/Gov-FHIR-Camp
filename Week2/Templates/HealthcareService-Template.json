@@ -1,0 +1,57 @@
+{
+    "resourceType": "HealthcareService",
+    "id": "",
+    "meta": {
+        "profile": [
+            "http://co.fhir.guide/core/StructureDefinition/HealthcareServiceCO"
+        ]
+    },
+    "identifier": [
+        {
+            "use": "official",
+            "system": "http://co.fhir.guide/NamingSystem/REPS",
+            "value": ""
+        }
+    ],
+    "active": true,
+    "providedBy": {
+        "reference": "Organization/"
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.fhir.guide/co/CodeSystem/REPShealthcareServiceCategory",
+                    "code": "",
+                    "display": ""
+                }
+            ]
+        }
+    ],
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.fhir.guide/co/CodeSystem/REPShealthcareServices",
+                    "code": "",
+                    "display": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        {
+            "reference": "Location/"
+        }
+    ],
+    "name": "",
+    "availableTime": [
+        {
+            "daysOfWeek": [
+                ""
+            ],
+            "availableStartTime": "",
+            "availableEndTime": ""
+        }
+    ]
+}

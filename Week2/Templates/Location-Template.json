@@ -1,0 +1,89 @@
+{
+    "resourceType": "Location",
+    "id": "",
+    "meta": {
+        "profile": [
+            "http://co.fhir.guide/core/StructureDefinition/CareDeliveryLocationCO"
+        ]
+    },
+    "identifier": [
+        {
+            "use": "official",
+            "system": "http://co.fhir.guide/NamingSystem/REPS",
+            "value": ""
+        }
+    ],
+    "status": "active",
+    "name": "",
+    "alias": [
+        ""
+    ],
+    "description": "",
+    "mode": "instance",
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                    "code": "HOSP",
+                    "display": "Hospital"
+                }
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "id": "TelecomPhone-0",
+            "system": "phone",
+            "value": ""
+        },
+        {
+            "id": "TelecomURL-0",
+            "system": "url",
+            "value": ""
+        }
+    ],
+    "address": {
+        "use": "work",
+        "type": "physical",
+        "text": "",
+        "city": "",
+        "_city": {
+            "extension": [
+                {
+                    "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality",
+                    "valueCoding": {
+                        "system": "http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA",
+                        "code": ""
+                    }
+                }
+            ]
+        },
+        "district": "",
+        "state": "",
+        "_state": {
+            "extension": [
+                {
+                    "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment",
+                    "valueCoding": {
+                        "system": "http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA",
+                        "code": ""
+                    }
+                }
+            ]
+        },
+        "postalCode": "",
+        "country": "CO"
+    },
+    "managingOrganization": {
+        "reference": "Organization/"
+    },
+    "hoursOfOperation": [
+        {
+            "daysOfWeek": [
+                ""
+            ],
+            "allDay": 
+        }
+    ]
+}

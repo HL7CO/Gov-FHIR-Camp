@@ -1,0 +1,148 @@
+{
+    "resourceType": "Practitioner",
+    "id": "",
+    "meta": {
+        "profile": [
+            "http://co.fhir.guide/core/StructureDefinition/PractitionerCO"
+        ]
+    },
+    "identifier": [
+        {
+            "id": "NationalPersonIdentifier-0",
+            "use": "official",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "PN",
+                        "display": "Person number"
+                    },
+                    {
+                        "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier",
+                        "code": "",
+                        "display": ""
+                    }
+                ]
+            },
+            "system": "http://co.fhir.guide/NamingSystem/RNEC",
+            "value": "",
+            "period": {
+                "start": ""
+            }
+        }
+    ],
+    "active": ,
+    "name": [
+        {
+            "use": "official",
+            "family": "",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName",
+                        "valueString": ""
+                    },
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName",
+                        "valueString": ""
+                    }
+                ]
+            },
+            "given": [
+                "",
+                ""
+            ],
+            "prefix": [
+                ""
+            ],
+            "suffix": [
+                ""
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "id": "TelecomMobile-0",
+            "system": "phone",
+            "value": "",
+            "use": "mobile"
+        },
+        {
+            "id": "TelecomEmail-0",
+            "system": "email",
+            "value": ""
+        }
+    ],
+    "address": [
+        {
+            "use": "work",
+            "type": "physical",
+            "text": "",
+            "city": "",
+            "_city": {
+                "extension": [
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality",
+                        "valueCoding": {
+                            "system": "http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA",
+                            "code": ""
+                        }
+                    }
+                ]
+            },
+            "district": "",
+            "state": "",
+            "_state": {
+                "extension": [
+                    {
+                        "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment",
+                        "valueCoding": {
+                            "system": "http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA",
+                            "code": ""
+                        }
+                    }
+                ]
+            },
+            "postalCode": "",
+            "country": ""
+        }
+    ],
+    "gender": "",
+    "birthDate": "",
+    "qualification": [
+        {
+            "identifier": [
+                {
+                    "use": "official",
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                "code": "LN",
+                                "display": "License number"
+                            }
+                        ]
+                    },
+                    "system": "http://co.fhir.guide/NamingSystem/RETHUS",
+                    "value": "",
+                    "assigner": {
+                        "type": "Organization",
+                        "display": "MinSalud"
+                    }
+                }
+            ],
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://terminology.fhir.guide/co/CodeSystem/RETHUSqualification",
+                        "code": "",
+                        "display": ""
+                    }
+                ]
+            },
+            "period": {
+                "start": ""
+            }
+        }
+    ]
+}
