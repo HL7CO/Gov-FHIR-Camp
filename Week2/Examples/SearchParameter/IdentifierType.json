@@ -1,0 +1,63 @@
+{
+    "resourceType": "SearchParameter",
+    "id": "IdentifierTypeSearchParameter",
+    "url": "http://co.fhir.guide/core/SearchParameter/IdentifierTypeSearchParameter",
+    "version": "0.1.0",
+    "name": "IdentifierTypeSearchParameter",
+    "status": "draft",
+    "experimental": false,
+    "date": "2024-11-19",
+    "publisher": "HL7 Colombia (Core)",
+    "contact": [
+        {
+          "name": "Mario Enrique Cortés M",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "mario.cortes@hl7co.org",
+              "use": "work"
+            }
+          ]
+        },
+        {
+          "name": "Nathalia Ortega M",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "nathalia.ortega@hl7co.org",
+              "use": "work"
+            }
+          ]
+        },
+        {
+          "name": "Jaime Alberto Ramírez C",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "jaime.ramirez@hl7co.org",
+              "use": "work"
+            }
+          ]
+        }
+      ],
+    "description": "Search parameter FHIR resource for individual profiles (Patient, Person, Practitioner, RelatedPerson), via Colombian identifier type code. [ES: Recurso FHIR SearchParameter para perfiles de individuos (Patient, Practitioner, Person, RelatedPerson), a través del código de tipos de identificaciones colombianas.]",
+    "jurisdiction": [
+        {
+          "coding": [
+            {
+              "code": "CO",
+              "system": "urn:iso:std:iso:3166:-2",
+              "display": "Colombia"
+            }
+          ]
+        }
+      ],
+      "code": "_identifier-type",
+      "base": ["Patient", "Practitioner", "Person", "RelatedPerson"],
+      "type": "token",
+      "expression": "(Patient|Practitioner|Person|RelatedPerson).identifier.where(id='NationalPersonIdentifier-0').type.coding.where(system='http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier').code",
+      "multipleOr": true,
+      "multipleAnd": true,
+      "comparator": ["eq"],
+      "modifier": ["exact"]
+}
