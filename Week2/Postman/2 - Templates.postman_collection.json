@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "aea30623-cdad-4da5-a5e4-3d5fa6149565",
+		"name": "2 | Templates",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9087637",
+		"_collection_link": "https://hl7co-org.postman.co/workspace/Gov-FHIR-Camp-%257C-MinSalud~c9e25df9-9663-440a-a3e1-065a208aa8ac/collection/9087637-aea30623-cdad-4da5-a5e4-3d5fa6149565?action=share&source=collection_link&creator=9087637"
+	},
+	"item": [
+		{
+			"name": "2.1 | Patient",
+			"item": [
+				{
+					"name": "Create | Server assigns ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Patient\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/PatientCO\"\n        ]\n    },\n    \"extension\": [\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientNationality\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ISO31661\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientEthnicity\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianEthnicGroup\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientPopulationGroup\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianPopulationGroup\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientDisability\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianDisabilityClassification\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientGenderIdentity\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianGenderIdentity\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        }\n    ],\n    \"identifier\": [\n        {\n            \"id\": \"NationalPersonIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PN\",\n                        \"display\": \"Person number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier\",\n                        \"code\": \"\",\n                        \"display\": \"\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/RNEC\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ],\n    \"active\": ,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"family\": \"\",\n            \"_family\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName\",\n                        \"valueString\": \"\"\n                    },\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName\",\n                        \"valueString\": \"\"\n                    }\n                ]\n            },\n            \"given\": [\n                \"\",\n                \"\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomMobile-0\",\n            \"system\": \"phone\",\n            \"value\": \"\",\n            \"use\": \"mobile\"\n        },\n        {\n            \"id\": \"TelecomEmail-0\",\n            \"system\": \"email\",\n            \"value\": \"\"\n        }\n    ],\n    \"gender\": \"\",\n    \"birthDate\": \"\",\n    \"deceasedBoolean\": ,\n    \"address\": [\n        {\n            \"id\": \"HomeAddress-0\",\n            \"use\": \"home\",\n            \"type\": \"physical\",\n            \"text\": \"\",\n            \"city\": \"\",\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"district\": \"\",\n            \"state\": \"\",\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"postalCode\": \"\",\n            \"country\": \"\"\n        }\n    ],\n    \"maritalStatus\": {\n        \"coding\": [\n            {\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        ],\n        \"text\": \"\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Patient/",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Patient",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create | Source assigns ID Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Patient\",\n    \"id\": \"\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/PatientCO\"\n        ]\n    },\n    \"extension\": [\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientNationality\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ISO31661\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientEthnicity\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianEthnicGroup\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientPopulationGroup\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianPopulationGroup\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientDisability\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianDisabilityClassification\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        },\n        {\n            \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionPatientGenderIdentity\",\n            \"valueCoding\": {\n                \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianGenderIdentity\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        }\n    ],\n    \"identifier\": [\n        {\n            \"id\": \"NationalPersonIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PN\",\n                        \"display\": \"Person number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier\",\n                        \"code\": \"\",\n                        \"display\": \"\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/RNEC\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ],\n    \"active\": ,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"family\": \"\",\n            \"_family\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName\",\n                        \"valueString\": \"\"\n                    },\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName\",\n                        \"valueString\": \"\"\n                    }\n                ]\n            },\n            \"given\": [\n                \"\",\n                \"\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomMobile-0\",\n            \"system\": \"phone\",\n            \"value\": \"\",\n            \"use\": \"mobile\"\n        },\n        {\n            \"id\": \"TelecomEmail-0\",\n            \"system\": \"email\",\n            \"value\": \"\"\n        }\n    ],\n    \"gender\": \"\",\n    \"birthDate\": \"\",\n    \"deceasedBoolean\": ,\n    \"address\": [\n        {\n            \"id\": \"HomeAddress-0\",\n            \"use\": \"home\",\n            \"type\": \"physical\",\n            \"text\": \"\",\n            \"city\": \"\",\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"district\": \"\",\n            \"state\": \"\",\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"postalCode\": \"\",\n            \"country\": \"\"\n        }\n    ],\n    \"maritalStatus\": {\n        \"coding\": [\n            {\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\n                \"code\": \"\",\n                \"display\": \"\"\n            }\n        ],\n        \"text\": \"\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Patient/{{Patient.id}}",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Patient",
+								"{{Patient.id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2.2 | Practitioner",
+			"item": [
+				{
+					"name": "Create | Server assigns ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Practitioner\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/PractitionerCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"id\": \"NationalPersonIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PN\",\n                        \"display\": \"Person number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier\",\n                        \"code\": \"\",\n                        \"display\": \"\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/RNEC\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ],\n    \"active\": ,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"family\": \"\",\n            \"_family\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName\",\n                        \"valueString\": \"\"\n                    },\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName\",\n                        \"valueString\": \"\"\n                    }\n                ]\n            },\n            \"given\": [\n                \"\",\n                \"\"\n            ],\n            \"prefix\": [\n                \"\"\n            ],\n            \"suffix\": [\n                \"\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomMobile-0\",\n            \"system\": \"phone\",\n            \"value\": \"\",\n            \"use\": \"mobile\"\n        },\n        {\n            \"id\": \"TelecomEmail-0\",\n            \"system\": \"email\",\n            \"value\": \"\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"work\",\n            \"type\": \"physical\",\n            \"text\": \"\",\n            \"city\": \"\",\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"district\": \"\",\n            \"state\": \"\",\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"postalCode\": \"\",\n            \"country\": \"\"\n        }\n    ],\n    \"gender\": \"\",\n    \"birthDate\": \"\",\n    \"qualification\": [\n        {\n            \"identifier\": [\n                {\n                    \"use\": \"official\",\n                    \"type\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                \"code\": \"LN\",\n                                \"display\": \"License number\"\n                            }\n                        ]\n                    },\n                    \"system\": \"http://co.fhir.guide/NamingSystem/RETHUS\",\n                    \"value\": \"\",\n                    \"assigner\": {\n                        \"type\": \"Organization\",\n                        \"display\": \"MinSalud\"\n                    }\n                }\n            ],\n            \"code\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/RETHUSqualification\",\n                        \"code\": \"\",\n                        \"display\": \"\"\n                    }\n                ]\n            },\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Practitioner/",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Practitioner",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create | Source assigns ID Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Practitioner\",\n    \"id\": \"\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/PractitionerCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"id\": \"NationalPersonIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PN\",\n                        \"display\": \"Person number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianPersonIdentifier\",\n                        \"code\": \"\",\n                        \"display\": \"\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/RNEC\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ],\n    \"active\": ,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"family\": \"\",\n            \"_family\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionFathersFamilyName\",\n                        \"valueString\": \"\"\n                    },\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionMothersFamilyName\",\n                        \"valueString\": \"\"\n                    }\n                ]\n            },\n            \"given\": [\n                \"\",\n                \"\"\n            ],\n            \"prefix\": [\n                \"\"\n            ],\n            \"suffix\": [\n                \"\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomMobile-0\",\n            \"system\": \"phone\",\n            \"value\": \"\",\n            \"use\": \"mobile\"\n        },\n        {\n            \"id\": \"TelecomEmail-0\",\n            \"system\": \"email\",\n            \"value\": \"\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"work\",\n            \"type\": \"physical\",\n            \"text\": \"\",\n            \"city\": \"\",\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"district\": \"\",\n            \"state\": \"\",\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"postalCode\": \"\",\n            \"country\": \"\"\n        }\n    ],\n    \"gender\": \"\",\n    \"birthDate\": \"\",\n    \"qualification\": [\n        {\n            \"identifier\": [\n                {\n                    \"use\": \"official\",\n                    \"type\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                \"code\": \"LN\",\n                                \"display\": \"License number\"\n                            }\n                        ]\n                    },\n                    \"system\": \"http://co.fhir.guide/NamingSystem/RETHUS\",\n                    \"value\": \"\",\n                    \"assigner\": {\n                        \"type\": \"Organization\",\n                        \"display\": \"MinSalud\"\n                    }\n                }\n            ],\n            \"code\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/RETHUSqualification\",\n                        \"code\": \"\",\n                        \"display\": \"\"\n                    }\n                ]\n            },\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Practitioner/{{Practitioner.id}}",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Practitioner",
+								"{{Practitioner.id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2.3 | Organization",
+			"item": [
+				{
+					"name": "Create | Server assigns ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Organization\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"id\": \"TaxIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"TAX\",\n                        \"display\": \"Tax ID number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianOrganizationIdentifiers\",\n                        \"code\": \"NIT\",\n                        \"display\": \"Número de Identificación Tributaria\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/DIAN\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        },\n        {\n            \"id\": \"HealthcareProviderIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PRN\",\n                        \"display\": \"Provider number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianOrganizationIdentifiers\",\n                        \"code\": \"CodigoPrestador\",\n                        \"display\": \"Código de habilitación de prestador de servicios de salud\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/REPS\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ],\n    \"active\": ,\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianProviderClass\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        },\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianLegalNatureType\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        },\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianHealthcareLevel\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        }\n    ],\n    \"name\": \"\",\n    \"alias\": [\n        \"\"\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomPhone-0\",\n            \"system\": \"phone\",\n            \"value\": \"\"\n        },\n        {\n            \"id\": \"TelecomURL-0\",\n            \"system\": \"url\",\n            \"value\": \"\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"work\",\n            \"type\": \"physical\",\n            \"text\": \"\",\n            \"city\": \"\",\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"district\": \"\",\n            \"state\": \"\",\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"postalCode\": \"\",\n            \"country\": \"\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Organization/",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Organization",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create | Source assigns ID Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Organization\",\n    \"id\": \"\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/CareDeliveryOrganizationCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"id\": \"TaxIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"TAX\",\n                        \"display\": \"Tax ID number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianOrganizationIdentifiers\",\n                        \"code\": \"NIT\",\n                        \"display\": \"Número de Identificación Tributaria\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/DIAN\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        },\n        {\n            \"id\": \"HealthcareProviderIdentifier-0\",\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PRN\",\n                        \"display\": \"Provider number\"\n                    },\n                    {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianOrganizationIdentifiers\",\n                        \"code\": \"CodigoPrestador\",\n                        \"display\": \"Código de habilitación de prestador de servicios de salud\"\n                    }\n                ]\n            },\n            \"system\": \"http://co.fhir.guide/NamingSystem/REPS\",\n            \"value\": \"\",\n            \"period\": {\n                \"start\": \"\"\n            }\n        }\n    ],\n    \"active\": ,\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianProviderClass\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        },\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianLegalNatureType\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        },\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/ColombianHealthcareLevel\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        }\n    ],\n    \"name\": \"\",\n    \"alias\": [\n        \"\"\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomPhone-0\",\n            \"system\": \"phone\",\n            \"value\": \"\"\n        },\n        {\n            \"id\": \"TelecomURL-0\",\n            \"system\": \"url\",\n            \"value\": \"\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"work\",\n            \"type\": \"physical\",\n            \"text\": \"\",\n            \"city\": \"\",\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"district\": \"\",\n            \"state\": \"\",\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                        \"valueCoding\": {\n                            \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                            \"code\": \"\"\n                        }\n                    }\n                ]\n            },\n            \"postalCode\": \"\",\n            \"country\": \"\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Organization/{{Organization.id}}",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Organization",
+								"{{Organization.id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2.4 | Location",
+			"item": [
+				{
+					"name": "Create | Server assigns ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/CareDeliveryLocationCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"system\": \"http://co.fhir.guide/NamingSystem/REPS\",\n            \"value\": \"\"\n        }\n    ],\n    \"status\": \"active\",\n    \"name\": \"\",\n    \"alias\": [\n        \"\"\n    ],\n    \"description\": \"\",\n    \"mode\": \"instance\",\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n                    \"code\": \"HOSP\",\n                    \"display\": \"Hospital\"\n                }\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomPhone-0\",\n            \"system\": \"phone\",\n            \"value\": \"\"\n        },\n        {\n            \"id\": \"TelecomURL-0\",\n            \"system\": \"url\",\n            \"value\": \"\"\n        }\n    ],\n    \"address\": {\n        \"use\": \"work\",\n        \"type\": \"physical\",\n        \"text\": \"\",\n        \"city\": \"\",\n        \"_city\": {\n            \"extension\": [\n                {\n                    \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                    \"valueCoding\": {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                        \"code\": \"\"\n                    }\n                }\n            ]\n        },\n        \"district\": \"\",\n        \"state\": \"\",\n        \"_state\": {\n            \"extension\": [\n                {\n                    \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                    \"valueCoding\": {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                        \"code\": \"\"\n                    }\n                }\n            ]\n        },\n        \"postalCode\": \"\",\n        \"country\": \"CO\"\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/\"\n    },\n    \"hoursOfOperation\": [\n        {\n            \"daysOfWeek\": [\n                \"\"\n            ],\n            \"allDay\": \n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Location/",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Location",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create | Source assigns ID Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/CareDeliveryLocationCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"system\": \"http://co.fhir.guide/NamingSystem/REPS\",\n            \"value\": \"\"\n        }\n    ],\n    \"status\": \"active\",\n    \"name\": \"\",\n    \"alias\": [\n        \"\"\n    ],\n    \"description\": \"\",\n    \"mode\": \"instance\",\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n                    \"code\": \"HOSP\",\n                    \"display\": \"Hospital\"\n                }\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"id\": \"TelecomPhone-0\",\n            \"system\": \"phone\",\n            \"value\": \"\"\n        },\n        {\n            \"id\": \"TelecomURL-0\",\n            \"system\": \"url\",\n            \"value\": \"\"\n        }\n    ],\n    \"address\": {\n        \"use\": \"work\",\n        \"type\": \"physical\",\n        \"text\": \"\",\n        \"city\": \"\",\n        \"_city\": {\n            \"extension\": [\n                {\n                    \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaMunicipality\",\n                    \"valueCoding\": {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                        \"code\": \"\"\n                    }\n                }\n            ]\n        },\n        \"district\": \"\",\n        \"state\": \"\",\n        \"_state\": {\n            \"extension\": [\n                {\n                    \"url\": \"http://co.fhir.guide/core/StructureDefinition/ExtensionDivipolaDepartment\",\n                    \"valueCoding\": {\n                        \"system\": \"http://terminology.fhir.guide/co/CodeSystem/DIVIPOLA\",\n                        \"code\": \"\"\n                    }\n                }\n            ]\n        },\n        \"postalCode\": \"\",\n        \"country\": \"CO\"\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/\"\n    },\n    \"hoursOfOperation\": [\n        {\n            \"daysOfWeek\": [\n                \"\"\n            ],\n            \"allDay\": \n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/Location/{{Location.id}}",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"Location",
+								"{{Location.id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2.5 | HealthcareService",
+			"item": [
+				{
+					"name": "Create | Server assigns ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"HealthcareService\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/HealthcareServiceCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"system\": \"http://co.fhir.guide/NamingSystem/REPS\",\n            \"value\": \"\"\n        }\n    ],\n    \"active\": true,\n    \"providedBy\": {\n        \"reference\": \"Organization/\"\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/REPShealthcareServiceCategory\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        }\n    ],\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/REPShealthcareServices\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        }\n    ],\n    \"location\": [\n        {\n            \"reference\": \"Location/\"\n        }\n    ],\n    \"name\": \"\",\n    \"availableTime\": [\n        {\n            \"daysOfWeek\": [\n                \"\"\n            ],\n            \"availableStartTime\": \"\",\n            \"availableEndTime\": \"\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/HealthcareService/",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"HealthcareService",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create | Source assigns ID Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"HealthcareService\",\n    \"id\": \"\",\n    \"meta\": {\n        \"profile\": [\n            \"http://co.fhir.guide/core/StructureDefinition/HealthcareServiceCO\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"system\": \"http://co.fhir.guide/NamingSystem/REPS\",\n            \"value\": \"\"\n        }\n    ],\n    \"active\": true,\n    \"providedBy\": {\n        \"reference\": \"Organization/\"\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/REPShealthcareServiceCategory\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        }\n    ],\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.fhir.guide/co/CodeSystem/REPShealthcareServices\",\n                    \"code\": \"\",\n                    \"display\": \"\"\n                }\n            ]\n        }\n    ],\n    \"location\": [\n        {\n            \"reference\": \"Location/\"\n        }\n    ],\n    \"name\": \"\",\n    \"availableTime\": [\n        {\n            \"daysOfWeek\": [\n                \"\"\n            ],\n            \"availableStartTime\": \"\",\n            \"availableEndTime\": \"\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhirurl}}/HealthcareService/{{HealthcareService.id}}",
+							"host": [
+								"{{fhirurl}}"
+							],
+							"path": [
+								"HealthcareService",
+								"{{HealthcareService.id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
