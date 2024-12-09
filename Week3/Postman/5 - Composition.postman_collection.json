@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "da80ace4-02f5-4e56-985d-c4388deec1b6",
+		"name": "5 | Composition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9087637",
+		"_collection_link": "https://hl7co-org.postman.co/workspace/Gov-FHIR-Camp-%257C-MinSalud~c9e25df9-9663-440a-a3e1-065a208aa8ac/collection/9087637-da80ace4-02f5-4e56-985d-c4388deec1b6?action=share&source=collection_link&creator=9087637"
+	},
+	"item": [
+		{
+			"name": "Composition | c9e8abe3-2aec-4645-8822-115111881886",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resourceType\": \"Composition\",\n    \"id\": \"c9e8abe3-2aec-4645-8822-115111881886\",\n    \"status\": \"final\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://loinc.org\",\n                \"code\": \"11516-2\",\n                \"display\": \"Physician Records total Encounter\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://loinc.org\",\n                    \"code\": \"11488-4\",\n                    \"display\": \"Consult Note\"\n                }\n            ]\n        }\n    ],\n    \"subject\": {\n        \"reference\": \"Patient/9bb9e704-ed22-4eae-83e0-7d040605ed3b\"\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/1999576c-46ec-40b2-b663-c84c3764cd2b\"\n    },\n    \"date\": \"2024-12-05T10:30:00-05:00\",\n    \"author\": [\n        {\n            \"reference\": \"Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a\"\n        }\n    ],\n    \"title\": \"Epicrisis de consulta ambulatoria\",\n    \"confidentiality\": \"N\",\n    \"attester\": [\n        {\n            \"mode\": \"professional\",\n            \"time\": \"2024-12-05T10:30:00-05:00\",\n            \"party\": {\n                \"reference\": \"Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a\"\n            }\n        }\n    ],\n    \"custodian\": {\n        \"reference\": \"Organization/3565ccc1-95b4-47ef-8cc9-5652dba007e6\"\n    },\n    \"section\": [\n        {\n            \"title\": \"Active Problems\",\n            \"code\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://loinc.org\",\n                        \"code\": \"11450-4\",\n                        \"display\": \"Problem list Reported\"\n                    }\n                ]\n            },\n            \"entry\": [\n                {\n                    \"reference\": \"Condition/0a97ab0e-8199-4040-b7e3-823416a7777e\"\n                },\n                {\n                    \"reference\": \"Condition/b368be4f-b8fa-41ab-9e8d-28f1c820fb2d\"\n                },\n                {\n                    \"reference\": \"Condition/36be2a2a-72ec-41ca-bd5b-9bc362d5cc10\"\n                }\n            ]\n        } \n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Composition/c9e8abe3-2aec-4645-8822-115111881886",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Composition",
+						"c9e8abe3-2aec-4645-8822-115111881886"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
