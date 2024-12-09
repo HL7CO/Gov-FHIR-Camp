@@ -1,0 +1,34 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "resource": /*AQUÍ EL RECURSO CONDITION 1*/ ,
+            "request": {
+                "method": "PUT", /* o POST*/
+                "url": "Condition/{{id-condition-1}}" //ID Condition 1
+            }
+        },
+        {
+            "resource": /*AQUÍ EL RECURSO CONDITION 2*/ ,
+            "request": {
+                "method": "PUT", /* o POST*/
+                "url": "Condition/{{id-condition-2}}" //ID Condition 2
+            }
+        },
+        {
+            "resource": /*AQUÍ EL RECURSO CONDITION 3*/ ,
+            "request": {
+                "method": "PUT", /* o POST*/
+                "url": "Condition/{{id-condition-2}}" //ID Condition 3
+            }
+        },
+        {
+            "resource": /*AQUÍ EL RECURSO ENCOUNTER*/ ,
+            "request": {
+                "method": "PUT", /* o POST*/
+                "url": "Encounter/{{id-encounter-0}}" //ID Encounter 0
+            }
+        }
+    ]
+}

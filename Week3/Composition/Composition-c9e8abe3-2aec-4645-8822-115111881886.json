@@ -1,0 +1,76 @@
+{
+    "resourceType": "Composition",
+    "id": "c9e8abe3-2aec-4645-8822-115111881886",
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "11516-2",
+                "display": "Physician Records total Encounter"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "11488-4",
+                    "display": "Consult Note"
+                }
+            ]
+        }
+    ],
+    "subject": {
+        "reference": "Patient/9bb9e704-ed22-4eae-83e0-7d040605ed3b"
+    },
+    "encounter": {
+        "reference": "Encounter/1999576c-46ec-40b2-b663-c84c3764cd2b"
+    },
+    "date": "2024-12-05T10:30:00-05:00",
+    "author": [
+        {
+            "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+        }
+    ],
+    "title": "Epicrisis de consulta ambulatoria",
+    "confidentiality": "N",
+    "attester": [
+        {
+            "mode": "professional",
+            "time": "2024-12-05T10:30:00-05:00",
+            "party": {
+                "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+            }
+        }
+    ],
+    "custodian": {
+        "reference": "Organization/3565ccc1-95b4-47ef-8cc9-5652dba007e6"
+    },
+    "section": [
+        {
+            "title": "Active Problems",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "11450-4",
+                        "display": "Problem list Reported"
+                    }
+                ]
+            },
+            "entry": [
+                {
+                    "reference": "Condition/0a97ab0e-8199-4040-b7e3-823416a7777e"
+                },
+                {
+                    "reference": "Condition/b368be4f-b8fa-41ab-9e8d-28f1c820fb2d"
+                },
+                {
+                    "reference": "Condition/36be2a2a-72ec-41ca-bd5b-9bc362d5cc10"
+                }
+            ]
+        } 
+    ]
+}

@@ -1,0 +1,147 @@
+{
+    "resourceType": "Condition",
+    "id": "0a97ab0e-8199-4040-b7e3-823416a7777e",
+    "meta": {
+        "profile": [
+            "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+        ]
+    },
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                }
+            ]
+        }
+    ],
+    "subject": {
+        "reference": "Patient/9bb9e704-ed22-4eae-83e0-7d040605ed3b"
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "J15.9",
+                "display": "NEUMONIA BACTERIANA, NO ESPECIFICADA"
+            }
+        ]
+    },
+    "recordedDate": "2024-12-05",
+    "recorder": {
+        "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+    },
+    "asserter": {
+        "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+    },
+    "evidence": [
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "386661006",
+                            "display": "Fiebre (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "11833005",
+                            "display": "Tos con expectoración (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "102592001",
+                            "display": "Dolor torácico pleurítico (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "267036007",
+                            "display": "Disnea (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "84229001",
+                            "display": "Malestar general (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "detail": [
+                {
+                    "reference": "DiagnosticReport/a6e2540d-7ce1-45f4-8e11-8a2161bb9c93",
+                    "display": "Radiografía de tórax mostrando infiltrados pulmonares"
+                },
+                {
+                    "reference": "DiagnosticReport/441d53b0-09bc-48fe-8172-cef57f3055f6",
+                    "display": "Cultivo bacteriano o prueba rápida de detección"
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "text": "Infección bacteriana del parénquima pulmonar que provoca inflamación y acumulación de líquidos en los alvéolos."
+        },
+        {
+            "text": "Estertores crepitantes a la auscultación"
+        },
+        {
+            "text": "Hipoxemia (confirmada por oximetría o gasometría arterial)"
+        }
+    ]
+}

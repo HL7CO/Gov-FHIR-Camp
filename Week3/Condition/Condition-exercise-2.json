@@ -1,0 +1,122 @@
+{
+    "resourceType": "Condition",
+    "id": "b368be4f-b8fa-41ab-9e8d-28f1c820fb2d",
+    "meta": {
+        "profile": [
+            "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+        ]
+    },
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                }
+            ]
+        }
+    ],
+    "subject": {
+        "reference": "Patient/9bb9e704-ed22-4eae-83e0-7d040605ed3b"
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "J44.9",
+                "display": "ENFERMEDAD PULMONAR OBSTRUCTIVA CRONICA, NO ESPECIFICADA"
+            }
+        ]
+    },
+    "recordedDate": "2024-12-09",
+    "recorder": {
+        "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+    },
+    "asserter": {
+        "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+    },
+    "evidence": [
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "40917007",
+                            "display": "Tos crónica (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "267036007",
+                            "display": "Disnea progresiva (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "56018004",
+                            "display": "Sibilancias (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "42399005",
+                            "display": "Producción excesiva de esputo (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "text": "Enfermedad progresiva caracterizada por limitación persistente al flujo de aire debido a inflamación y daño en las vías respiratorias y los alvéolos."
+        },
+        {
+            "text": "El paciente con EPOC tiene un mayor riesgo de infecciones pulmonares recurrentes como neumonía."
+        },
+        {
+            "text": "La insuficiencia respiratoria puede complicarse en episodios agudos."
+        }
+    ]
+}

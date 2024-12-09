@@ -1,0 +1,125 @@
+{
+    "resourceType": "Condition",
+    "id": "36be2a2a-72ec-41ca-bd5b-9bc362d5cc10",
+    "meta": {
+        "profile": [
+            "http://co.fhir.guide/core/StructureDefinition/ConditionCO"
+        ]
+    },
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                }
+            ]
+        }
+    ],
+    "subject": {
+        "reference": "Patient/9bb9e704-ed22-4eae-83e0-7d040605ed3b"
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "I50.9",
+                "display": "INSUFICIENCIA CARDIACA, NO ESPECIFICADA"
+            }
+        ]
+    },
+    "recordedDate": "2024-12-09",
+    "recorder": {
+        "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+    },
+    "asserter": {
+        "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+    },
+    "evidence": [
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "267036007",
+                            "display": "Disnea (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "42343007",
+                            "display": "Edema en extremidades inferiores (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "84229001",
+                            "display": "Fatiga y debilidad general (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "109002",
+                            "display": "Taquicardia (hallazgo)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "text": "Trastorno en el cual el corazón no puede bombear suficiente sangre para satisfacer las necesidades del cuerpo, lo que lleva a congestión en los pulmones y otros tejidos."
+        },
+        {
+            "text": "La insuficiencia cardíaca puede exacerbar la dificultad respiratoria en casos de neumonía, debido a la congestión pulmonar preexistente."
+        },
+        {
+            "text": "El paciente con insuficiencia cardíaca tiene un mayor riesgo de infecciones pulmonares debido a una disminución en la eficiencia de la circulación pulmonar y una inmunidad comprometida."
+        },
+        {
+            "text": "El manejo debe ser cuidadoso para evitar sobrecarga de líquidos durante la terapia de rehidratación o antibiótica."
+        }
+    ]
+}
