@@ -1,0 +1,13 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "resource": {},
+            "request": {
+                "method": "PUT",
+                "url": "Condition/9ea426a3-9d0c-4c04-9e76-a2562657492d"
+            }
+        }
+    ]
+}

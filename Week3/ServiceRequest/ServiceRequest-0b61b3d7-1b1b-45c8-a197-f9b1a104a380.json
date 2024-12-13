@@ -1,0 +1,58 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "0b61b3d7-1b1b-45c8-a197-f9b1a104a380",
+  "meta": {
+    "profile": [
+      "http://co.fhir.guide/core/StructureDefinition/ServiceRequestLabCO"
+    ]
+  },
+  "identifier": [
+    {
+      "id": "ordenIdentifier",
+      "use": "usual",
+      "system": "https://hospital.example.org/servicerequest-identifiers",
+      "value": "LB76897-6"
+    }
+  ],
+  "requisition": {
+    "value": "LB76897"
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "108252007",
+          "system": "http://snomed.info/sct",
+          "display": "Laboratory procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://terminology.fhir.guide/co/CodeSystem/CUPS",
+        "code": "902210",
+        "display": "HEMOGRAMA IV (HEMOGLOBINA HEMATOCRITO RECUENTO DE ERITROCITOS INDICES ERITROCITARIOS LEUCOGRAMA RECUENTO DE PLAQUETAS INDICES PLAQUETARIOS Y MORFOLOGIA ELECTRONICA E HISTOGRAMA) AUTOMATIZADO"
+      }
+    ]
+  },
+  "quantityQuantity": {
+    "value": 1
+  },
+  "note": [
+    {
+      "text": "In officia fugiat elit dolor cupidatat duis cupidatat anim."
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "priority": "routine",
+  "subject": {
+    "reference": "Patient/92a8e277-af20-4854-a3fb-02cbe9fb8d49"
+  },
+  "authoredOn": "2023-09-24T17:12:41-05:00",
+  "requester": {
+    "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+  }
+}

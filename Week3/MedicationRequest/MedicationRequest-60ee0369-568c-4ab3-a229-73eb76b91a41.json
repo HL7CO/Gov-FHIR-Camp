@@ -1,0 +1,87 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "60ee0369-568c-4ab3-a229-73eb76b91a41",
+  "meta": {
+    "profile": [
+      "http://co.fhir.guide/core/StructureDefinition/MedicationRequestCO"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://example.co/prescription-orders",
+      "value": "73eb76b91a41"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "outpatient",
+          "display": "Outpatient"
+        }
+      ]
+    }
+  ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://www.whocc.no/atc",
+        "code": "N02BE01",
+        "display": "PARACETAMOL"
+      },
+      {
+        "system": "http://terminology.fhir.guide/co/CodeSystem/CUMS",
+        "code": "19986458",
+        "display": "ACETAMINOFEN TABLETAS 500 MG"
+      }
+    ]
+  },
+  "insurance": [
+    {
+      "reference": "Coverage/b3f91b2a-ab86-432c-9bb0-31bfab293fbc"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "route": {
+        "coding": [
+          {
+            "system": "http://terminology.fhir.guide/co/CodeSystem/MipresDosageRoute",
+            "code": "048",
+            "display": "ORAL"
+          }
+        ]
+      },
+      "text": "Tomar una cápsula cada seis (6) horas, durante cuatro (4) días"
+    }
+  ],
+  "dispenseRequest": {
+    "validityPeriod": {
+      "start": "2024-02-19T09:40:00-05:00"
+    },
+    "quantity": {
+      "system": "http://terminology.fhir.guide/co/CodeSystem/MipresDispenseUnit",
+      "value": 16,
+      "unit": "CAPSULA",
+      "code": "14"
+    },
+    "numberOfRepeatsAllowed": 1
+  },
+  "status": "active",
+  "intent": "order",
+  "priority": "routine",
+  "reportedBoolean": true,
+  "subject": {
+    "reference": "Patient/92a8e277-af20-4854-a3fb-02cbe9fb8d49"
+  },
+  "encounter": {
+    "reference": "Encounter/47b7e0b5-25cc-43d3-a3a8-ee34ff1687fe"
+  },
+  "authoredOn": "2024-02-19T09:40:00-05:00",
+  "requester": {
+    "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+  },
+  "recorder": {
+    "reference": "Practitioner/feb1e63b-d4ed-4b53-9d1f-8d9efa339b0a"
+  }
+}

@@ -1,0 +1,103 @@
+{
+    "resourceType": "Composition",
+    "id": "461ae707-795f-4a8f-ad58-8580b4c93763",
+    "identifier": {
+        "system": "http://hospitalgeneral.com/documents/428734098",
+        "value": "4297348721034870"
+    },
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "11516-2", 	
+                "display": "Physician Records total Encounter"
+            },
+            {
+                "system": "http://example.com/document-types",
+                "code": "01",
+                "display": "RDA"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "18842-5",
+                    "display": "Discharge summary"
+                }
+            ]
+        }
+    ],
+    "subject": {
+        "reference": "Patient/dc13524b-adae-401c-b031-d7b695c4841d"
+    },
+    "encounter": {
+        "reference": "Encounter/601ab7b4-f392-465c-90c8-fa46efcce246"
+    },
+    "date": "2024-12-05T11:00:00-05:00",
+    "author": [
+        {
+            "reference": "Practitioner/734acb78-dac7-4175-a340-23bb6336de63"
+        }
+    ],
+   "title": "Registro Digital de Atención",
+   "confidentiality": "N",
+   "attester": [
+    {
+        "mode": "professional",
+        "time": "2024-12-05T11:00:00-05:00",
+        "party": {
+            "reference": "Practitioner/734acb78-dac7-4175-a340-23bb6336de63"
+        }
+    }
+   ],
+   "custodian": {
+    "reference": "Organization/47d7a6e4-ff12-4158-a4a6-2dcc8e089cdf"
+   },
+   "section": [
+    {
+        "title": "Diagnósticos",
+        "code" : {
+        "coding" : [
+          {
+            "system" : "http://loinc.org",
+            "code" : "11450-4",
+            "display" : "Problem list Reported"
+          }
+        ]
+      },
+      "entry": [
+        {
+            "reference": "Condition/1dff8093-ba25-464f-9626-f13486ff412b"
+        },
+        {
+            "reference": "Condition/5f7df2ef-e836-4176-a0e2-59dc66ab1efb"
+        },{
+            "reference": "Condition/6887171c-7e1e-44fa-a1e7-815a2b0390fdß"
+        }
+      ]
+    },
+
+   ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

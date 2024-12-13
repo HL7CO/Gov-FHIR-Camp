@@ -151,7 +151,7 @@
                 ]
             },
             "request": {
-                "method": "POST",
+                "method": "PUT",
                 "url": "Condition/0a97ab0e-8199-4040-b7e3-823416a7777e"
             }
         },
@@ -279,7 +279,7 @@
                 ]
             },
             "request": {
-                "method": "POST",
+                "method": "PUT",
                 "url": "Condition/b368be4f-b8fa-41ab-9e8d-28f1c820fb2d"
             }
         },
@@ -410,7 +410,7 @@
                 ]
             },
             "request": {
-                "method": "POST",
+                "method": "PUT",
                 "url": "Condition/36be2a2a-72ec-41ca-bd5b-9bc362d5cc10"
             }
         },
@@ -567,7 +567,7 @@
                 }
             },
             "request": {
-                "method": "POST",
+                "method": "PUT",
                 "url": "Encounter/1999576c-46ec-40b2-b663-c84c3764cd2b"
             }
         }

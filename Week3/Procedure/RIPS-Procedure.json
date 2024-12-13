@@ -1,0 +1,142 @@
+{
+    "resourceType": "Procedure",
+    // ID del recurso Encounter, creado en la ETL
+    "id": "785151dc-448e-4806-b409-752f8c5330a3",
+    "extension": [
+        {
+            "id": "SurgicalMethod",
+            "url": "http://co.fhir.guide/core/StructureDefinition/ExtensionSurgicalMethod",
+            "valueCoding": {
+                "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianSurgicalMethod",
+                /* Campo 14: Forma de realización del acto quirúrgico */
+                /*  1   =   Único o unilateral
+                    2   =   Múltiple o bilateral, misma vía, diferente especialidad
+                    3   =   Múltiple o bilateral, misma vía, igual especialidad
+                    4   =   Múltiple o bilateral, diferente vía, diferente especialidad
+                    5   =   Múltiple o bilateral, diferente vía, igual especialidad    */
+                "code": "1",
+                "display": "Único o unilateral"
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "id": "InvoiceIdentifier",
+            "use": "official",
+            "system": "http://co.fhir.guide/core/NamingSystem/Invoices",
+            /* Campo 1: Número de la factura */
+            "value": "b92b-580ac97e6132"
+        },
+        {
+            "id": "AutorizationIdentifier",
+            "use": "official",
+            "system": "http://co.fhir.guide/core/NamingSystem/EncounterAutorization",
+            /* Campo 6: Número de autorización */
+            "value": "AUT-327498-BF-67"
+        }
+    ],
+    "status": "completed",
+    "category": {
+        "coding": [
+            {
+                "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianProcedureCategory",
+                /* Campo 8: Ámbito de realización del procedimiento */
+                /*  1 = Ambulatorio 
+                    2 = Hospitalario 
+                    3 = Urgencias */
+                "code": "3",
+                "display": "Urgencias"
+            }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://terminology.fhir.guide/co/CodeSystem/CUPS",
+            /* Campo 7: Código del procedimiento */
+            "code": "2470",
+            /*Nombre asociado al código del procedimiento*/
+            "display": "COLOCACION DE ANCLAJE ESQUELETICO"
+        }
+    ]
+    },
+    "subject": {
+        /* Campo Campos 3 y 4: (Referencia al paciente). Buscar un paciente:
+        Patient.identifier.type.coding[2].code == CC (Tipo de identificación del usuario)
+        Patient.identifier.value = 1085280052 (Número de identificación del usuario en el sistema)
+        Retornar Patient.id */
+        "reference": "Patient/92a8e277-af20-4854-a3fb-02cbe9fb8d49"
+    },
+    "encounter": {
+        /*Referencia el encuentro de atención (Opcional)*/
+        "reference": "Ecounter/ceb49970-cff4-4639-94e6-3887d7e66d53"
+    },
+     /* Campo 5: Fecha del procedimiento */
+    "performedDateTime": "2024-06-18",
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "http://terminology.fhir.guide/co/CodeSystem/PactitionerTypeFunction",
+                        /* Campo 10: Personal que atiende */
+                        /*  1 = Médico (a) especialista 
+                            2 = Médico (a) general
+                            3 = Enfermera (o)
+                            4 = Auxiliar de enfermería 
+                            5 = Otro*/
+                        "code": "1",
+                        "display": "Médico (a) especialista"
+                    }
+                ]
+            },
+            "actor": {
+                /* Campo 2: Código del prestador de servicios de salud */
+                /* Referencia al recurso Organization */
+                "reference": "Organization/3565ccc1-95b4-47ef-8cc9-5652dba007e6"
+            }
+        }
+    ],
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.fhir.guide/co/CodeSystem/ColombianProcedureReason",
+                    /* Campo 9: Finalidad del procedimiento */
+                    /*  1 = Diagnóstico
+                        2 = Terapéutico
+                        3 = Protección específica
+                        4 = Detección temprana de enfermedad general
+                        5 = Detección temprana de enfermedad laboral*/
+                    "code": "2",
+                    "display": "Terapéutico"
+                }
+            ]
+        }
+    ],  
+    "reasonReference": [
+        {
+            // Este elemento es Hardcoding
+            "id": "MainDiagnosis",
+            /* Campo 11: Diagnóstico principal */
+              "reference": "Condition/072d9e24-f388-4a3f-ab82-e8b7a81e4459"
+        },
+        {
+            // Este elemento es Hardcoding
+            "id": "Comobility-1",
+            /* Campo 12: Diagnóstico relacionado */
+            "reference": "Condition/f7118d86-5dd3-4cc2-b366-f944051ca47c"
+        }
+    ],
+    "complication": [
+        {
+            "coding": [{
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                /* Campo 13: Complicación */
+                "code": "A084",
+                /* Nombre asociado al código de la complicación (CIE10)*/
+                "display": "Infeccion intestinal viral, sin otra especificacion"
+            }]
+        }
+    ]
+}

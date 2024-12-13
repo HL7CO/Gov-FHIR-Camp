@@ -1,0 +1,84 @@
+{
+    "resourceType": "QuestionnaireResponse",
+    "item": [
+        {
+            "linkId": "Pregunta-1",
+            "text": "¿Se le ha detectado alguna vez un nivel elevado de glucosa en sangre (por ejemplo, en un reconocimiento médico, durante una enfermedad o durante el embarazo)?",
+            "answer": [
+                {
+                    "valueBoolean": true
+                }
+            ]
+        },
+        {
+            "linkId": "Pregunta-2",
+            "text": "Peso del paciente",
+            "answer": [
+                {
+                    "valueQuantity": {
+                            "value": 80,
+                            "unit": "kg"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "Pregunta-3",
+            "text": "Estatura del paciente",
+            "answer": [
+                {
+                    "valueReference": {
+                        "reference": "Observation/ac59f9e5-b7d3-4ae0-8156-6d6ec441c18d"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "Pregunta-4",
+            "text": "Fecha de la última cita?",
+            "answer": [
+                {
+                    "valueDate": "2020-01-01"
+                }
+            ]
+        },
+        {
+            "linkId": "Pregunta-5",
+            "text": "Peso del paciente?",
+            "answer": [
+                {
+                    "valueReference": {
+                        "reference": "Observation/7f186dd5-36ef-4abd-a930-f80074a947c6"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "Pregunta-7",
+            "text": "Cuál es el valor de su perímetro abdominal actual?",
+            "answer": [
+                {
+                    "valueDecimal": 90
+                }
+            ]
+        },
+        {
+            "linkId": "Pregunta-8",
+            "text": "Cuál fue el valor de su perímetro abdominal en la última cita?",
+            "answer": [
+                {
+                    "valueDecimal": 100
+                }
+            ]
+        },
+        {
+            "linkId": "Pregunta-9",
+            "text": "Cual es el valor de su presión arterial?",
+            "answer": [
+                {
+                    "valueString": "120/80"
+                }
+            ]
+        }
+    ]
+}

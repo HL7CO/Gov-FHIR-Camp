@@ -3,8 +3,8 @@
   "status": "active",
   "name": "ColombianGroupCodes",
   "id": "ColombianGroupCodes",
-  "title": "ValueSet: Group Codes Ecopetrol",
-  "description": "SSet of coded values for Ecopetrol patient groups (e.g. Family Group).\r\n\r\n[ES: Conjunto de valores codificados para grupos de pacientes de Ecopetrol (Ej: Grupo Familiar).]",
+  "title": "ValueSet: Group Codes CO",
+  "description": "SSet of coded values for Colombia patient groups (e.g. Family Group).\r\n\r\n[ES: Conjunto de valores codificados para grupos de pacientes de Colombia (Ej: Grupo Familiar).]",
   "url": "http://terminology.fhir.guide/co/ValueSet/ColombianGroupCodes",
   "version": "0.1.0",
   "experimental": false,
@@ -80,7 +80,7 @@
       ]
     }
   ],
-  "purpose": "This set of coded values is used as a nomenclature for Ecopetrol patient groups (e.g. Family Group).\r\n\r\n[ES: Este conjunto de valores codificados se utiliza como una nomenclatura para grupos de pacientes de Ecopetrol (Ej: Grupo Familiar).]",
+  "purpose": "This set of coded values is used as a nomenclature for Colombia patient groups (e.g. Family Group).\r\n\r\n[ES: Este conjunto de valores codificados se utiliza como una nomenclatura para grupos de pacientes de Colombia (Ej: Grupo Familiar).]",
   "copyright": "HL7 Colombia, CC-BY-4.0 2006+",
   "compose": {
     "include": [

@@ -1,0 +1,66 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "db6fe228-46e7-4485-8e68-61df8da9f399",
+  "meta": {
+    "profile": [
+      "http://co.fhir.guide/core/StructureDefinition/DocumentReferenceCO"
+    ]
+  },
+  "masterIdentifier": {
+    "system": "http://co.fhir.guide/core/DocumentReference",
+    "value": "8e68-61df8da9f399"
+  },
+  "identifier": [
+    {
+      "system": "http://example.org/DocumentReference/system",
+      "value": "d2458dda-1c4b.pdf"
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.fhir.guide/co/CodeSystem/CODocumentType",
+        "code": "11526-1",
+        "display": "Pathology study"
+      }
+    ]
+  },
+  "author": [
+    {
+      "reference": "Organization/3565ccc1-95b4-47ef-8cc9-5652dba007e6"
+    }
+  ],
+  "content": [
+    {
+      "attachment": {
+        "url": "https://document-reference-index.reposotory-example.azurehealthcareapis.com/db6fe228-46e7-4485-8e68-61df8da9f399.pdf"
+      },
+      "format": {
+        "system": "urn:ietf:bcp:13",
+        "code": "application/pdf",
+        "display": "PDF"
+      }
+    }
+  ],
+  "context": {
+    "encounter": [
+      {
+        "reference": "Encounter/531c1a17-9124-4d81-ab0b-f021c29eb3d4"
+      }
+    ],
+    "period": {
+      "start": "2024-02-17T22:30:00-05:00",
+      "end": "2024-02-19T09:00:00-05:00"
+    }
+  },
+  "status": "current",
+  "docStatus": "final",
+  "subject": {
+    "reference": "Patient/d393440c-e974-4613-b962-a242cf308bff"
+  },
+  "date": "2024-02-18T14:00:00-05:00",
+  "custodian": {
+    "reference": "Organization/3565ccc1-95b4-47ef-8cc9-5652dba007e6"
+  },
+  "description": "Estudio de patología Nº: 2348798"
+}
